@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Design direction: this reads as a control-assessment workpaper, not a
+  marketing SaaS page. Paper background (not stark white, not cream/terracotta),
+  ink-navy for structure and authority, a measured amber/forest/brick/slate set
+  for the five permitted implementation statuses (never color-only -- every
+  status also carries a text label and icon in the components that use these).
+*/
+
+:root {
+  --paper: #f7f6f3;
+  --paper-raised: #ffffff;
+  --ink: #1a2233;
+  --ink-soft: #47536b;
+  --ink-faint: #8892a6;
+  --line: #dfdcd2;
+
+  --accent: #1f3a5f; /* structural navy -- nav, active states, links */
+  --accent-soft: #e8edf4;
+
+  --status-implemented: #2f6f5e;
+  --status-implemented-bg: #e7f1ee;
+  --status-partial: #b4791a;
+  --status-partial-bg: #faf1e2;
+  --status-not-implemented: #9b3b34;
+  --status-not-implemented-bg: #f7e9e7;
+  --status-not-enough-info: #3d5a80;
+  --status-not-enough-info-bg: #e9eef5;
+  --status-not-applicable: #6b4f8a;
+  --status-not-applicable-bg: #ede7f2;
+
+  --severity-low: #5c7a63;
+  --severity-moderate: #b4791a;
+  --severity-high: #c1552e;
+  --severity-critical: #9b3b34;
+
+  --radius: 6px;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-status-implemented: var(--status-implemented);
+  --color-status-implemented-bg: var(--status-implemented-bg);
+  --color-status-partial: var(--status-partial);
+  --color-status-partial-bg: var(--status-partial-bg);
+  --color-status-not-implemented: var(--status-not-implemented);
+  --color-status-not-implemented-bg: var(--status-not-implemented-bg);
+  --color-status-not-enough-info: var(--status-not-enough-info);
+  --color-status-not-enough-info-bg: var(--status-not-enough-info-bg);
+  --color-status-not-applicable: var(--status-not-applicable);
+  --color-status-not-applicable-bg: var(--status-not-applicable-bg);
+
+  --font-display: var(--font-source-serif);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* control identifiers (AC-2, AU-6, etc.) are literal codes, not decoration --
+   monospace makes that legible at a glance across the interface */
+.control-id {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: 0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
