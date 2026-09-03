@@ -83,7 +83,6 @@ describe("buildFixedFields", () => {
   it("always returns the exact required disclaimer text", () => {
     const fields = buildFixedFields("nist-800-53-r5", "AC-2", "Account Management");
     expect(fields.disclaimer).toContain("does not constitute an audit opinion");
-    expect(fields.completenessScore).toBeNull();
   });
 
   it("returns a valid ISO timestamp", () => {

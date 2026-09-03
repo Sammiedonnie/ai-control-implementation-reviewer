@@ -90,11 +90,7 @@ export function ResultsView({ result }: { result: FullAssessmentResult }) {
                 </div>
                 <div>
                   <dt className="text-ink-faint">Completeness score</dt>
-                  <dd className="text-ink-soft italic">
-                    {result.completenessScore === null
-                      ? "Not yet calculated -- deterministic scoring engine ships in a later chunk"
-                      : `${result.completenessScore}%`}
-                  </dd>
+                  <dd className="text-ink font-medium text-lg">{result.completenessScore}%</dd>
                 </div>
                 <div>
                   <dt className="text-ink-faint">Assessed</dt>
@@ -103,6 +99,42 @@ export function ResultsView({ result }: { result: FullAssessmentResult }) {
                   </dd>
                 </div>
               </dl>
+            </Card>
+            <Card>
+              <h3 className="text-sm font-semibold text-ink mb-3">
+                How the completeness score was calculated
+              </h3>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left text-ink-faint text-xs border-b border-line">
+                    <th className="pb-2 font-medium">Category</th>
+                    <th className="pb-2 font-medium">Weight</th>
+                    <th className="pb-2 font-medium">Finding</th>
+                    <th className="pb-2 font-medium text-right">Points</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-line">
+                  {result.scoreBreakdown.map((b) => (
+                    <tr key={b.category} className={b.excluded ? "text-ink-faint" : "text-ink-soft"}>
+                      <td className="py-1.5">{b.category}</td>
+                      <td className="py-1.5">{b.weight}%</td>
+                      <td className="py-1.5">
+                        {b.excluded ? `${b.presence} (excluded)` : b.presence}
+                      </td>
+                      <td className="py-1.5 text-right">
+                        {b.excluded ? "--" : `${b.pointsEarned}/${b.weight}`}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="mt-3 text-xs text-ink-faint">
+                Score = sum of points earned / sum of applicable weight (Not
+                Applicable categories are excluded from both). This is a
+                fixed application calculation, not something the AI computed.
+                It does not by itself determine implementation status --
+                evidence sufficiency and operating effectiveness matter too.
+              </p>
             </Card>
             {result.strengths.length > 0 && (
               <Card>

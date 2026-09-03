@@ -194,14 +194,58 @@ without re-reading the whole codebase or repeating finished work.
   measurability 10%). Do not let the model compute this number; the schema
   has no field for the model to fill it in, by design.
 
+## Chunk 5 -- Deterministic scoring engine (DONE)
+
+- RESOLVED the 6-vs-8-category weight conflict flagged at the end of Chunk 4:
+  spec section 8 gives weights for 6 categories (Who 15/What 20/When 15/
+  How 20/Evidence 20/Scope+measurability 10), but section 7's required
+  findings are 8 categories. Decision (documented in the code comment in
+  lib/scoring/calculateCompleteness.ts, not silently picked): the 10%
+  "Scope and measurability" bucket is split Scope=4/Responsibilities=3/
+  Measurability=3, preserving all 5 named category weights and the 100%
+  total exactly as specified.
+- lib/scoring/calculateCompleteness.ts -- pure, deterministic, no AI or
+  network involvement. Present=100% of weight, Partially Present=50%,
+  Missing=0%. Not Applicable is excluded from BOTH numerator and
+  denominator (a legitimately N/A category doesn't penalize the score).
+  A category the model never addressed at all (absent from the findings
+  array, not marked N/A) is scored as Missing with full weight counted --
+  this cannot be gamed by the model simply omitting a hard category.
+- tests/unit/calculateCompleteness.test.ts -- 9 tests: weights sum to
+  exactly 100, all 8 categories covered, all-Present=100, all-Missing=0,
+  all-Partial=50, an omitted category scores as Missing (not excluded), a
+  legitimate N/A is excluded from the denominator (doesn't drag score
+  down), a realistic mixed case computes the exact expected weighted
+  score, and an all-N/A edge case returns 0 without NaN/crash
+- lib/ai/outputSchema.ts -- FullAssessmentResultSchema.completenessScore is
+  now a required number (no longer nullable/placeholder), added
+  scoreBreakdown array field
+- lib/ai/reviewLogic.ts -- buildFixedFields() no longer sets
+  completenessScore (that's now computed by calculateCompleteness(),
+  called separately in the route)
+- app/api/review/route.ts -- calls calculateCompleteness(proposed.
+  statementQualityAnalysis) after the safety-override step, includes
+  completenessScore + scoreBreakdown in the response
+- components/review/ResultsView.tsx -- Summary tab now shows the real
+  percentage (no more "not yet calculated" placeholder) plus a full
+  calculation table (category / weight / finding / points) with a caption
+  clarifying this is a fixed application calculation, not an AI output,
+  and that the score does not by itself determine implementation status --
+  satisfies spec section 8's "display the calculation to the user"
+  requirement and section 7's "the completeness score must not
+  automatically determine compliance status" requirement (status still
+  comes from the AI + MCP validate_assessment + applySafetyOverrides path
+  from Chunk 4, completely independent of this score)
+- Verified: `npm run build`, `npm run lint`, `npx vitest run` (41/41 across
+  4 test files) all pass clean
+- NOT manually re-tested end-to-end with a live API key in this chunk
+  (would need the user's key in the sandbox, which isn't available) --
+  the scoring math itself is fully covered by unit tests, and the wiring
+  is the same pattern already proven working in Chunk 4. Worth a quick
+  live check when picking this up with the user to see a real percentage
+  render, but the logic itself doesn't depend on it.
+
 ## Remaining chunks (per Phase 1 plan)
-5. Deterministic scoring engine (reads statementQualityAnalysis from the
-   AssessmentOutput already being returned by Chunk 4 -- the category names
-   already match the weight categories from the Phase 1 plan, just need
-   Scope/Responsibilities/Measurability folded into "Scope and
-   measurability" per the spec's 6-category weighting, or the weighting
-   table revisited for 8 categories -- decide this explicitly when building
-   Chunk 5, don't silently pick one)
 6. History (browser storage) + report export
 7. Testing (Vitest unit, Playwright e2e) + security hardening + docs/THREAT-MODEL.md
 8. GitHub + Vercel deployment walkthrough

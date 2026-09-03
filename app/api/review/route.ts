@@ -7,6 +7,7 @@ import { SYSTEM_PROMPT } from "@/lib/ai/systemPrompt";
 import { AssessmentOutputSchema } from "@/lib/ai/outputSchema";
 import { applySafetyOverrides, buildFixedFields, type McpValidation } from "@/lib/ai/reviewLogic";
 import { validateAssessmentTool } from "@/lib/mcp/tools/validateAssessment";
+import { calculateCompleteness } from "@/lib/scoring/calculateCompleteness";
 import { loadControl } from "@/lib/data/frameworkLoader";
 
 export const runtime = "nodejs";
@@ -141,11 +142,16 @@ Assess this implementation statement for ${controlId} following your instruction
 
     const { status: finalStatus, overridden, reason } = applySafetyOverrides(proposed, mcpValidation);
     const fixedFields = buildFixedFields(frameworkId, controlId, control.controlName);
+    const { score: completenessScore, breakdown: scoreBreakdown } = calculateCompleteness(
+      proposed.statementQualityAnalysis
+    );
 
     const fullResult = {
       ...proposed,
       overallStatus: finalStatus,
       ...fixedFields,
+      completenessScore,
+      scoreBreakdown,
       mcpValidation,
       statusWasOverridden: overridden,
       overrideReason: reason,

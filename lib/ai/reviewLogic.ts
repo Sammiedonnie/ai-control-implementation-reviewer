@@ -45,7 +45,9 @@ export function applySafetyOverrides(
 
 // Builds the final, app-controlled fields that are never left to the model:
 // the disclaimer text is always exactly the required wording, never
-// whatever (if anything) the model produced.
+// whatever (if anything) the model produced. Completeness score is
+// computed deterministically here, from the model's category findings --
+// see lib/scoring/calculateCompleteness.ts for the weighting rules.
 export function buildFixedFields(frameworkId: string, controlId: string, controlName: string) {
   return {
     frameworkId,
@@ -53,6 +55,5 @@ export function buildFixedFields(frameworkId: string, controlId: string, control
     controlName,
     assessmentTimestamp: new Date().toISOString(),
     disclaimer: REQUIRED_DISCLAIMER,
-    completenessScore: null as number | null, // Chunk 5 fills this in deterministically
   };
 }

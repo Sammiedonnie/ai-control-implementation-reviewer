@@ -51,14 +51,23 @@ export type AssessmentOutput = z.infer<typeof AssessmentOutputSchema>;
 // The full record returned to the browser -- adds fields the application
 // computes/injects deterministically, which the model never controls:
 // framework/control identity, the fixed disclaimer, a timestamp, MCP
-// validation results, and a placeholder for the Chunk 5 scoring engine.
+// validation results, and the deterministic completeness score.
 export const FullAssessmentResultSchema = AssessmentOutputSchema.extend({
   frameworkId: z.string(),
   controlId: z.string(),
   controlName: z.string(),
   assessmentTimestamp: z.string(),
   disclaimer: z.string(),
-  completenessScore: z.number().nullable(), // null until Chunk 5's scoring engine is wired in
+  completenessScore: z.number(),
+  scoreBreakdown: z.array(
+    z.object({
+      category: z.string(),
+      weight: z.number(),
+      presence: z.string(),
+      pointsEarned: z.number(),
+      excluded: z.boolean(),
+    })
+  ),
   mcpValidation: z.object({
     validControlReference: z.boolean(),
     unsupportedClaims: z.array(z.string()),
