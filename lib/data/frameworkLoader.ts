@@ -95,3 +95,11 @@ export function searchControls(
       c.summary.toLowerCase().includes(term)
   );
 }
+
+export function loadCrosswalks(frameworkId: string) {
+  const file = path.join(frameworkDir(frameworkId), "crosswalks.json");
+  if (!fs.existsSync(file)) return [];
+  const raw = JSON.parse(fs.readFileSync(file, "utf-8"));
+  if (!Array.isArray(raw)) return [];
+  return raw as import("@/lib/types/framework").CrosswalkEntry[];
+}

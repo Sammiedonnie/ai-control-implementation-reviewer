@@ -46,3 +46,13 @@ export const ControlSchema = z.object({
   lastReviewed: z.string(), // ISO date
 });
 export type Control = z.infer<typeof ControlSchema>;
+
+export const CrosswalkEntrySchema = z.object({
+  sourceFrameworkId: z.string(),
+  sourceControlId: z.string(),
+  targetFrameworkId: z.string(),
+  targetControlId: z.string(),
+  confidence: z.enum(["Exact", "Related", "Partial", "Informational"]),
+  notes: z.string(),
+});
+export type CrosswalkEntry = z.infer<typeof CrosswalkEntrySchema>;

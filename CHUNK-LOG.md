@@ -69,14 +69,69 @@ without re-reading the whole codebase or repeating finished work.
   a smaller download -- always run `npm install` first if picking this repo
   up fresh in the sandbox
 
-## Chunk 3 -- next up: MCP server (all 8 tools, Zod schemas, tests)
-Not started. The 8 tools should be thin wrappers around lib/data/frameworkLoader.ts
-functions already built in Chunk 2 -- validate_control_reference, get_control_details,
-get_evidence_requirements, search_controls, list_frameworks, list_control_families
-map almost directly. map_control and validate_assessment are new logic.
+## Chunk 3 -- MCP server: all 8 tools, Zod schemas, tests (DONE)
+
+- lib/mcp/schemas.ts -- Zod raw-shape input/output schemas for all 8 tools,
+  built on the Chunk 2 Framework/ControlFamily/Control schemas and the
+  Chunk 1 ImplementationStatus/FindingPresence unions (no redefinition)
+- lib/mcp/tools/*.ts -- one pure, independently-testable function per tool:
+  listFrameworks, listControlFamilies, searchControls, getControlDetails,
+  getEvidenceRequirements, validateControlReference, mapControl,
+  validateAssessment. All read-only, all wrap lib/data/frameworkLoader.ts
+  (or, for validateAssessment, apply deterministic business-rule checks --
+  no LLM call happens inside these tools).
+- validateAssessmentTool is the key anti-hallucination gate: rejects
+  "Implemented" status with no evidenceInformation, rejects "Implemented"
+  when any required finding category is "Missing", flags every one of the
+  8 required categories (Who/What/When/How/Evidence/Scope/Responsibilities/
+  Measurability) that wasn't addressed, and never trusts a control
+  reference it can't validate against the data layer.
+- mapControlTool correctly returns "Not Available" for any cross-framework
+  mapping until crosswalks.json has real entries (only 1 framework exists
+  in the MVP) -- never fabricates or upgrades confidence.
+- lib/types/framework.ts -- added CrosswalkEntrySchema;
+  lib/data/frameworkLoader.ts -- added loadCrosswalks()
+- lib/mcp/server.ts -- McpServer with all 8 tools registered via
+  registerTool(), each returning both structuredContent (validated against
+  its outputSchema) and a text content block
+- app/api/mcp/route.ts -- Next.js App Router route handler exposing the
+  server over Streamable HTTP using WebStandardStreamableHTTPServerTransport
+  in STATELESS mode (sessionIdGenerator: undefined, enableJsonResponse:
+  true) -- a fresh server+transport per request, which fits Vercel
+  Functions (no persistent connection needed since every tool is a stateless
+  read). Runs on the default Node.js runtime (not edge) since the data
+  loader uses node:fs.
+- tests/unit/mcpTools.test.ts -- 18 Vitest tests covering all 8 tools,
+  including the validate_assessment rejection cases above
+- MANUALLY VERIFIED over real HTTP (not just unit tests): started the dev
+  server, POSTed a real MCP `initialize` request (200 OK, correct
+  protocolVersion/serverInfo back), a `tools/list` request (all 8 tools
+  discoverable with generated JSON schemas), and two `tools/call` requests
+  (get_control_details returned real AC-2 data; validate_assessment
+  correctly rejected an "Implemented" claim with no evidence and listed
+  the 7 missing required categories). This confirms the transport wiring
+  works end-to-end, not just the underlying functions.
+- Verified: `npm run build`, `npm run lint`, `npx vitest run` (26/26
+  passing across both test files) all pass clean
+- Note for local testing: the MCP endpoint is at POST/GET/DELETE
+  http://localhost:3000/api/mcp -- there is no browser UI change in this
+  chunk, it's a backend-only addition. Nothing to see by clicking around
+  the site; testing requires either curl/Postman or waiting for Chunk 4
+  to wire the AI assistant into it.
+
+## Chunk 4 -- next up: AI assistant integration
+Not started. Needs: ANTHROPIC_API_KEY set (locally in .env.local, and in
+Vercel project settings), a strict system prompt (spec section 10) built
+around treating user statement text as untrusted data, an AI SDK route at
+/api/review that calls Claude with MCP tool access (the mcp() server config
+pointing at /api/mcp), forces get_control_details + get_evidence_requirements
++ validate_assessment calls before returning conclusions, and validates the
+model's final output against a Zod schema before it reaches scoring (Chunk 5)
+or the UI. The StatementForm submit handler in NewReviewClient.tsx currently
+just shows a "not wired up yet" placeholder -- Chunk 4 replaces that with
+the real call.
 
 ## Remaining chunks (per Phase 1 plan)
-4. AI assistant integration (system prompt, AI SDK route, structured output)
 5. Deterministic scoring engine
 6. History (browser storage) + report export
 7. Testing (Vitest unit, Playwright e2e) + security hardening + docs/THREAT-MODEL.md
