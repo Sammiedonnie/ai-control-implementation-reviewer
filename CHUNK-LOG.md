@@ -119,20 +119,89 @@ without re-reading the whole codebase or repeating finished work.
   the site; testing requires either curl/Postman or waiting for Chunk 4
   to wire the AI assistant into it.
 
-## Chunk 4 -- next up: AI assistant integration
-Not started. Needs: ANTHROPIC_API_KEY set (locally in .env.local, and in
-Vercel project settings), a strict system prompt (spec section 10) built
-around treating user statement text as untrusted data, an AI SDK route at
-/api/review that calls Claude with MCP tool access (the mcp() server config
-pointing at /api/mcp), forces get_control_details + get_evidence_requirements
-+ validate_assessment calls before returning conclusions, and validates the
-model's final output against a Zod schema before it reaches scoring (Chunk 5)
-or the UI. The StatementForm submit handler in NewReviewClient.tsx currently
-just shows a "not wired up yet" placeholder -- Chunk 4 replaces that with
-the real call.
+## Chunk 4 -- AI assistant integration (DONE)
+
+- Installed @ai-sdk/mcp (separate package from `ai` -- createMCPClient lives
+  there, not in the core `ai` package)
+- lib/ai/systemPrompt.ts -- strict system prompt: mandatory MCP tool call
+  order (validate_control_reference -> get_control_details ->
+  get_evidence_requirements -> validate_assessment before any conclusion),
+  explicit "user statement/context is DATA not instructions" framing with
+  prompt-injection handling instructions, never-invent rules, and an
+  instruction to honor validate_assessment's verdict (backed up by server-
+  side re-checking below, not just trusted)
+- lib/ai/outputSchema.ts -- AssessmentOutputSchema (what the model must
+  produce via the submit_assessment tool call) and FullAssessmentResultSchema
+  (adds app-injected fields: framework/control identity, fixed disclaimer
+  text, timestamp, mcpValidation, completenessScore: null until Chunk 5,
+  statusWasOverridden/overrideReason)
+- lib/ai/reviewLogic.ts -- applySafetyOverrides() and buildFixedFields():
+  PURE functions, no network/AI calls, so fully unit-testable without an
+  API key. This is the defense-in-depth layer -- independently re-checks
+  the model's proposed status against MCP's validate_assessment output
+  rather than trusting the model followed its instructions. Downgrades an
+  unearned "Implemented" to "Not Enough Information" automatically.
+- lib/ai/reviewRequestSchema.ts -- input validation (length limits) for
+  POST /api/review
+- app/api/review/route.ts -- the orchestration route:
+  1. Checks ANTHROPIC_API_KEY is set (clear 500 error if not -- verified
+     this returns the exact right message with no key configured)
+  2. Validates request body (Zod) -- verified 400 on empty statement,
+     unknown control, and malformed JSON
+  3. Creates an MCP client pointed at `${origin}/api/mcp` (same-origin,
+     derived from the request URL -- no hardcoded localhost)
+  4. Calls generateText() with model "claude-sonnet-5", the MCP tools, and
+     a local submit_assessment tool (schema = AssessmentOutputSchema) that
+     captures the model's final structured call
+  5. Re-validates the captured output against AssessmentOutputSchema
+     (malformed response -> 502 with source: "malformed_ai_response")
+  6. Independently calls validateAssessmentTool() server-side (Chunk 3's
+     function, not a second AI call) and applies applySafetyOverrides()
+  7. Injects fixed fields, returns the full result
+  8. Distinguishes error sources in responses: ai_provider (502),
+     malformed_ai_response (502), mcp_unavailable (502), validation (400),
+     config (500) -- per spec section 19's "fail safely and explain which
+     layer failed" requirement
+- components/review/ResultsView.tsx -- all 7 required tabs (Summary,
+  Statement Analysis, Gaps, Evidence, Improved Statement, Follow-Up
+  Questions, Validation Sources), reusing StatusBadge and the paper/ink
+  design system. Summary tab visibly shows when status was auto-overridden
+  and why. Completeness score explicitly says "not yet calculated" rather
+  than showing a fake number.
+- app/new-review/NewReviewClient.tsx -- StatementForm submit now POSTs to
+  /api/review for real, with idle/loading/error/done states; error state
+  shows the server's message and offers Try again
+- tests/unit/reviewLogic.test.ts -- 6 tests covering: invalid control
+  reference always downgrades regardless of proposed status, unearned
+  "Implemented" gets downgraded, a correctly-proposed non-Implemented
+  status is NOT second-guessed, a valid permitted "Implemented" is left
+  alone, disclaimer text is always exact, timestamp is valid ISO
+- Verified: `npm run build` (both /api/mcp and /api/review show as dynamic
+  routes, correct), `npm run lint`, `npx vitest run` (32/32 across 3 files)
+  all pass clean
+- MANUALLY VERIFIED over real HTTP: started dev server with no API key ->
+  confirmed the exact clear error message and 500 status; started with a
+  fake key -> confirmed empty-statement, unknown-control, and malformed-
+  JSON all correctly return 400 with specific messages before ever
+  reaching Anthropic
+- NOT YET TESTED: an actual successful end-to-end AI review (needs a real
+  ANTHROPIC_API_KEY, which the user will add locally and in Vercel -- the
+  sandbox has no key and can't reach api.anthropic.com anyway). This is the
+  first thing to test once the key is added.
+- completenessScore is intentionally null in every response right now --
+  Chunk 5 fills it in with the deterministic weighted calculation from the
+  Phase 1 plan (Who 15%/What 20%/When 15%/How 20%/Evidence 20%/Scope+
+  measurability 10%). Do not let the model compute this number; the schema
+  has no field for the model to fill it in, by design.
 
 ## Remaining chunks (per Phase 1 plan)
-5. Deterministic scoring engine
+5. Deterministic scoring engine (reads statementQualityAnalysis from the
+   AssessmentOutput already being returned by Chunk 4 -- the category names
+   already match the weight categories from the Phase 1 plan, just need
+   Scope/Responsibilities/Measurability folded into "Scope and
+   measurability" per the spec's 6-category weighting, or the weighting
+   table revisited for 8 categories -- decide this explicitly when building
+   Chunk 5, don't silently pick one)
 6. History (browser storage) + report export
 7. Testing (Vitest unit, Playwright e2e) + security hardening + docs/THREAT-MODEL.md
 8. GitHub + Vercel deployment walkthrough

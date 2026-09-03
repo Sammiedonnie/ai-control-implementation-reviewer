@@ -2,12 +2,22 @@
 
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ChevronLeft, Construction } from "lucide-react";
+import { ChevronLeft, Loader2, AlertCircle } from "lucide-react";
 import type { Control, ControlFamily } from "@/lib/types/framework";
+import type { FullAssessmentResult } from "@/lib/ai/outputSchema";
 import { ControlBrowser } from "@/components/review/ControlBrowser";
 import { ControlDetailPanel } from "@/components/review/ControlDetailPanel";
 import { StatementForm, type OptionalContext } from "@/components/review/StatementForm";
+import { ResultsView } from "@/components/review/ResultsView";
 import { Card } from "@/components/ui/Card";
+
+const FRAMEWORK_ID = "nist-800-53-r5";
+
+type ReviewState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "error"; message: string }
+  | { status: "done"; result: FullAssessmentResult };
 
 export function NewReviewClient({
   controls,
@@ -21,15 +31,40 @@ export function NewReviewClient({
   const [selectedId, setSelectedId] = useState<string | undefined>(
     controls.find((c) => c.controlId === preselected)?.controlId
   );
-  const [submitted, setSubmitted] = useState<{
-    statement: string;
-    context: OptionalContext;
-  } | null>(null);
+  const [review, setReview] = useState<ReviewState>({ status: "idle" });
 
   const selected = useMemo(
     () => controls.find((c) => c.controlId === selectedId),
     [controls, selectedId]
   );
+
+  async function handleSubmit(statement: string, context: OptionalContext) {
+    if (!selected) return;
+    setReview({ status: "loading" });
+    try {
+      const res = await fetch("/api/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          frameworkId: FRAMEWORK_ID,
+          controlId: selected.controlId,
+          statement,
+          context,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setReview({ status: "error", message: data.error ?? "Something went wrong." });
+        return;
+      }
+      setReview({ status: "done", result: data.assessment });
+    } catch {
+      setReview({
+        status: "error",
+        message: "Couldn't reach the server. Check your connection and try again.",
+      });
+    }
+  }
 
   if (!selected) {
     return (
@@ -57,7 +92,7 @@ export function NewReviewClient({
         type="button"
         onClick={() => {
           setSelectedId(undefined);
-          setSubmitted(null);
+          setReview({ status: "idle" });
         }}
         className="inline-flex items-center gap-1 text-sm text-accent hover:underline"
       >
@@ -69,34 +104,49 @@ export function NewReviewClient({
         <ControlDetailPanel control={selected} />
       </Card>
 
-      {!submitted ? (
+      {review.status !== "done" && (
         <Card>
-          <StatementForm
-            onSubmit={(statement, context) => setSubmitted({ statement, context })}
-          />
+          <StatementForm onSubmit={handleSubmit} />
         </Card>
-      ) : (
-        <Card className="flex gap-3 items-start">
-          <Construction className="size-5 text-status-partial shrink-0 mt-0.5" aria-hidden="true" />
+      )}
+
+      {review.status === "loading" && (
+        <Card className="flex gap-3 items-center">
+          <Loader2 className="size-5 text-accent animate-spin shrink-0" aria-hidden="true" />
+          <p className="text-sm text-ink-soft">
+            Validating against MCP-served control data and generating a structured assessment...
+          </p>
+        </Card>
+      )}
+
+      {review.status === "error" && (
+        <Card className="border-status-not-implemented bg-status-not-implemented-bg flex gap-3 items-start">
+          <AlertCircle className="size-5 text-status-not-implemented shrink-0 mt-0.5" aria-hidden="true" />
           <div>
-            <h3 className="text-sm font-semibold text-ink">
-              Statement captured -- AI review isn&apos;t wired up yet
-            </h3>
-            <p className="mt-1 text-sm text-ink-soft">
-              This confirms the form, control selection, and data flow all
-              work end to end. The MCP server (Chunk 3) and the AI review
-              call (Chunk 4) will turn this into an actual structured
-              assessment.
-            </p>
+            <h3 className="text-sm font-semibold text-ink">Review failed</h3>
+            <p className="mt-1 text-sm text-ink-soft">{review.message}</p>
             <button
               type="button"
-              onClick={() => setSubmitted(null)}
+              onClick={() => setReview({ status: "idle" })}
               className="mt-3 text-sm text-accent hover:underline"
             >
-              Edit statement
+              Try again
             </button>
           </div>
         </Card>
+      )}
+
+      {review.status === "done" && (
+        <>
+          <ResultsView result={review.result} />
+          <button
+            type="button"
+            onClick={() => setReview({ status: "idle" })}
+            className="text-sm text-accent hover:underline"
+          >
+            Submit a different statement
+          </button>
+        </>
       )}
     </div>
   );
