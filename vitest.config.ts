@@ -4,6 +4,7 @@ import path from "node:path";
 export default defineConfig({
   test: {
     environment: "node",
+    include: ["tests/unit/**/*.test.ts"], // e2e specs use @playwright/test, not vitest -- keep them separate
   },
   resolve: {
     alias: {

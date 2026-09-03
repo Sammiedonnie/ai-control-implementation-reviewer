@@ -8,9 +8,13 @@ import { AssessmentOutputSchema } from "@/lib/ai/outputSchema";
 import { applySafetyOverrides, buildFixedFields, type McpValidation } from "@/lib/ai/reviewLogic";
 import { validateAssessmentTool } from "@/lib/mcp/tools/validateAssessment";
 import { calculateCompleteness } from "@/lib/scoring/calculateCompleteness";
+import { checkRateLimit } from "@/lib/security/rateLimit";
 import { loadControl } from "@/lib/data/frameworkLoader";
 
 export const runtime = "nodejs";
+
+const RATE_LIMIT = 10; // requests
+const RATE_WINDOW_MS = 60_000; // per minute, per client IP -- see lib/security/rateLimit.ts for caveats
 
 // This route is the only place that talks to both the Anthropic API and
 // the MCP server. It: (1) validates the request, (2) gives the model
@@ -21,6 +25,16 @@ export const runtime = "nodejs";
 // (disclaimer, timestamp, framework/control identity).
 
 export async function POST(req: Request) {
+  const clientIp =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const rateLimit = checkRateLimit(`review:${clientIp}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: "Too many review requests. Please wait a moment and try again." },
+      { status: 429, headers: { "Retry-After": Math.ceil(rateLimit.retryAfterMs / 1000).toString() } }
+    );
+  }
+
   if (!process.env.ANTHROPIC_API_KEY) {
     return NextResponse.json(
       {
