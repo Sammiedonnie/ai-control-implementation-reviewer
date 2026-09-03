@@ -1,0 +1,8 @@
+[
+  { "id": "AC", "name": "Access Control", "description": "Controls that limit system access to authorized users, processes, and devices, and govern the types of transactions and functions those users are permitted to exercise." },
+  { "id": "AU", "name": "Audit and Accountability", "description": "Controls that ensure events are logged, logs are reviewed, and actions can be traced back to individual users." },
+  { "id": "IA", "name": "Identification and Authentication", "description": "Controls that verify the identity of users, processes, and devices before granting access." },
+  { "id": "CM", "name": "Configuration Management", "description": "Controls that establish and maintain baseline configurations and manage changes to systems in a controlled manner." },
+  { "id": "SC", "name": "System and Communications Protection", "description": "Controls that protect the confidentiality and integrity of transmitted and processed information, including boundary protection." },
+  { "id": "AT", "name": "Awareness and Training", "description": "Controls that ensure personnel are aware of security risks and receive role-appropriate security training." }
+]

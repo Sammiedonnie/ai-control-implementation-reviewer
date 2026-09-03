@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AU-6",
+  "controlName": "Audit Record Review, Analysis, and Reporting",
+  "family": "AU",
+  "purpose": "Ensures that logged events are actually reviewed and analyzed for signs of inappropriate or unusual activity, not simply collected and left unexamined.",
+  "summary": "Designated personnel review audit records on a defined schedule (or via automated correlation/alerting), investigate anomalies, and escalate or report findings through a defined process.",
+  "expectedStatementElements": [
+    "Who performs the review (role, not just 'the security team')",
+    "How often review occurs, or what triggers automated alerting",
+    "What tool(s) support review/correlation (SIEM, manual, etc.)",
+    "What happens when an anomaly is found -- escalation path",
+    "How review activity itself is evidenced (sign-off, ticket, report)"
+  ],
+  "evidenceExamples": [
+    "Log review sign-off sheets or tickets",
+    "SIEM alert/investigation records",
+    "Escalation/incident tickets originating from log review"
+  ],
+  "commonGaps": [
+    "Statement says logs are 'monitored' without describing frequency or method",
+    "No description of what happens after an anomaly is identified",
+    "No evidence that review actually occurred (only that a tool exists)"
+  ],
+  "interviewQuestions": [
+    "Who specifically reviews these logs, and on what schedule?",
+    "Walk me through what happens the moment something suspicious is found.",
+    "How would you show me evidence that a review happened last month?"
+  ],
+  "relatedControls": [
+    "AU-2"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

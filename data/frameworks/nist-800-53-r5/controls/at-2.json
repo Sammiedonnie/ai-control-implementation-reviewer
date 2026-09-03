@@ -1,0 +1,35 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AT-2",
+  "controlName": "Literacy Training and Awareness",
+  "family": "AT",
+  "purpose": "Ensures personnel understand security risks and their responsibilities, reducing the likelihood of human-error-driven incidents like phishing or credential mishandling.",
+  "summary": "The organization provides security awareness training to all personnel at onboarding and on a recurring basis, tracks completion, and updates content to reflect current threats.",
+  "expectedStatementElements": [
+    "Who is required to take training (all staff, or role-specific)",
+    "Training frequency (onboarding plus a defined recurring cadence)",
+    "How completion is tracked and enforced for non-completion",
+    "How content is kept current with emerging threats",
+    "Whether role-based supplemental training exists for higher-risk roles"
+  ],
+  "evidenceExamples": [
+    "Training completion reports by employee",
+    "Training content/curriculum with revision history",
+    "Escalation records for non-completion"
+  ],
+  "commonGaps": [
+    "Statement says training occurs 'annually' but doesn't confirm onboarding training or completion tracking",
+    "No process described for what happens if someone doesn't complete training",
+    "No mention of role-based or threat-updated content"
+  ],
+  "interviewQuestions": [
+    "Is training required at onboarding, or only on the annual cycle?",
+    "What happens if someone doesn't complete required training by the deadline?",
+    "When was the training content last updated, and based on what threats?"
+  ],
+  "relatedControls": [],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

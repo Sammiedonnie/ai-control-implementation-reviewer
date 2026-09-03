@@ -1,0 +1,40 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AC-3",
+  "controlName": "Access Enforcement",
+  "family": "AC",
+  "purpose": "Ensures the system technically enforces approved authorizations for logical access, so that users can only perform the actions their assigned permissions allow.",
+  "summary": "The system enforces access control policy at the point of access (e.g., role-based access control, permission checks) rather than relying solely on procedural agreement not to exceed authorized access.",
+  "expectedStatementElements": [
+    "What access control model is used (RBAC, ABAC, ACLs, etc.)",
+    "What technology enforces access decisions",
+    "Who defines and approves the access rules/roles",
+    "How enforcement is verified (testing, logging of denied attempts)",
+    "How exceptions to standard access rules are handled and approved"
+  ],
+  "evidenceExamples": [
+    "Role/permission matrix showing enforced access levels",
+    "System configuration screenshots or exports showing enforcement mechanism",
+    "Logs of denied access attempts",
+    "Access exception approval records"
+  ],
+  "commonGaps": [
+    "Statement describes policy but not the technical enforcement mechanism",
+    "No evidence that enforcement is actually tested or verified",
+    "Exception handling process not described"
+  ],
+  "interviewQuestions": [
+    "What technical control actually blocks unauthorized access -- not just policy?",
+    "How would we verify enforcement is working today, not just configured once?",
+    "Who approves exceptions to standard role-based access?"
+  ],
+  "relatedControls": [
+    "AC-2",
+    "AC-5",
+    "AC-6"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

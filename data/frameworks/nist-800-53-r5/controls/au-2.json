@@ -1,0 +1,38 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AU-2",
+  "controlName": "Event Logging",
+  "family": "AU",
+  "purpose": "Ensures the organization identifies which events need to be logged and configures systems to actually capture them, providing the raw material needed for later detection and investigation.",
+  "summary": "The organization defines a list of auditable events based on risk (e.g., logon attempts, privilege changes, data access) and configures systems to log those events with sufficient detail.",
+  "expectedStatementElements": [
+    "Which specific event types are logged (not just 'security events')",
+    "What systems/technology performs the logging",
+    "How the list of loggable events was determined (risk-based rationale)",
+    "How log completeness/coverage is periodically verified",
+    "How the list of events is kept current as systems change"
+  ],
+  "evidenceExamples": [
+    "List of configured auditable event types",
+    "Logging configuration exports (e.g., SIEM ingestion rules)",
+    "Periodic coverage review records"
+  ],
+  "commonGaps": [
+    "Statement says 'security events are logged' without naming specific event types",
+    "No description of how the event list was determined or is kept current",
+    "No verification that logging is actually functioning as configured"
+  ],
+  "interviewQuestions": [
+    "Can you list the specific event types currently configured for logging?",
+    "How was this list of events decided, and when was it last reviewed?",
+    "How do you confirm logging is still working, not just configured once?"
+  ],
+  "relatedControls": [
+    "AU-6",
+    "AC-2"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

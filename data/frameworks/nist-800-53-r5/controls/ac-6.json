@@ -1,0 +1,39 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AC-6",
+  "controlName": "Least Privilege",
+  "family": "AC",
+  "purpose": "Limits users and processes to only the access necessary to perform their assigned tasks, reducing the impact of compromised credentials or insider misuse.",
+  "summary": "Access rights are scoped to the minimum necessary for a user's role, privileged access is limited and separately controlled, and elevated access is time-bound or justified where possible.",
+  "expectedStatementElements": [
+    "How roles are mapped to the minimum necessary permissions",
+    "How privileged/administrative access is separately controlled",
+    "Whether just-in-time or time-bound elevated access is used",
+    "How least-privilege is validated over time (not just at provisioning)",
+    "Who approves privileged access requests"
+  ],
+  "evidenceExamples": [
+    "Role-to-permission mapping documentation",
+    "Privileged access request/approval records",
+    "Reports showing time-bound or expiring elevated access"
+  ],
+  "commonGaps": [
+    "Statement conflates least privilege with basic access control (AC-3) without addressing scope minimization",
+    "No process to periodically re-validate that granted access is still the minimum necessary",
+    "No distinction between standard and privileged/administrative access"
+  ],
+  "interviewQuestions": [
+    "How do you determine the minimum access a role actually needs?",
+    "Is privileged access permanent, or time-bound/just-in-time?",
+    "How often is granted access re-validated against actual need?"
+  ],
+  "relatedControls": [
+    "AC-2",
+    "AC-3",
+    "AC-5"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

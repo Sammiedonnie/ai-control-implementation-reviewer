@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "SC-7",
+  "controlName": "Boundary Protection",
+  "family": "SC",
+  "purpose": "Controls and monitors communications at the external boundary and key internal boundaries of the system, preventing unauthorized access and detecting anomalous traffic.",
+  "summary": "The organization defines and enforces network boundaries using controls such as firewalls, segmentation, and monitored ingress/egress points, and restricts external connections to only what's explicitly authorized.",
+  "expectedStatementElements": [
+    "What boundary controls are in place (firewall, segmentation, proxy)",
+    "How ingress/egress points are restricted and monitored",
+    "Whether internal network segmentation exists (not just perimeter)",
+    "How boundary rules are reviewed/audited over time",
+    "How exceptions to boundary rules are approved and tracked"
+  ],
+  "evidenceExamples": [
+    "Firewall/network segmentation diagrams",
+    "Firewall rule review records",
+    "Boundary traffic monitoring/alerting configuration"
+  ],
+  "commonGaps": [
+    "Statement addresses perimeter only, not internal segmentation",
+    "No periodic review process for firewall/boundary rules described",
+    "No process for approving and tracking exceptions"
+  ],
+  "interviewQuestions": [
+    "Is boundary protection limited to the perimeter, or are internal zones segmented too?",
+    "How often are firewall rules reviewed, and by whom?",
+    "How is an exception to a boundary rule requested and approved?"
+  ],
+  "relatedControls": [
+    "AC-3"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

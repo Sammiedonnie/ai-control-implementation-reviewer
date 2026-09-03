@@ -1,0 +1,48 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AC-2",
+  "controlName": "Account Management",
+  "family": "AC",
+  "purpose": "Ensures that system accounts are created, modified, reviewed, and removed in a controlled way, so that access reflects only what current, authorized users actually need.",
+  "summary": "The organization defines account types, assigns account managers, and follows a defined process to create, enable, modify, disable, and remove accounts -- including timely action when a user's role or employment changes.",
+  "expectedStatementElements": [
+    "Who owns/manages accounts and who approves account requests",
+    "Which systems, applications, or account types are in scope",
+    "How often accounts are reviewed (a specific, defined frequency)",
+    "How new accounts are provisioned and approved",
+    "How account modifications (role/privilege changes) are handled",
+    "How terminated or transferred users are identified and accounts disabled",
+    "How inactive accounts are identified and handled",
+    "How privileged accounts are reviewed separately from standard accounts",
+    "What technology/system is used to manage accounts",
+    "Where review evidence is retained and for how long"
+  ],
+  "evidenceExamples": [
+    "Account review exports with reviewer names and dates",
+    "Approval tickets for account creation/modification",
+    "Termination/offboarding tickets showing account disablement date",
+    "Privileged account inventory with last-reviewed date"
+  ],
+  "commonGaps": [
+    "Statement says accounts are reviewed 'periodically' without a defined frequency",
+    "No distinction between standard and privileged account review",
+    "No mention of how terminated users are identified or how quickly accounts are disabled",
+    "No evidence retention location specified"
+  ],
+  "interviewQuestions": [
+    "Who is notified when an employee is terminated or changes roles, and how quickly?",
+    "How are privileged accounts identified and reviewed differently from standard accounts?",
+    "What happens to an account after 30/60/90 days of inactivity?",
+    "Where is the account review evidence stored, and who can access it?"
+  ],
+  "relatedControls": [
+    "AC-3",
+    "AC-5",
+    "AC-6",
+    "IA-2"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

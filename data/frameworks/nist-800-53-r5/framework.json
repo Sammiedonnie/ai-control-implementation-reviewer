@@ -1,0 +1,8 @@
+{
+  "id": "nist-800-53-r5",
+  "name": "NIST SP 800-53",
+  "version": "Revision 5",
+  "description": "Security and privacy controls for information systems and organizations, published by the National Institute of Standards and Technology.",
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "contentStatusNotice": "Control identifiers and family structure are public-domain NIST content. Purpose statements, plain-language summaries, expected statement elements, common gaps, and interview questions in this dataset are application-authored for demonstration purposes and are not official NIST language."
+}

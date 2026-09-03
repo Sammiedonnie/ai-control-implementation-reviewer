@@ -1,0 +1,38 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AC-5",
+  "controlName": "Separation of Duties",
+  "family": "AC",
+  "purpose": "Divides critical functions among different individuals so that no single person can both execute and conceal fraudulent or erroneous activity.",
+  "summary": "The organization identifies duties that must be separated (e.g., requesting vs. approving access, developing vs. deploying code) and enforces that separation through role assignment or system controls.",
+  "expectedStatementElements": [
+    "Which specific duties/functions are identified as requiring separation",
+    "How separation is enforced (role assignment, system restriction, or both)",
+    "Who is responsible for defining and maintaining the separation matrix",
+    "How separation is validated (periodic review, audit)",
+    "How conflicts (e.g., in small teams) are compensated for when full separation isn't feasible"
+  ],
+  "evidenceExamples": [
+    "Separation-of-duties matrix",
+    "Role assignment records showing conflicting duties are not combined",
+    "Compensating control documentation for small-team exceptions"
+  ],
+  "commonGaps": [
+    "No specific list of duties considered sensitive/conflicting",
+    "Statement asserts separation exists without describing how it's enforced or reviewed",
+    "No compensating controls described for cases where separation isn't fully achievable"
+  ],
+  "interviewQuestions": [
+    "Which specific job functions have you identified as needing separation?",
+    "What prevents the same person from requesting and approving their own access?",
+    "How do you compensate when a small team can't fully separate a function?"
+  ],
+  "relatedControls": [
+    "AC-2",
+    "AC-6"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,38 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "AC-7",
+  "controlName": "Unsuccessful Logon Attempts",
+  "family": "AC",
+  "purpose": "Limits the number of consecutive failed logon attempts, protecting against brute-force and credential-guessing attacks.",
+  "summary": "The system enforces a defined threshold of failed logon attempts within a defined time period, after which it takes an automatic action such as locking the account or delaying further attempts.",
+  "expectedStatementElements": [
+    "The specific failed-attempt threshold (e.g., '5 attempts')",
+    "The time window the threshold applies to",
+    "The automatic action taken (lockout duration, delay, alert)",
+    "How the account is unlocked (self-service, help desk, timed)",
+    "Whether the setting is enforced system-wide or varies by system"
+  ],
+  "evidenceExamples": [
+    "System configuration showing the lockout threshold and duration",
+    "Screenshots of the account lockout policy setting",
+    "Help desk unlock request logs"
+  ],
+  "commonGaps": [
+    "Statement says lockout is 'enabled' without stating the threshold or duration",
+    "No description of the unlock process",
+    "Setting not confirmed to be consistent across all in-scope systems"
+  ],
+  "interviewQuestions": [
+    "What is the exact failed-attempt threshold and lockout duration configured?",
+    "How does a user regain access after being locked out?",
+    "Is this setting consistent across every system in scope, or does it vary?"
+  ],
+  "relatedControls": [
+    "IA-2",
+    "AC-2"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-800-53-r5",
+  "frameworkVersion": "Revision 5",
+  "controlId": "CM-3",
+  "controlName": "Configuration Change Control",
+  "family": "CM",
+  "purpose": "Ensures changes to system configurations are proposed, reviewed, tested, and approved in a controlled manner before implementation, preventing unauthorized or unvetted changes.",
+  "summary": "The organization follows a defined change management process -- including a change advisory function, documented approval, testing where applicable, and a rollback plan -- for changes to production systems.",
+  "expectedStatementElements": [
+    "What process/tool is used to submit and track change requests",
+    "Who approves changes (a defined role/board, not just 'management')",
+    "Whether/how changes are tested before production deployment",
+    "How emergency changes are handled differently from standard changes",
+    "How rollback is planned for in case a change fails"
+  ],
+  "evidenceExamples": [
+    "Change request tickets with approval trail",
+    "Change advisory board meeting minutes",
+    "Emergency change records with retroactive approval"
+  ],
+  "commonGaps": [
+    "No distinction between standard and emergency change processes",
+    "Approval role not clearly defined",
+    "No mention of testing or rollback planning"
+  ],
+  "interviewQuestions": [
+    "Walk me through what happens from a change being proposed to being live in production.",
+    "Who has authority to approve a production change?",
+    "What happens if an emergency change is needed outside the normal process?"
+  ],
+  "relatedControls": [
+    "CM-8"
+  ],
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

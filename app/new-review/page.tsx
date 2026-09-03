@@ -1,22 +1,23 @@
+import { Suspense } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { Card } from "@/components/ui/Card";
+import { loadControls, loadFamilies } from "@/lib/data/frameworkLoader";
+import { NewReviewClient } from "./NewReviewClient";
+
+const FRAMEWORK_ID = "nist-800-53-r5";
 
 export default function NewReviewPage() {
+  const controls = loadControls(FRAMEWORK_ID);
+  const families = loadFamilies(FRAMEWORK_ID);
+
   return (
     <>
       <PageHeader
         title="New Review"
-        description="Select a framework and control, then submit an implementation statement for review."
+        description="Select a control, then submit an implementation statement for review."
       />
-      <div className="p-6 md:p-10">
-        <Card>
-          <p className="text-sm text-ink-soft">
-            The framework/control selectors, statement form, and results
-            tabs are built in later chunks (data layer, then MCP, then AI
-            integration). This placeholder confirms routing works.
-          </p>
-        </Card>
-      </div>
+      <Suspense fallback={<div className="p-10 text-sm text-ink-soft">Loading...</div>}>
+        <NewReviewClient controls={controls} families={families} />
+      </Suspense>
     </>
   );
 }
