@@ -9,7 +9,9 @@ import { ControlBrowser } from "@/components/review/ControlBrowser";
 import { ControlDetailPanel } from "@/components/review/ControlDetailPanel";
 import { StatementForm, type OptionalContext } from "@/components/review/StatementForm";
 import { ResultsView } from "@/components/review/ResultsView";
+import { DownloadReportButton } from "@/components/review/DownloadReportButton";
 import { Card } from "@/components/ui/Card";
+import { saveReviewToHistory, type StoredReview } from "@/lib/storage/reviewHistory";
 
 const FRAMEWORK_ID = "nist-800-53-r5";
 
@@ -17,7 +19,7 @@ type ReviewState =
   | { status: "idle" }
   | { status: "loading" }
   | { status: "error"; message: string }
-  | { status: "done"; result: FullAssessmentResult };
+  | { status: "done"; result: FullAssessmentResult; stored: StoredReview };
 
 export function NewReviewClient({
   controls,
@@ -57,7 +59,14 @@ export function NewReviewClient({
         setReview({ status: "error", message: data.error ?? "Something went wrong." });
         return;
       }
-      setReview({ status: "done", result: data.assessment });
+      const stored = saveReviewToHistory({
+        frameworkId: FRAMEWORK_ID,
+        controlId: selected.controlId,
+        controlName: selected.controlName,
+        statement,
+        assessment: data.assessment,
+      });
+      setReview({ status: "done", result: data.assessment, stored });
     } catch {
       setReview({
         status: "error",
@@ -138,6 +147,10 @@ export function NewReviewClient({
 
       {review.status === "done" && (
         <>
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <p className="text-xs text-ink-faint">Saved to your Review History (this browser only)</p>
+            <DownloadReportButton review={review.stored} />
+          </div>
           <ResultsView result={review.result} />
           <button
             type="button"

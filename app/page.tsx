@@ -1,21 +1,15 @@
 import { PageHeader } from "@/components/ui/PageHeader";
-import { Card } from "@/components/ui/Card";
+import { DashboardClient } from "./DashboardClient";
 
 export default function DashboardPage() {
   return (
     <>
       <PageHeader
         title="Dashboard"
-        description="An overview of implementation reviews performed in this session."
+        description="An overview of implementation reviews performed in this browser."
       />
-      <div className="p-6 md:p-10">
-        <Card>
-          <p className="text-sm text-ink-soft">
-            Review statistics will appear here once the scoring engine and
-            history store are built (Chunk 6). This page confirms the
-            navigation shell and design system are working.
-          </p>
-        </Card>
+      <div className="p-6 md:p-10 max-w-2xl">
+        <DashboardClient />
       </div>
     </>
   );

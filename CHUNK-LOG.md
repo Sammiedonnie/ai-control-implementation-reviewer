@@ -245,7 +245,64 @@ without re-reading the whole codebase or repeating finished work.
   live check when picking this up with the user to see a real percentage
   render, but the logic itself doesn't depend on it.
 
+## Chunk 6 -- Review history (browser storage) + report export (DONE)
+
+- lib/storage/reviewHistory.ts -- localStorage-backed history, capped at
+  50 entries, key "air-review-history-v1". Every function guards for
+  non-browser environments (SSR) and wraps localStorage access in try/catch
+  (quota exceeded, disabled storage, etc. fail silently -- the review still
+  displays for the current session, it just won't persist). This is
+  explicitly BROWSER-ONLY storage, per spec section 13's MVP allowance --
+  never sent to or kept on the server, explained both in code comments and
+  directly in the History page UI.
+- lib/reports/generateReportHtml.ts -- pure function producing a
+  self-contained, print-friendly HTML report (spec section 14) covering
+  every required field: system info, framework/control, original
+  statement, status, completeness score + breakdown, strengths, gaps,
+  evidence assessment, improved statement, follow-up questions, source
+  references, disclaimer. All user-supplied text is HTML-escaped to
+  prevent injection from a statement containing HTML/script-like content --
+  verified with a dedicated test.
+- lib/dashboard/computeStats.ts -- pure function computing total reviews,
+  status breakdown, average completeness score, and top-5 most frequently
+  identified gaps (by title) from stored history.
+- components/review/DownloadReportButton.tsx -- generates the report HTML
+  client-side and triggers a browser download (Blob + object URL); no
+  server round-trip, works entirely offline once the review data exists
+  locally
+- app/new-review/NewReviewClient.tsx -- successful reviews now call
+  saveReviewToHistory() and show a "Download report" button alongside the
+  results
+- app/history/ -- HistoryClient.tsx: expandable list of past reviews
+  (control, status badge, score, date), each expands to the full
+  ResultsView plus its own download/delete controls; explicit
+  browser-only-storage notice at the top; "Clear all history" control
+- app/DashboardClient.tsx + components/dashboard/StatsCards.tsx --
+  replaced the Chunk 1 placeholder Dashboard with real stats: total
+  reviews, average completeness score, reviews-by-status breakdown (all 5
+  statuses always shown, zero-filled), most frequently identified gaps
+- tests/unit/computeStats.test.ts -- 4 tests: empty history, status
+  counting, average score rounding, gap frequency ranking capped at 5
+- tests/unit/generateReportHtml.test.ts -- 3 tests: all key fields present
+  in output, HTML-escaping prevents script injection, output is a
+  well-formed HTML document
+- Verified: `npm run build`, `npm run lint`, `npx vitest run` (48/48
+  across 6 test files) all pass clean
+- Fixed 2 lint errors from a newer eslint-plugin-react-hooks rule
+  (react-hooks/set-state-in-effect) on the two "read localStorage after
+  mount" effects in HistoryClient and DashboardClient -- this pattern is a
+  legitimate, deliberate exception (localStorage needs window, which
+  doesn't exist during SSR, so it can't be read during the initial render)
+  and is disabled per-line with a comment explaining why, not disabled
+  globally.
+- NOT manually re-tested end-to-end with a live API key in this chunk
+  (same reasoning as Chunk 5 -- sandbox has no key/network to Anthropic).
+  Worth clicking through Dashboard and History with a couple of real
+  reviews saved when picking this up with the user.
+
 ## Remaining chunks (per Phase 1 plan)
-6. History (browser storage) + report export
 7. Testing (Vitest unit, Playwright e2e) + security hardening + docs/THREAT-MODEL.md
-8. GitHub + Vercel deployment walkthrough
+8. GitHub + Vercel deployment walkthrough (already substantially done
+   incrementally each chunk -- Chunk 8 is really just the final README/
+   About-page polish and the AI-RMF/EU-AI-Act framing agreed in Phase 1,
+   not first-time deployment setup)
