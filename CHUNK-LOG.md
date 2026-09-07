@@ -508,10 +508,21 @@ was ALSO not the real (full) fix
   after adding an env var" gotcha the user hit personally in Chunk 4),
   a troubleshooting section, security/limitations pointer, honest roadmap
 
+## Chunk 8 -- About page content + dev-mode CSP fix (DONE)
+Replaced the About page placeholder with real content covering the
+business problem, how AI/MCP are used (tool-call-before-conclusion
+design), data provenance (NIST 800-53 Rev. 5 source only, nothing
+inferred), responsible-AI design (deterministic scoring engine, AI
+never has final judgment), threat model / NIST AI RMF / EU AI Act
+framing, and why human review still matters. Verified rendering
+locally and in production.
+
+Also fixed a dev-only console error: the strict production CSP (no
+'unsafe-eval') was also applied in `next dev`, which broke React's
+debug tooling that requires eval() in development. Updated
+middleware.ts so 'unsafe-eval' is added to script-src only when
+NODE_ENV is "development" -- production CSP is unchanged.
+
 ## Remaining chunks (per Phase 1 plan)
-8. Final polish: About page content only at this point (business problem,
-   how AI/MCP work, data provenance, responsible-AI framing, EU AI Act
-   risk-classification note per the Phase 1 enhancement list, portfolio
-   presentation section). This is the only substantive work left --
-   everything structural, functional, tested, and security-hardened is
-   done and empirically confirmed working as of this log entry.
+None. All 8 chunks are complete, deployed to Vercel, and verified
+working in production as of this log entry.
