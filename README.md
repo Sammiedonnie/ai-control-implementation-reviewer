@@ -12,7 +12,7 @@ truth if a build session gets interrupted.
 
 ## What it does
 
-1. Select a NIST SP 800-53 Rev. 5 control (12 included in this demo).
+1. Select a control from any of 11 supported frameworks (NIST SP 800-53, HIPAA Security Rule, OWASP LLM/API/Web Top 10, NIST AI RMF, MITRE ATT&CK, MITRE ATLAS, ISO/IEC 42001, EU AI Act).
 2. Enter an implementation statement (optionally with system/owner/
    technology/frequency/evidence context).
 3. Claude assesses it -- but only after calling MCP tools to retrieve the
@@ -152,9 +152,9 @@ distributed; there is no authentication or account system in this MVP).
 - Broken object-level authorization / account system (not needed until
   multi-user data isolation matters)
 - Shared-store rate limiting (Vercel KV / Upstash) instead of per-instance
-- Additional frameworks (HIPAA, NIST CSF, SOC 2, etc.) -- the data layer
-  and MCP `map_control` tool were built to support this without rewriting
-  application code
+- Additional frameworks beyond the current 11 (e.g. SOC 2, PCI DSS) -- the
+  data layer and MCP `map_control` tool are built to support this without
+  rewriting application code
 - PDF export as an alternative to the current HTML report
 
 ## License
