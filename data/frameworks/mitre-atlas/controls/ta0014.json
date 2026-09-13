@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0014",
+    "controlName": "Command and Control",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary communicating with compromised AI systems to control them, including traffic disguised to mimic normal AI service activity.",
+    "summary": "Command and Control consists of techniques adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection, and there are many ways to establish command and control with varying levels of stealth depending on the victim's network structure and defenses.",
+    "expectedStatementElements": [
+        "How network traffic to/from systems hosting AI models and agents is monitored for anomalous command-and-control patterns",
+        "Whether the organization can distinguish legitimate AI service traffic (e.g., API calls to model providers) from disguised C2 traffic",
+        "What egress controls exist for AI agent systems that could otherwise be used as a C2 channel",
+        "How embedded malware in model files (that could establish C2 on load) is detected before deployment"
+    ],
+    "evidenceExamples": [
+        "Network traffic monitoring/anomaly detection configuration for AI system and agent egress",
+        "Allow-listing of legitimate AI service provider endpoints with alerting on deviations",
+        "Model file scanning results for embedded malware or unexpected network behavior",
+        "Incident response records for suspected C2 activity involving AI infrastructure"
+    ],
+    "commonGaps": [
+        "No baseline exists for what normal AI service traffic looks like, making disguised C2 traffic hard to spot",
+        "Egress from AI agent systems isn't restricted to known-legitimate endpoints",
+        "Model files aren't scanned for embedded code that could establish outbound C2 connections on load"
+    ],
+    "interviewQuestions": [
+        "Would we be able to tell the difference between legitimate AI API traffic and a disguised command-and-control channel?",
+        "Is outbound traffic from our AI agents restricted to known, legitimate service endpoints?",
+        "Do we scan model files for embedded code that could phone home when the model is loaded?",
+        "If an AI system on our network was being remotely controlled by an attacker, how would we find out?"
+    ],
+    "relatedControls": ["AML.TA0010", "AML.TA0005", "AML.TA0011"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0014/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

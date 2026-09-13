@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0003",
+    "controlName": "Resource Development",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization limits an adversary's ability to acquire resources — such as AI artifacts, infrastructure, or accounts — that could be used to support an attack against its AI systems.",
+    "summary": "Resource Development consists of techniques adversaries use to create, purchase, or compromise/steal resources that support targeting. These resources include AI artifacts (public models, datasets), infrastructure, accounts, and capabilities, which can be leveraged in later stages such as AI Attack Staging.",
+    "expectedStatementElements": [
+        "What controls exist to limit exposure of public AI artifacts (datasets, pretrained models, configs) associated with the organization",
+        "How the organization monitors for adversarial tooling or capabilities being developed against its specific AI systems",
+        "Whether account registration and access controls prevent adversaries from establishing accounts to reach AI resources",
+        "How compromised or malicious public models/datasets are screened out before being incorporated internally"
+    ],
+    "evidenceExamples": [
+        "Inventory and access controls for publicly hosted AI artifacts (models, datasets, configs)",
+        "Vetting or scanning process for third-party/open-source models and datasets before internal use",
+        "Account registration controls and abuse-monitoring for services exposing AI resources",
+        "Threat intelligence monitoring for adversarial tooling or discussion targeting the organization's AI systems"
+    ],
+    "commonGaps": [
+        "Publicly hosted model artifacts or datasets are not screened for exposure and could be repurposed by an adversary",
+        "Third-party or open-source models are integrated without scanning for embedded malicious code or provenance verification",
+        "No account-abuse monitoring exists for services adversaries could use to reach or interact with AI resources"
+    ],
+    "interviewQuestions": [
+        "Could an adversary download or copy an AI artifact we've made public and use it against us?",
+        "Do we verify the source and integrity of open-source models or datasets before we use them?",
+        "How would we know if an adversary set up accounts specifically to target our AI resources?",
+        "Do we track discussions or tooling in the wild aimed at our specific AI systems?"
+    ],
+    "relatedControls": ["AML.TA0002", "AML.TA0004", "AML.TA0001"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0003/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

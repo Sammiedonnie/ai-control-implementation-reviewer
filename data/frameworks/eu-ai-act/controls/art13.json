@@ -1,0 +1,37 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.13",
+    "controlName": "Transparency and provision of information to deployers",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization designs its high-risk AI system to be sufficiently transparent to deployers and provides instructions for use that allow deployers to interpret outputs and use the system appropriately.",
+    "summary": "Article 13 requires high-risk AI systems to be designed and developed so their operation is sufficiently transparent to enable deployers to interpret the system's output and use it appropriately. Systems must be accompanied by instructions for use containing concise, complete, correct, and clear information, including the provider's identity, the system's characteristics and capabilities, its limitations, and information relevant to human oversight measures.",
+    "expectedStatementElements": [
+        "How the system's design ensures deployers can meaningfully interpret its outputs rather than treating it as a black box",
+        "What instructions for use are provided, and whether they cover characteristics, capabilities, and known limitations",
+        "How the instructions support the human oversight measures deployers are expected to implement",
+        "How provider identity and contact information are made available to deployers"
+    ],
+    "evidenceExamples": [
+        "Instructions-for-use documentation provided to deployers, covering capabilities, limitations, and provider identity",
+        "Design documentation showing how outputs are made interpretable to deployers (e.g., confidence scores, explanations)",
+        "Cross-reference between instructions for use and the human oversight measures required under Article 14",
+        "Deployer feedback or support records showing instructions were sufficient for appropriate use"
+    ],
+    "commonGaps": [
+        "The system produces outputs deployers can't meaningfully interpret without additional undocumented context",
+        "Instructions for use are generic marketing material rather than the concise, complete, and clear information the article requires",
+        "Known limitations of the system aren't disclosed to deployers, leaving them to discover them the hard way",
+        "Instructions for use don't connect to what deployers actually need for human oversight"
+    ],
+    "interviewQuestions": [
+        "If a deployer got an unexpected output from this system, would our instructions help them understand why?",
+        "Are our instructions for use genuinely informative, or do they read more like marketing material?",
+        "Do we disclose known limitations of the system to deployers, or do they find out on their own?",
+        "Do our instructions actually help deployers carry out the human oversight the system requires?"
+    ],
+    "relatedControls": ["Art.12", "Art.14"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/13/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0040",
+  "controlName": "Impact",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can limit or recover from an adversary's attempts to manipulate, interrupt, or destroy systems and data.",
+  "summary": "Impact consists of techniques adversaries use to disrupt availability or compromise integrity, such as data destruction, ransomware encryption, denial of service, or manipulating business or operational processes to achieve a disruptive or destructive goal.",
+  "expectedStatementElements": [
+    "How the organization backs up critical data and systems, and how those backups are protected from being encrypted or destroyed alongside production data",
+    "What resilience or failover capabilities limit the impact of a denial-of-service or destructive attack on availability",
+    "How the organization detects and responds to signs of ransomware or mass encryption/deletion activity in progress",
+    "How business and operational process integrity is verified so subtle manipulation (rather than outright destruction) would be caught"
+  ],
+  "evidenceExamples": [
+    "Backup architecture documentation showing offline/immutable backups isolated from production credentials",
+    "Business continuity/disaster recovery plan and recent test results",
+    "Ransomware/mass-encryption detection configuration and response playbook",
+    "Process integrity verification or reconciliation controls for critical business processes"
+  ],
+  "commonGaps": [
+    "Backups are reachable using the same credentials as production, so they could be encrypted or deleted in the same attack",
+    "No tested failover or resilience plan exists for a destructive or denial-of-service event",
+    "Mass encryption or deletion activity isn't detected until the impact is already widespread",
+    "Business process integrity isn't independently verified, so subtle manipulation could go unnoticed for a long time"
+  ],
+  "interviewQuestions": [
+    "Could the same attacker who compromised production also reach and destroy your backups?",
+    "Has your disaster recovery or failover plan actually been tested, not just documented?",
+    "Would mass encryption or deletion get caught early, or only after the damage is already done?",
+    "How would you catch someone quietly manipulating a business process rather than destroying something outright?"
+  ],
+  "relatedControls": ["TA0010", "TA0112"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0040/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

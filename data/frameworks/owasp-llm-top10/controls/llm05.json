@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM05",
+  "controlName": "Improper Output Handling",
+  "family": "LLM",
+  "purpose": "Ensures LLM-generated output is validated and sanitized before being passed to downstream systems, preventing injection or execution of malicious content.",
+  "summary": "Improper Output Handling occurs when an application passes LLM output directly to downstream components (databases, browsers, shell commands, other services) without validation, trusting the model not to generate malicious content such as scripts or injection payloads.",
+  "expectedStatementElements": [
+    "What downstream systems consume LLM output (databases, browsers, APIs, shell commands)",
+    "How output is validated or sanitized before being passed to each downstream system",
+    "Whether output is treated as untrusted by default, regardless of source",
+    "What encoding or escaping is applied based on the output's destination context",
+    "How the system is tested for injection via model output (XSS, SSRF, command injection)"
+  ],
+  "evidenceExamples": [
+    "Output handling/sanitization code or configuration for each downstream integration",
+    "Architecture diagram showing where LLM output flows and what validation occurs at each hop",
+    "Security test results for injection via model-generated output",
+    "Context-specific encoding rules (HTML escaping, SQL parameterization, etc.)"
+  ],
+  "commonGaps": [
+    "LLM output is rendered or executed downstream with no validation",
+    "Output is trusted differently depending on how confident the team is in the model, rather than treated as untrusted by default",
+    "No context-specific encoding applied (e.g., output rendered in a browser without HTML escaping)",
+    "No testing has probed for injection via model-generated output"
+  ],
+  "interviewQuestions": [
+    "What happens to the model's output before it reaches a database, browser, or another system?",
+    "Is LLM output treated as untrusted the same way user input would be?",
+    "What encoding or escaping is applied, and does it change based on where the output is going?",
+    "Has this system been tested for injection attacks that originate from model output?"
+  ],
+  "relatedControls": ["LLM01", "LLM06"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

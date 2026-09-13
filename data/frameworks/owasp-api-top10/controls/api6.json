@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API6",
+  "controlName": "Unrestricted Access to Sensitive Business Flows",
+  "family": "API",
+  "purpose": "Prevents automated abuse of legitimate business functions — such as purchasing, booking, or account creation — that could harm the business even without exploiting a traditional technical vulnerability.",
+  "summary": "Unrestricted Access to Sensitive Business Flows occurs when an API exposes a business flow (like ticket purchasing, coupon redemption, or account creation) without adequately restricting how it can be accessed, allowing attackers to automate excessive use in ways that harm the business, even without a technical bug involved.",
+  "expectedStatementElements": [
+    "Which business flows exposed by this API are sensitive to automated abuse (purchasing, booking, coupon use, account creation)",
+    "What controls exist to detect and limit automated or excessive use of these flows (rate limiting, CAPTCHA, device fingerprinting, business-logic-specific limits)",
+    "How the organization determined which flows require this extra protection versus normal endpoints",
+    "How abuse of these specific flows is monitored and detected"
+  ],
+  "evidenceExamples": [
+    "Inventory of business flows identified as sensitive to automated abuse",
+    "Rate limiting, CAPTCHA, or bot-detection configuration specific to those flows",
+    "Business-logic-specific limits (e.g., max redemptions per user per day)",
+    "Monitoring or alerting for abuse patterns in these specific flows"
+  ],
+  "commonGaps": [
+    "No analysis was done to identify which business flows are attractive targets for automated abuse",
+    "Generic rate limiting exists but doesn't account for business-logic-specific abuse patterns",
+    "No CAPTCHA, bot detection, or device fingerprinting protects high-value flows like checkout or coupon redemption",
+    "No monitoring would catch a bot scalping tickets or abusing a promotional flow"
+  ],
+  "interviewQuestions": [
+    "Which of your business flows would be most damaging if automated at scale — ticket buying, coupon redemption, account creation?",
+    "What stops a bot from repeatedly exploiting one of those flows faster than a human could?",
+    "How did you decide which flows needed this extra layer of protection versus standard rate limiting?",
+    "How would you actually detect if one of these flows was being abused right now?"
+  ],
+  "relatedControls": ["API4", "API3"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

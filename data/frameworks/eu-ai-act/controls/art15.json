@@ -1,0 +1,37 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.15",
+    "controlName": "Accuracy, robustness and cybersecurity",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization's high-risk AI system achieves an appropriate level of accuracy, is resilient to errors and inconsistencies, and is protected against attempts to alter its use, outputs, or performance through security vulnerabilities.",
+    "summary": "Article 15 requires high-risk AI systems to be designed and developed to achieve an appropriate level of accuracy, robustness, and cybersecurity, and to perform consistently in these respects throughout their life cycle. Systems must be resilient against errors, faults, or inconsistencies, and against attempts by unauthorized third parties to alter their use, outputs, or performance by exploiting vulnerabilities, including where applicable, resilience against data poisoning and adversarial examples.",
+    "expectedStatementElements": [
+        "How accuracy levels are defined, measured, and declared for the system's intended purpose",
+        "What resilience testing is performed for errors, faults, and inconsistencies during operation",
+        "What cybersecurity controls specifically protect the system against adversarial manipulation, including data poisoning and adversarial examples where relevant",
+        "How accuracy and robustness are monitored to remain consistent throughout the system's life cycle, not just at initial deployment"
+    ],
+    "evidenceExamples": [
+        "Accuracy metrics and testing methodology documentation, including declared accuracy levels",
+        "Resilience/robustness testing results covering error and fault conditions",
+        "Cybersecurity assessment results specifically addressing adversarial manipulation, data poisoning, and adversarial examples",
+        "Ongoing performance monitoring showing accuracy and robustness remain consistent post-deployment"
+    ],
+    "commonGaps": [
+        "The system's accuracy is described qualitatively but was never actually measured against a defined benchmark",
+        "Resilience testing covers normal operation but not deliberate error or fault injection",
+        "Cybersecurity testing addresses conventional vulnerabilities but never specifically tests for data poisoning or adversarial examples",
+        "Accuracy is validated once before launch and never checked again as the system operates in production"
+    ],
+    "interviewQuestions": [
+        "Can we point to a specific measured accuracy number for this system, or is it just described as 'accurate'?",
+        "Have we deliberately tried to break this system with bad or inconsistent inputs to see how it responds?",
+        "Has this system specifically been tested against adversarial examples or data poisoning, not just general security scanning?",
+        "Do we check that accuracy hasn't degraded since launch, or do we assume it's still fine?"
+    ],
+    "relatedControls": ["Art.9", "Art.14"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/15/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

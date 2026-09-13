@@ -1,0 +1,39 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-7",
+  "controlName": "Contingency Plan",
+  "family": "AS",
+  "purpose": "Ensures ePHI remains available and recoverable during emergencies such as system failures, natural disasters, or cyberattacks.",
+  "summary": "The covered entity or business associate establishes policies and procedures for responding to an emergency or other occurrence that damages systems containing ePHI, including a data backup plan, disaster recovery plan, emergency mode operation plan, and periodic testing.",
+  "expectedStatementElements": [
+    "How data backups are performed and how often",
+    "The disaster recovery process for restoring lost data",
+    "How critical operations continue during an emergency (emergency mode operation)",
+    "How and how often the contingency plan is tested",
+    "How the relative criticality of applications and data is assessed"
+  ],
+  "evidenceExamples": [
+    "Data backup plan and backup logs",
+    "Disaster recovery plan document",
+    "Emergency mode operation procedures",
+    "Test results or after-action report from a contingency plan test",
+    "Criticality analysis of systems and applications"
+  ],
+  "commonGaps": [
+    "Backups exist but restoration has never been tested",
+    "No documented emergency mode operation plan",
+    "Contingency plan hasn't been updated as systems changed",
+    "No criticality analysis to prioritize recovery order"
+  ],
+  "interviewQuestions": [
+    "How often are backups tested by actually restoring data?",
+    "What would happen to ePHI access if your primary systems went down today?",
+    "When was the contingency plan last tested, and what were the results?",
+    "How do you decide which systems get restored first in a recovery?"
+  ],
+  "relatedControls": ["AS-6", "AS-8"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

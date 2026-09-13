@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM02",
+  "controlName": "Sensitive Information Disclosure",
+  "family": "LLM",
+  "purpose": "Prevents the LLM from exposing sensitive data such as PII, proprietary business information, or confidential training data through its outputs.",
+  "summary": "LLMs can memorize and reproduce fragments of training data or context, including personal information, credentials, and proprietary content. This risk covers unintended disclosure through model outputs, whether from training data, retrieved context, or conversation history.",
+  "expectedStatementElements": [
+    "What sensitive data categories the system may encounter (PII, credentials, proprietary data)",
+    "How sensitive data is filtered or redacted from model inputs and outputs",
+    "How the system prevents cross-user or cross-session data leakage",
+    "Whether training or fine-tuning data was screened for sensitive content",
+    "What data minimization is applied before content reaches the model"
+  ],
+  "evidenceExamples": [
+    "Data classification policy covering inputs and outputs to the LLM",
+    "PII/sensitive-data detection or redaction configuration",
+    "Test results probing for training data or cross-session leakage",
+    "Data flow diagram showing what data reaches the model and what's filtered beforehand"
+  ],
+  "commonGaps": [
+    "No filtering of sensitive data before it's sent to or returned from the model",
+    "Fine-tuning data wasn't screened for embedded PII or secrets",
+    "Conversation history or context isn't isolated between users",
+    "No testing performed to probe for inadvertent sensitive data disclosure"
+  ],
+  "interviewQuestions": [
+    "What sensitive data could this system realistically be exposed to?",
+    "What prevents that data from appearing in a response to a different user?",
+    "Was training or fine-tuning data screened for PII or secrets beforehand?",
+    "Has anyone tested this system for unintended data disclosure?"
+  ],
+  "relatedControls": ["LLM01", "LLM08"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

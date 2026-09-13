@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API10",
+  "controlName": "Unsafe Consumption of APIs",
+  "family": "API",
+  "purpose": "Prevents an application from blindly trusting data or behavior returned by third-party APIs it integrates with, since those integrations are often held to a lower security standard than the app's own inputs.",
+  "summary": "Unsafe Consumption of APIs occurs when developers trust data received from third-party APIs more than user input, often skipping validation, sanitization, and the same security controls applied to direct user input, and following redirects or instructions from the third party without question.",
+  "expectedStatementElements": [
+    "Which third-party APIs the application integrates with and what data or actions those integrations can trigger",
+    "Whether data received from third-party APIs is validated and sanitized the same way as direct user input",
+    "How connections to third-party APIs are secured (TLS verification, timeouts, following redirects only to trusted hosts)",
+    "How the organization evaluates a third party's security posture before integrating with it"
+  ],
+  "evidenceExamples": [
+    "Inventory of third-party API integrations and what data/actions each one can affect",
+    "Input validation code showing third-party API responses are validated like any other untrusted input",
+    "Configuration for TLS verification, timeouts, and redirect handling on outbound integration calls",
+    "Vendor security review or due diligence documentation for integrated third-party APIs"
+  ],
+  "commonGaps": [
+    "Responses from third-party APIs are trusted and used without the same validation applied to user input",
+    "No inventory exists of which third-party APIs are integrated and what they can affect",
+    "TLS certificate validation or redirect restrictions are disabled or overly permissive for convenience",
+    "Third parties are integrated without any security review of their practices or track record"
+  ],
+  "interviewQuestions": [
+    "Which third-party APIs does this application talk to, and what could go wrong if one of them returned something malicious?",
+    "Is data coming back from a third-party API validated the same way you'd validate direct user input?",
+    "Are TLS verification and redirect handling locked down on your outbound integration calls, or relaxed for convenience?",
+    "What kind of security review, if any, happens before integrating a new third-party API?"
+  ],
+  "relatedControls": ["API9", "API7"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

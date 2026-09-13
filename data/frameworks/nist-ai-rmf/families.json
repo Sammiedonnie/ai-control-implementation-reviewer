@@ -1,0 +1,6 @@
+[
+  { "id": "GV", "name": "Govern", "description": "Cross-cutting organizational policies, accountability structures, culture, and processes that make risk management repeatable across the organization." },
+  { "id": "MP", "name": "Map", "description": "Establishing context, categorizing the AI system, and identifying risks and impacts before they can be measured or managed." },
+  { "id": "MS", "name": "Measure", "description": "Analyzing, assessing, benchmarking, and monitoring AI risks and trustworthy characteristics using quantitative, qualitative, and mixed methods." },
+  { "id": "MG", "name": "Manage", "description": "Prioritizing, responding to, and treating identified AI risks, including third-party risk, incident response, and recovery." }
+]

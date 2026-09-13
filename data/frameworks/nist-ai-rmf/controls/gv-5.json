@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "GV-5",
+  "controlName": "Stakeholder Engagement",
+  "family": "GV",
+  "purpose": "Ensures processes exist for engaging the people affected by AI systems — not just the teams building them — and that their feedback actually feeds back into design decisions.",
+  "summary": "Processes are in place for robust engagement with relevant AI actors, establishing mechanisms to collect input from external users, affected communities, and domain experts, and building feedback loops so that adjudicated feedback actually informs system design and implementation.",
+  "expectedStatementElements": [
+    "How feedback is collected from external users, affected communities, and domain experts",
+    "What mechanisms exist for individuals to raise concerns or seek recourse related to an AI system's impact on them",
+    "How collected feedback is triaged, adjudicated, and fed back into system design or implementation changes",
+    "How the organization identifies which stakeholders are relevant for a given AI system"
+  ],
+  "evidenceExamples": [
+    "Stakeholder engagement plan or feedback collection mechanism (surveys, bug bounties, comment channels)",
+    "Recourse or appeal process documentation for affected individuals",
+    "Record of feedback that led to a documented system design change",
+    "Stakeholder mapping for a specific AI system"
+  ],
+  "commonGaps": [
+    "No mechanism exists for external users or affected communities to provide feedback",
+    "Feedback is collected but never triaged or acted on",
+    "No recourse process exists for someone negatively affected by an AI system's output",
+    "Relevant stakeholders for a given system were never explicitly identified"
+  ],
+  "interviewQuestions": [
+    "How can someone affected by this AI system actually raise a concern about it?",
+    "What happens to feedback once it's collected — where does it go?",
+    "Can you point to an example where external feedback changed how a system works?",
+    "How did you decide who the relevant stakeholders are for this system?"
+  ],
+  "relatedControls": ["GV-3", "GV-4"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

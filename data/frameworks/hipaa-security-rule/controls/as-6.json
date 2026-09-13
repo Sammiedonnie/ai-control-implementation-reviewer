@@ -1,0 +1,38 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-6",
+  "controlName": "Security Incident Procedures",
+  "family": "AS",
+  "purpose": "Ensures the organization can identify, respond to, and mitigate suspected or known security incidents involving ePHI.",
+  "summary": "The covered entity or business associate implements policies and procedures to address security incidents, including identifying and responding to suspected or known incidents, mitigating harmful effects, and documenting incidents and their outcomes.",
+  "expectedStatementElements": [
+    "How security incidents are defined and identified",
+    "The process for reporting a suspected or known incident",
+    "Roles and responsibilities during incident response",
+    "How harmful effects of an incident are mitigated",
+    "How incidents and outcomes are documented"
+  ],
+  "evidenceExamples": [
+    "Incident response plan or procedure document",
+    "Incident log or ticketing system export showing past incidents",
+    "Sample incident report with response and outcome documented",
+    "Evidence of workforce training on how to report incidents"
+  ],
+  "commonGaps": [
+    "No formal incident response plan, or plan exists but has never been tested",
+    "Incidents are handled ad hoc with no consistent documentation",
+    "Workforce doesn't know how or where to report a suspected incident",
+    "No post-incident review to capture lessons learned"
+  ],
+  "interviewQuestions": [
+    "How would a workforce member report a suspected security incident?",
+    "Walk me through what happens after an incident is reported.",
+    "Can you show me documentation from a recent incident, including how it was resolved?",
+    "How do you determine when an incident needs to be escalated further?"
+  ],
+  "relatedControls": ["AS-1", "AS-7"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

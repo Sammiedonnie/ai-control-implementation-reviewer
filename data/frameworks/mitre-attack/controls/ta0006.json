@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0006",
+  "controlName": "Credential Access",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can prevent or detect adversaries stealing account names, passwords, or other credentials.",
+  "summary": "Credential Access consists of techniques adversaries use to steal credentials, such as keylogging, credential dumping from memory or files, brute forcing, or intercepting authentication material in transit.",
+  "expectedStatementElements": [
+    "How credential storage (password managers, memory protection, secrets vaults) prevents dumping or extraction",
+    "What protections exist against brute-force and password-spraying attacks",
+    "How the organization detects keylogging, credential-dumping tools, or unusual authentication material access",
+    "How privileged credentials specifically are protected and rotated to limit the value of any single stolen credential"
+  ],
+  "evidenceExamples": [
+    "Secrets management/vault configuration and credential storage hardening documentation",
+    "Rate limiting, lockout, or password-spray detection configuration",
+    "EDR/SIEM detection rules for known credential-dumping tools and techniques",
+    "Privileged access management (PAM) configuration and credential rotation policy"
+  ],
+  "commonGaps": [
+    "Credentials are stored in plaintext or weakly protected locations accessible to a compromised host",
+    "No detection exists for password-spraying or slow, distributed brute-force attempts",
+    "Known credential-dumping techniques and tools aren't specifically detected by EDR/SIEM rules",
+    "Privileged credentials aren't rotated regularly, so one theft grants long-term access"
+  ],
+  "interviewQuestions": [
+    "Where are credentials stored, and could a compromised host access them in plaintext?",
+    "Would a slow, distributed password-spraying attempt actually get detected?",
+    "Do your detection tools specifically look for known credential-dumping techniques?",
+    "How often are privileged credentials rotated, and what limits the damage if one is stolen?"
+  ],
+  "relatedControls": ["TA0004", "TA0007"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0006/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

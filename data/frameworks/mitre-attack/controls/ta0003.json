@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0003",
+  "controlName": "Persistence",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect or disrupt an adversary's efforts to maintain access to systems across restarts, credential changes, or other interruptions.",
+  "summary": "Persistence consists of techniques adversaries use to maintain their foothold, such as creating new accounts, modifying startup processes, installing scheduled tasks or services, or planting backdoors that survive a reboot or credential rotation.",
+  "expectedStatementElements": [
+    "How new account creation, especially privileged accounts, is monitored and reviewed",
+    "How changes to startup items, scheduled tasks, and services are detected",
+    "How the organization verifies that eradication of a compromised host actually removes all persistence mechanisms",
+    "What baseline exists for expected accounts, scheduled tasks, and startup configurations to detect deviations"
+  ],
+  "evidenceExamples": [
+    "Account creation and privilege change monitoring/alerting configuration",
+    "Configuration management or EDR alerting on new scheduled tasks, services, or startup item changes",
+    "Incident response procedure showing persistence-mechanism verification during remediation",
+    "System baseline documentation used to detect configuration drift"
+  ],
+  "commonGaps": [
+    "New account creation, especially privileged accounts, isn't reviewed or alerted on in near real time",
+    "Changes to scheduled tasks, services, or startup items aren't monitored, allowing persistence to go unnoticed",
+    "Incident response focuses on removing the initial malware without verifying all persistence mechanisms are gone",
+    "No baseline exists to distinguish expected system configuration from an attacker's additions"
+  ],
+  "interviewQuestions": [
+    "If a new privileged account were created right now, would anyone notice?",
+    "Would a new scheduled task or service quietly added to a system get flagged?",
+    "During an incident, how do you confirm every persistence mechanism was actually removed, not just the initial payload?",
+    "Do you have a baseline that would make it obvious if something unexpected was added to a system?"
+  ],
+  "relatedControls": ["TA0002", "TA0004"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0003/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

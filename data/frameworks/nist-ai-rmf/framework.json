@@ -1,0 +1,8 @@
+{
+  "id": "nist-ai-rmf",
+  "name": "NIST AI Risk Management Framework",
+  "version": "1.0",
+  "description": "A voluntary framework organized around four functions — Govern, Map, Measure, and Manage — that helps organizations identify, assess, and manage risks across the AI system lifecycle.",
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "contentStatusNotice": "Function and category identifiers and titles are drawn from the public NIST AI RMF 1.0 (NIST AI 100-1). Purpose, summary, and review guidance are application-authored to support compliance review workflows and are not official NIST guidance."
+}

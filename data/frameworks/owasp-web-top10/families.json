@@ -1,0 +1,3 @@
+[
+  { "id": "WEB", "name": "Web Application Risks", "description": "The ten critical security risks to web applications, covering access control, configuration, supply chain, cryptography, injection, design, authentication, integrity, logging, and error handling." }
+]

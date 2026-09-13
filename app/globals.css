@@ -16,8 +16,12 @@
   --ink-faint: #8892a6;
   --line: #dfdcd2;
 
-  --accent: #1f3a5f; /* structural navy -- nav, active states, links */
-  --accent-soft: #e8edf4;
+  --accent: #2563eb; /* brighter blue -- buttons, active states, links */
+  --accent-soft: #eff4ff;
+  --sidebar-bg: #0f1b2d; /* dark navy sidebar background */
+  --sidebar-ink: #e2e8f0; /* light text on dark sidebar */
+  --sidebar-ink-soft: #94a3b8; /* muted text on dark sidebar */
+  --sidebar-active-bg: #1c3a5e; /* active nav item background on dark sidebar */
 
   --status-implemented: #2f6f5e;
   --status-implemented-bg: #e7f1ee;
@@ -47,6 +51,10 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-ink: var(--sidebar-ink);
+  --color-sidebar-ink-soft: var(--sidebar-ink-soft);
+  --color-sidebar-active-bg: var(--sidebar-active-bg);
 
   --color-status-implemented: var(--status-implemented);
   --color-status-implemented-bg: var(--status-implemented-bg);

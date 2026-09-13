@@ -1,0 +1,7 @@
+[
+  { "id": "AS", "name": "Administrative Safeguards", "description": "Policies and procedures to manage the selection, development, and execution of security measures to protect ePHI, and to manage the workforce's conduct in relation to protecting that information." },
+  { "id": "PS", "name": "Physical Safeguards", "description": "Physical measures, policies, and procedures to protect electronic information systems and related buildings and equipment from natural and environmental hazards and unauthorized intrusion." },
+  { "id": "TS", "name": "Technical Safeguards", "description": "The technology and related policies and procedures that protect ePHI and control access to it." },
+  { "id": "OR", "name": "Organizational Requirements", "description": "Requirements for contracts or other arrangements between a covered entity and its business associates, and related documentation." },
+  { "id": "PD", "name": "Policies, Procedures & Documentation", "description": "Requirements to implement reasonable and appropriate policies and procedures, and to maintain documentation of actions, activities, and assessments." }
+]

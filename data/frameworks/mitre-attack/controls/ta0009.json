@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0009",
+  "controlName": "Collection",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect an adversary gathering sensitive data of interest in preparation for exfiltration.",
+  "summary": "Collection consists of techniques adversaries use to gather data before exfiltration, such as accessing local files, capturing screenshots or audio, or pulling data from cloud storage, shared drives, or databases at scale.",
+  "expectedStatementElements": [
+    "How access to sensitive data repositories (databases, file shares, cloud storage) is logged and monitored for unusual bulk access",
+    "What data classification and access controls limit who can gather large amounts of sensitive data at once",
+    "How the organization detects unusual archiving, compression, or staging of data prior to exfiltration",
+    "How endpoint monitoring detects screenshot capture, clipboard monitoring, or audio/video recording by unauthorized processes"
+  ],
+  "evidenceExamples": [
+    "Data access logging and anomaly detection configuration for sensitive repositories",
+    "Data classification policy and corresponding access control implementation",
+    "Alerting configuration for unusual file archiving, compression, or staging activity",
+    "Endpoint monitoring rules for screen capture, clipboard access, or recording by unexpected processes"
+  ],
+  "commonGaps": [
+    "Bulk access to sensitive data repositories isn't logged or monitored for unusual volume or timing",
+    "Data classification doesn't map cleanly to access controls, so large amounts of sensitive data are broadly accessible",
+    "No detection exists for unusual archiving or compression activity that often precedes exfiltration",
+    "Screenshot capture or clipboard monitoring by unauthorized processes wouldn't be detected"
+  ],
+  "interviewQuestions": [
+    "Would unusually large or unusually timed access to a sensitive data repository actually get noticed?",
+    "Does your data classification actually limit who can access large volumes of sensitive data at once?",
+    "Would someone compressing or archiving a large batch of files right before exfiltration raise a flag?",
+    "Could an unauthorized process capture screenshots or clipboard content without detection?"
+  ],
+  "relatedControls": ["TA0008", "TA0010"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0009/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

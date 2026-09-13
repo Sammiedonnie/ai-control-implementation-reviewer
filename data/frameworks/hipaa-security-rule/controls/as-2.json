@@ -1,0 +1,34 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-2",
+  "controlName": "Assigned Security Responsibility",
+  "family": "AS",
+  "purpose": "Ensures clear accountability for the organization's security program by naming a responsible individual.",
+  "summary": "The covered entity or business associate identifies the security official who is responsible for developing and implementing the security policies and procedures required by the Security Rule.",
+  "expectedStatementElements": [
+    "Who holds the designated security official role, by title",
+    "What authority and resources this role has",
+    "How this role interacts with other roles (privacy officer, IT, compliance)",
+    "How the designation is documented and kept current"
+  ],
+  "evidenceExamples": [
+    "Org chart or job description naming the security official",
+    "Written designation memo or policy naming the role",
+    "Meeting minutes or reports showing the official's oversight activity"
+  ],
+  "commonGaps": [
+    "Security responsibility is informally assigned with no documentation",
+    "Role has title but no real authority or budget to act",
+    "Designation is outdated after a personnel change"
+  ],
+  "interviewQuestions": [
+    "Who is your designated security official, and how was that decided?",
+    "What authority does this person have to enforce policy changes?",
+    "How would responsibility transfer if this person left the organization?"
+  ],
+  "relatedControls": ["AS-1", "AS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

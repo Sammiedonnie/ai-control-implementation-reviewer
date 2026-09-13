@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0006",
+    "controlName": "Persistence",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary maintaining a foothold in AI systems via modified artifacts or software, surviving restarts, credential changes, or other interruptions.",
+    "summary": "Persistence consists of techniques adversaries use to keep access to systems across restarts, changed credentials, and other interruptions. In AI contexts, this often involves leaving behind modified artifacts such as poisoned training data or manipulated AI models that continue producing adversary-desired effects after the initial compromise.",
+    "expectedStatementElements": [
+        "How model integrity is verified over time to detect unauthorized changes to weights, architecture, or configuration",
+        "Whether training data pipelines are monitored for unauthorized modification or reintroduction of poisoned data",
+        "How version control and change management are applied to production models to detect unexpected reversions or modifications",
+        "What controls exist over AI agent configuration files to prevent persistent malicious modification"
+    ],
+    "evidenceExamples": [
+        "Model integrity verification process (e.g., checksums, signed artifacts, versioned model registry)",
+        "Training data pipeline monitoring and change logs",
+        "Model version control and deployment audit trail",
+        "AI agent configuration file access controls and change monitoring"
+    ],
+    "commonGaps": [
+        "No integrity verification exists for deployed models, so a manipulated model could go undetected indefinitely",
+        "Training data pipelines lack change monitoring, allowing poisoned data to be reintroduced silently",
+        "AI agent configuration files can be modified without triggering any alert or review"
+    ],
+    "interviewQuestions": [
+        "If someone changed our production model's weights, would we notice?",
+        "How would we detect if poisoned data got reintroduced into our training pipeline after we cleaned it?",
+        "Do we version and audit changes to our models the same way we do application code?",
+        "Who can modify an AI agent's configuration, and would we know if it happened outside a normal change process?"
+    ],
+    "relatedControls": ["AML.TA0005", "AML.TA0007", "AML.TA0012"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0006/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

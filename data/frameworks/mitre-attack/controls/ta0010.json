@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0010",
+  "controlName": "Exfiltration",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect or prevent an adversary removing stolen data from the environment.",
+  "summary": "Exfiltration consists of techniques adversaries use to steal data out of the network, such as transferring it over the command-and-control channel, over an alternate protocol, over physical media, or through automated exfiltration of large data sets to external destinations.",
+  "expectedStatementElements": [
+    "What data loss prevention (DLP) controls monitor and block unauthorized outbound transfer of sensitive data",
+    "How the organization detects unusually large or unusually timed outbound data transfers",
+    "What controls limit exfiltration over alternate channels (removable media, personal cloud storage, unauthorized protocols)",
+    "How exfiltration attempts are correlated with earlier-stage indicators (collection, staging) to catch an attack before data leaves"
+  ],
+  "evidenceExamples": [
+    "DLP tool configuration and policy covering sensitive data types and channels",
+    "Network monitoring/alerting configuration for anomalous outbound transfer volume or timing",
+    "Removable media and unsanctioned cloud storage restriction policy and enforcement",
+    "Correlation rules linking exfiltration-stage alerts with earlier collection/staging indicators"
+  ],
+  "commonGaps": [
+    "DLP coverage is incomplete, missing key sensitive data types or channels like personal email or cloud storage",
+    "Unusually large or oddly timed outbound transfers aren't flagged for review",
+    "Removable media or unsanctioned cloud storage services aren't restricted or monitored",
+    "Exfiltration alerts are treated in isolation rather than correlated with earlier signs of collection or staging"
+  ],
+  "interviewQuestions": [
+    "Does your DLP actually cover the data types and channels that matter most, or are there known gaps?",
+    "Would an unusually large or oddly timed outbound transfer get flagged for review?",
+    "Are removable media and personal cloud storage services restricted or monitored?",
+    "If exfiltration were detected, would it be connected to earlier warning signs, or treated as a standalone event?"
+  ],
+  "relatedControls": ["TA0009", "TA0011"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0010/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "PD-1",
+  "controlName": "Policies and Procedures",
+  "family": "PD",
+  "purpose": "Requires reasonable and appropriate written policies and procedures to comply with the Security Rule, and allows them to be updated as circumstances change.",
+  "summary": "The covered entity or business associate implements reasonable and appropriate policies and procedures to comply with the standards, implementation specifications, and other requirements of the Security Rule, and maintains the ability to change these policies as needed while documenting all changes.",
+  "expectedStatementElements": [
+    "How policies and procedures were developed to address each Security Rule requirement",
+    "What process exists to review and update policies as the organization or environment changes",
+    "Who owns and approves security policies",
+    "How employees are made aware of current policies"
+  ],
+  "evidenceExamples": [
+    "Master security policy set covering administrative, physical, and technical safeguards",
+    "Policy review and revision history log",
+    "Policy approval sign-off from designated owner (e.g., Security Officer)",
+    "Evidence of policy distribution/acknowledgment by workforce"
+  ],
+  "commonGaps": [
+    "Policies exist but haven't been reviewed or updated in years",
+    "No clear owner accountable for keeping policies current",
+    "Policies don't map to actual practice, or practice has drifted from policy",
+    "No process to notify staff when a policy changes"
+  ],
+  "interviewQuestions": [
+    "Who owns your security policies, and how often are they reviewed?",
+    "Can you show me the revision history for a key policy?",
+    "How do you make sure policies reflect what's actually being done day to day?",
+    "How are workforce members notified when a policy changes?"
+  ],
+  "relatedControls": ["AS-1", "PD-2"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.316",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

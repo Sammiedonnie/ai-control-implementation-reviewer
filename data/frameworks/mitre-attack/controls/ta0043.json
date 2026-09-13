@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0043",
+  "controlName": "Reconnaissance",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect or disrupt an adversary's efforts to gather information about the target before an attack begins.",
+  "summary": "Reconnaissance consists of techniques adversaries use to actively or passively gather information that can be used to support targeting, such as scanning networks, harvesting employee emails, or researching victim-owned websites and social media.",
+  "expectedStatementElements": [
+    "What external attack surface (domains, IPs, exposed services, employee/social media footprint) has been identified and monitored",
+    "How the organization detects active scanning or probing activity directed at its infrastructure",
+    "What controls limit the information an attacker could passively gather (e.g., job postings, DNS records, public documents with metadata)",
+    "How threat intelligence about targeting or reconnaissance against the organization or its sector is monitored"
+  ],
+  "evidenceExamples": [
+    "External attack surface inventory or attack surface management tool output",
+    "Network monitoring or IDS rules configured to flag scanning behavior",
+    "Policy or process limiting sensitive information exposure in public-facing content and metadata",
+    "Threat intelligence feed or subscription covering the organization's sector"
+  ],
+  "commonGaps": [
+    "No inventory exists of the organization's external attack surface, so reconnaissance against it would go unnoticed",
+    "Scanning and probing activity isn't distinguished from normal traffic in monitoring",
+    "Job postings, public documents, or metadata routinely leak information useful to an attacker",
+    "No threat intelligence process tracks whether the organization or its sector is being targeted"
+  ],
+  "interviewQuestions": [
+    "Do you know what your external attack surface looks like from an outsider's perspective right now?",
+    "Would repeated scanning of your public-facing systems actually get noticed?",
+    "Have you checked what your own public job postings, documents, or metadata reveal about your environment?",
+    "How would you find out if your organization or sector was being actively targeted for reconnaissance?"
+  ],
+  "relatedControls": ["TA0042", "TA0001"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0043/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

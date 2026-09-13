@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0004",
+  "controlName": "Privilege Escalation",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can prevent or detect an adversary gaining higher-level permissions than the access they initially obtained.",
+  "summary": "Privilege Escalation consists of techniques adversaries use to gain higher-level permissions on a system or network, such as exploiting vulnerabilities, abusing misconfigured permissions, or hijacking legitimate processes with elevated privileges.",
+  "expectedStatementElements": [
+    "How the principle of least privilege is enforced and periodically reviewed across accounts and services",
+    "How the environment is patched against known privilege escalation vulnerabilities (local and network-based)",
+    "How misconfigured permissions (file, registry, cloud IAM) that could enable escalation are identified",
+    "How the organization detects a low-privileged account or process suddenly gaining elevated access"
+  ],
+  "evidenceExamples": [
+    "Least-privilege access review results across user and service accounts",
+    "Patch management records specifically covering privilege escalation CVEs",
+    "Permission/IAM misconfiguration scanning results (file system, registry, cloud roles)",
+    "Alerting configuration for unexpected privilege elevation events"
+  ],
+  "commonGaps": [
+    "Accounts and services accumulate excess privileges over time with no periodic review to trim them back",
+    "Known privilege escalation vulnerabilities remain unpatched for extended periods",
+    "Misconfigured file, registry, or cloud IAM permissions that enable escalation aren't proactively scanned for",
+    "No alerting exists for an account or process suddenly gaining elevated privileges outside normal patterns"
+  ],
+  "interviewQuestions": [
+    "When was the last time account and service privileges were actually reviewed and trimmed back?",
+    "How current is your patching specifically against known privilege escalation vulnerabilities?",
+    "Do you actively scan for misconfigured permissions that could let someone escalate privileges?",
+    "Would you notice if a low-privileged account suddenly gained administrative access?"
+  ],
+  "relatedControls": ["TA0003", "TA0005"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0004/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

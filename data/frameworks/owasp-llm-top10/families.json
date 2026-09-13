@@ -1,0 +1,3 @@
+[
+  { "id": "LLM", "name": "LLM Risks", "description": "The ten critical security risks specific to large language model applications, covering the full lifecycle from input handling to resource consumption." }
+]

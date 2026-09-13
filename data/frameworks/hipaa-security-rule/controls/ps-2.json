@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "PS-2",
+  "controlName": "Workstation Use",
+  "family": "PS",
+  "purpose": "Defines the appropriate functions and physical conditions for workstations that access ePHI.",
+  "summary": "The covered entity or business associate implements policies and procedures that specify the proper functions to be performed, the manner in which those functions are to be performed, and the physical attributes of the surroundings of a specific workstation or class of workstations that can access ePHI.",
+  "expectedStatementElements": [
+    "What tasks and functions are permitted on workstations that access ePHI",
+    "What physical placement or screening requirements apply (e.g., privacy screens, positioning away from public view)",
+    "Whether personal devices or unauthorized software are permitted on these workstations",
+    "How workstation use policies differ across roles or locations (e.g., remote work)"
+  ],
+  "evidenceExamples": [
+    "Workstation use policy document",
+    "Photos or diagrams showing workstation placement relative to public areas",
+    "Remote work / telework security policy, if applicable",
+    "Acceptable use agreement signed by workforce members"
+  ],
+  "commonGaps": [
+    "No documented workstation use policy beyond general IT acceptable use",
+    "Workstations displaying ePHI are visible from public-facing areas",
+    "Remote work introduces workstation risks not addressed by the policy",
+    "No restriction on personal devices being used to access ePHI"
+  ],
+  "interviewQuestions": [
+    "What does your workstation use policy say about where and how ePHI can be viewed?",
+    "How are workstations positioned to prevent unauthorized viewing?",
+    "Does the policy address remote or telework workstations differently?",
+    "Are workforce members allowed to use personal devices to access ePHI?"
+  ],
+  "relatedControls": ["PS-1", "PS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.310",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

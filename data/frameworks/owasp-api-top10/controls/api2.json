@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API2",
+  "controlName": "Broken Authentication",
+  "family": "API",
+  "purpose": "Prevents attackers from compromising authentication mechanisms to impersonate legitimate users through stolen tokens, credential stuffing, or weak authentication implementation.",
+  "summary": "Broken Authentication occurs when authentication mechanisms are implemented incorrectly, allowing attackers to compromise authentication tokens or exploit implementation flaws to assume other users' identities, whether temporarily or permanently.",
+  "expectedStatementElements": [
+    "What authentication mechanism is used (API keys, OAuth, JWT) and how tokens are issued, validated, and expired",
+    "What protections exist against credential stuffing and brute-force attacks (rate limiting, account lockout, CAPTCHA)",
+    "How authentication tokens are protected from theft or leakage (in transit, in logs, in URLs)",
+    "Whether weak or default credentials, or unauthenticated endpoints that should require authentication, have been identified and remediated"
+  ],
+  "evidenceExamples": [
+    "Authentication architecture documentation (token type, issuance, expiration, revocation)",
+    "Rate limiting or account lockout configuration for authentication endpoints",
+    "Security scan results checking for tokens exposed in logs, URLs, or error messages",
+    "Inventory of endpoints confirming authentication is required where expected"
+  ],
+  "commonGaps": [
+    "No rate limiting or lockout exists on authentication endpoints, enabling credential stuffing",
+    "Tokens don't expire, or expiration is set unreasonably long",
+    "Tokens or credentials appear in URLs, logs, or error messages where they can leak",
+    "Some endpoints that should require authentication are unintentionally left open"
+  ],
+  "interviewQuestions": [
+    "What stops an attacker from brute-forcing or credential-stuffing your login endpoint?",
+    "How long do authentication tokens live, and can they be revoked?",
+    "Could a token or credential ever end up in a log file, URL, or error message?",
+    "How do you verify that every endpoint requiring authentication actually enforces it?"
+  ],
+  "relatedControls": ["API1", "API5"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

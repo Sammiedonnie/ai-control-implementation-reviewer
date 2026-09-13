@@ -1,0 +1,8 @@
+{
+  "id": "owasp-api-top10",
+  "name": "OWASP API Security Top 10",
+  "version": "2023",
+  "description": "OWASP's list of the ten most critical security risks specific to APIs, covering authorization, authentication, resource consumption, and business logic flaws.",
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "contentStatusNotice": "Category identifiers and structure are drawn from the public OWASP API Security Top 10 (2023). Purpose, summary, and review guidance are application-authored to support compliance review workflows and are not official OWASP guidance."
+}

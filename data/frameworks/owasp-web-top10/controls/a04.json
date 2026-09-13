@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A04",
+  "controlName": "Cryptographic Failures",
+  "family": "WEB",
+  "purpose": "Prevents sensitive data from being exposed due to missing, weak, or improperly implemented cryptography in transit and at rest.",
+  "summary": "Cryptographic Failures occur when sensitive data isn't adequately protected through encryption, whether because encryption is missing entirely, uses outdated or weak algorithms, or is implemented with flaws such as hardcoded keys or improper certificate validation, leading to exposure of data like credentials, financial information, or personal data.",
+  "expectedStatementElements": [
+    "What sensitive data the application handles and how it's classified for protection requirements",
+    "What encryption is applied to sensitive data in transit (TLS configuration) and at rest (storage encryption)",
+    "How cryptographic keys are generated, stored, rotated, and protected from exposure",
+    "Whether current, non-deprecated algorithms and protocol versions are used, and how that's verified over time"
+  ],
+  "evidenceExamples": [
+    "Data classification documentation identifying sensitive data requiring encryption",
+    "TLS configuration and scan results confirming strong protocols/ciphers are enforced",
+    "Key management documentation (generation, storage, rotation, access restriction)",
+    "Evidence that deprecated algorithms (e.g., MD5, SHA-1, outdated TLS versions) are not in use"
+  ],
+  "commonGaps": [
+    "Sensitive data is transmitted or stored without encryption, or with encryption that's easily bypassed",
+    "Deprecated or weak cryptographic algorithms and protocol versions remain in use",
+    "Cryptographic keys are hardcoded, stored insecurely, or never rotated",
+    "No process periodically re-evaluates cryptographic choices as algorithms and standards age"
+  ],
+  "interviewQuestions": [
+    "What sensitive data does this application handle, and is all of it encrypted in transit and at rest?",
+    "Are you confident no deprecated algorithms or old TLS versions are still in use anywhere?",
+    "Where are your encryption keys stored, and who or what can access them?",
+    "How often do you revisit your cryptographic choices to make sure they haven't become outdated?"
+  ],
+  "relatedControls": ["A05", "A02"],
+  "sourceUrl": "https://top10.owasp.org/2025/A04_2025-Cryptographic_Failures/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

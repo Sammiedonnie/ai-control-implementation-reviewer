@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "GV-6",
+  "controlName": "Third-Party and Supply Chain Risk Management",
+  "family": "GV",
+  "purpose": "Ensures AI risks arising from third-party software, data, and other supply chain elements are addressed through deliberate policy rather than assumed away.",
+  "summary": "Policies and procedures are in place to address AI risks and benefits arising from third-party software, data, and other supply chain issues, including contractual requirements for third parties and contingency processes for when third-party AI components fail or introduce risk.",
+  "expectedStatementElements": [
+    "How third-party AI software, models, and data sources are vetted before adoption",
+    "What contractual requirements govern third-party AI risk responsibilities",
+    "What contingency plans exist if a third-party AI component fails, is deprecated, or introduces unacceptable risk",
+    "How the organization tracks which AI systems depend on third-party components"
+  ],
+  "evidenceExamples": [
+    "Third-party AI vendor risk assessment or vetting checklist",
+    "Contract language specifying AI risk responsibilities for vendors",
+    "Contingency plan for third-party AI component failure or deprecation",
+    "Inventory mapping AI systems to their third-party dependencies"
+  ],
+  "commonGaps": [
+    "Third-party AI models or data are adopted without any formal risk vetting",
+    "Contracts with AI vendors don't address risk responsibilities or liability",
+    "No contingency plan exists if a critical third-party AI dependency is deprecated or fails",
+    "No inventory tracks which systems rely on which third-party AI components"
+  ],
+  "interviewQuestions": [
+    "How do you vet a third-party AI vendor or model before adopting it?",
+    "What does your contract with an AI vendor say about who's responsible if something goes wrong?",
+    "What would you do if a third-party AI component you depend on was suddenly deprecated?",
+    "Can you trace which of your systems depend on which third-party AI components?"
+  ],
+  "relatedControls": ["GV-1", "MG-3"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

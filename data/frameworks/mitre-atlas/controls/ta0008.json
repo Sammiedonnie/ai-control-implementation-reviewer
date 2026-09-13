@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0008",
+    "controlName": "Discovery",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary who has gained a foothold trying to figure out its AI environment, including AI artifacts, agent configurations, and internal network.",
+    "summary": "Discovery consists of techniques an adversary may use to gain knowledge about the AI system and internal network after initial compromise. This helps adversaries observe the environment, orient themselves, and identify what they control and what's around their entry point, often using native tools for this post-compromise information gathering.",
+    "expectedStatementElements": [
+        "How the organization monitors for unusual enumeration of AI artifacts, model registries, or container/software repositories",
+        "Whether AI agent configurations, tool definitions, and embedded knowledge are protected from unauthorized discovery",
+        "What logging exists for internal reconnaissance activity (e.g., repeated queries about model ontology or family)",
+        "How access to internal AI infrastructure documentation is restricted post-compromise"
+    ],
+    "evidenceExamples": [
+        "Logging and alerting for unusual access patterns against model registries, repos, or artifact stores",
+        "Access controls protecting AI agent configuration files, tool definitions, and system prompts from unauthorized read access",
+        "Internal network segmentation documentation isolating AI infrastructure from general access",
+        "Incident response playbook covering post-compromise discovery activity in AI environments"
+    ],
+    "commonGaps": [
+        "No logging exists for enumeration of model registries or artifact repositories, so post-compromise discovery goes unnoticed",
+        "AI agent configuration files and system prompts are readable by broader internal access than necessary",
+        "AI infrastructure isn't segmented from general internal network access, allowing easy lateral discovery"
+    ],
+    "interviewQuestions": [
+        "If someone with internal access started browsing our model registries and artifact stores, would we see it?",
+        "Who internally can read our AI agent's configuration files or system prompts?",
+        "Is our AI infrastructure segmented from the rest of the internal network, or is it broadly reachable?",
+        "Do we have a specific incident response step for post-compromise discovery activity targeting AI systems?"
+    ],
+    "relatedControls": ["AML.TA0007", "AML.TA0009", "AML.TA0015"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0008/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

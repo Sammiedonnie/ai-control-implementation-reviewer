@@ -1,0 +1,36 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.5",
+    "controlName": "Assessing impacts of AI systems",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization has a documented process for evaluating the potential impacts of its AI systems on individuals, groups, and society, and acts on the results.",
+    "summary": "This objective requires the organization to establish a process for assessing the impacts of AI systems throughout their life cycle, document the results of those assessments, and specifically consider impacts on individuals or groups of individuals as well as broader societal impacts such as fairness, accessibility, and environmental effects.",
+    "expectedStatementElements": [
+        "Whether a documented AI impact assessment process exists and at what life cycle stages it's applied",
+        "How assessment results are documented, retained, and made available to relevant decision-makers",
+        "How impacts on individuals or groups (e.g., discrimination, unfair treatment) are specifically evaluated",
+        "How broader societal impacts (e.g., environmental cost, accessibility, misuse potential) are considered"
+    ],
+    "evidenceExamples": [
+        "AI impact assessment methodology/template and completed assessments for in-scope systems",
+        "Records showing impact assessments were performed at defined life cycle checkpoints (design, pre-deployment, post-deployment)",
+        "Documented findings related to individual/group impacts, including any bias or fairness testing",
+        "Documented findings related to societal impacts (e.g., compute/environmental footprint, accessibility review)"
+    ],
+    "commonGaps": [
+        "No formal impact assessment process exists; potential harms are considered informally, if at all",
+        "Impact assessments are done once at design time and never revisited as the system evolves in production",
+        "Assessments focus narrowly on technical performance and skip individual fairness or societal impact entirely"
+    ],
+    "interviewQuestions": [
+        "Do we have a documented process for assessing an AI system's potential impact before and after deployment?",
+        "Are impact assessments revisited as a system changes, or done once and forgotten?",
+        "How do we specifically evaluate whether an AI system could unfairly affect certain individuals or groups?",
+        "Do our impact assessments ever consider broader effects, like environmental cost or accessibility?"
+    ],
+    "relatedControls": ["A.4", "A.6"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

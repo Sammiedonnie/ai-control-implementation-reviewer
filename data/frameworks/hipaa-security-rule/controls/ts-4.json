@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "TS-4",
+  "controlName": "Person or Entity Authentication",
+  "family": "TS",
+  "purpose": "Verifies that a person or entity seeking access to ePHI is who they claim to be before granting access.",
+  "summary": "The covered entity or business associate implements procedures to verify that a person or entity seeking access to ePHI is the one claimed, using methods such as passwords, PINs, tokens, biometrics, or multi-factor authentication.",
+  "expectedStatementElements": [
+    "What authentication method(s) are required to access systems containing ePHI (password, MFA, biometrics, token)",
+    "What password complexity, length, and rotation requirements are enforced",
+    "Whether multi-factor authentication is required, and for which systems or user types",
+    "How authentication credentials are provisioned and deactivated"
+  ],
+  "evidenceExamples": [
+    "Authentication policy specifying required method(s)",
+    "System configuration showing enforced password complexity and MFA settings",
+    "List of systems requiring MFA versus password-only access",
+    "Deprovisioning record showing credentials disabled upon termination"
+  ],
+  "commonGaps": [
+    "MFA isn't required for remote or privileged access to ePHI systems",
+    "Password complexity requirements are weak or not technically enforced",
+    "Authentication credentials aren't promptly deactivated after termination",
+    "Same authentication standard isn't applied consistently across all ePHI systems"
+  ],
+  "interviewQuestions": [
+    "What authentication is required to log into systems containing ePHI?",
+    "Is multi-factor authentication required, and for which access types?",
+    "What are the password complexity and rotation requirements, and are they enforced technically?",
+    "How quickly are a departing employee's credentials deactivated?"
+  ],
+  "relatedControls": ["TS-1", "AS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.312",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

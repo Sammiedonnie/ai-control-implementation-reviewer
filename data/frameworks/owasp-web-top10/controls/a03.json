@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A03",
+  "controlName": "Software Supply Chain Failures",
+  "family": "WEB",
+  "purpose": "Prevents compromised, outdated, or untrustworthy components, dependencies, and build/deployment tooling from introducing vulnerabilities into the application.",
+  "summary": "Software Supply Chain Failures occur when an application relies on third-party libraries, packages, base images, or CI/CD tooling that are outdated, vulnerable, or tampered with, allowing attackers to compromise the application indirectly through the software it's built and delivered with rather than a flaw in its own code.",
+  "expectedStatementElements": [
+    "How dependencies (libraries, packages, base images) are inventoried and scanned for known vulnerabilities",
+    "How the organization decides when and how to patch or upgrade outdated or vulnerable components",
+    "What controls protect the CI/CD pipeline itself from tampering (build integrity, signed artifacts, restricted access)",
+    "How the provenance and integrity of third-party components are verified before they're incorporated"
+  ],
+  "evidenceExamples": [
+    "Software Bill of Materials (SBOM) or dependency inventory with vulnerability scan results",
+    "Patch/upgrade cadence policy for outdated or vulnerable dependencies",
+    "CI/CD pipeline security controls (access restrictions, artifact signing, build integrity checks)",
+    "Documentation of the vetting process for new third-party dependencies before adoption"
+  ],
+  "commonGaps": [
+    "No current inventory or scanning exists for third-party dependencies and their known vulnerabilities",
+    "Known-vulnerable dependencies remain in use long after a fix is available, with no defined patch cadence",
+    "CI/CD pipeline access and build integrity aren't protected, allowing tampering to go undetected",
+    "New dependencies are adopted without any vetting of their source, maintenance status, or trustworthiness"
+  ],
+  "interviewQuestions": [
+    "Do you have a current inventory of every dependency this application uses, and are they scanned for known vulnerabilities?",
+    "When a dependency has a known vulnerability, how quickly does it actually get patched?",
+    "What stops someone from tampering with your build pipeline and slipping in a malicious change?",
+    "What's your process for vetting a new third-party library before it's added to the project?"
+  ],
+  "relatedControls": ["A02", "A08"],
+  "sourceUrl": "https://top10.owasp.org/2025/A03_2025-Software_Supply_Chain_Failures/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,38 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "TS-5",
+  "controlName": "Transmission Security",
+  "family": "TS",
+  "purpose": "Protects ePHI from unauthorized access while it is being transmitted over an electronic communications network.",
+  "summary": "The covered entity or business associate implements technical security measures to guard against unauthorized access to ePHI that is being transmitted over an electronic communications network, including integrity controls and encryption where reasonable and appropriate.",
+  "expectedStatementElements": [
+    "What encryption is applied to ePHI in transit (e.g., TLS, VPN)",
+    "How the organization determined encryption in transit is or isn't reasonable and appropriate",
+    "What integrity controls detect improper modification of ePHI during transmission",
+    "How ePHI transmitted via email or file transfer is protected",
+    "Whether transmission security requirements extend to third parties and business associates"
+  ],
+  "evidenceExamples": [
+    "Network architecture diagram showing encryption in transit (TLS/VPN)",
+    "Email encryption or secure file transfer configuration and policy",
+    "Risk analysis documenting the decision on encryption for transmission",
+    "Vendor/BAA requirements specifying transmission security obligations"
+  ],
+  "commonGaps": [
+    "ePHI is sent over email without encryption",
+    "No documented risk-analysis rationale for encryption decisions on transmission",
+    "Internal network transmissions are assumed safe with no verification",
+    "Business associates aren't held to the same transmission security standard"
+  ],
+  "interviewQuestions": [
+    "How is ePHI protected when it's transmitted outside your network?",
+    "Is email containing ePHI encrypted, and how is that enforced?",
+    "What was the reasoning behind your decision on where to apply encryption in transit?",
+    "Do your contracts with business associates specify transmission security requirements?"
+  ],
+  "relatedControls": ["TS-1", "TS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.312",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

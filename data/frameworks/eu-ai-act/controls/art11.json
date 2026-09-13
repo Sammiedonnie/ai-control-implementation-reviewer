@@ -1,0 +1,36 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.11",
+    "controlName": "Technical documentation",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization creates and keeps up to date technical documentation for its high-risk AI system, demonstrating compliance with the Act's requirements before the system is placed on the market or put into service.",
+    "summary": "Article 11 requires providers to draw up technical documentation before a high-risk AI system is placed on the market or put into service, and to keep it up to date. The documentation must be drafted in a way that demonstrates the system complies with Chapter III Section 2 requirements and must contain, at minimum, the elements set out in Annex IV (general description, design specifications, development process, monitoring/functioning/control capabilities, risk management measures, and more).",
+    "expectedStatementElements": [
+        "Whether technical documentation exists for the system, covering the Annex IV elements, before market placement or service",
+        "How technical documentation is kept up to date as the system changes post-deployment",
+        "How the documentation demonstrates compliance with the specific Chapter III Section 2 requirements (Articles 9-15)",
+        "What review or approval process governs technical documentation before it's considered complete"
+    ],
+    "evidenceExamples": [
+        "Technical documentation package covering Annex IV elements (system description, design specs, development process, monitoring capabilities, risk management)",
+        "Version history showing technical documentation updates aligned with system changes",
+        "Cross-reference mapping technical documentation sections to specific Chapter III Section 2 requirements",
+        "Documentation review/approval records prior to market placement or service deployment"
+    ],
+    "commonGaps": [
+        "Technical documentation is created after the system is already in production, rather than before deployment",
+        "Documentation isn't updated when the system changes, so it no longer accurately reflects what's actually running",
+        "Documentation doesn't clearly map back to the specific Article 9-15 requirements it's meant to demonstrate compliance with"
+    ],
+    "interviewQuestions": [
+        "Was our technical documentation finished before this system went live, or is it being written after the fact?",
+        "When the system changes, does someone actually go back and update the documentation?",
+        "If a regulator asked how our documentation proves compliance with Articles 9 through 15, could we show them directly?",
+        "Who reviews and signs off on technical documentation before it's considered complete?"
+    ],
+    "relatedControls": ["Art.10", "Art.12"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/11/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

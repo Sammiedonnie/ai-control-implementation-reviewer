@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A06",
+  "controlName": "Insecure Design",
+  "family": "WEB",
+  "purpose": "Prevents security weaknesses that originate in the architecture and design phase, rather than a specific implementation bug, by requiring threat modeling and secure design patterns from the start.",
+  "summary": "Insecure Design covers flaws in the design and architecture of an application that no amount of correct implementation can fully fix, such as missing threat modeling, misuse of design patterns, or business logic that fails to account for how it could be abused, meaning the risk exists even before a single line of insecure code is written.",
+  "expectedStatementElements": [
+    "Whether threat modeling is performed during design, and how identified threats influence the resulting architecture",
+    "How secure design patterns and reference architectures are applied consistently across new features",
+    "How business logic flows are analyzed for abuse cases, not just functional correctness",
+    "How security requirements are captured and tracked from the design phase through to delivery"
+  ],
+  "evidenceExamples": [
+    "Threat model documentation for key features or the overall application",
+    "Secure design pattern library or architecture reference used by the team",
+    "Abuse case analysis or business logic review for sensitive flows",
+    "Security requirements tracked alongside functional requirements in the design process"
+  ],
+  "commonGaps": [
+    "Threat modeling isn't performed, or is performed inconsistently and doesn't influence the actual design",
+    "New features are designed without reference to any established secure design pattern",
+    "Business logic is validated for correctness but never analyzed for how it could be abused",
+    "Security requirements are treated as a checklist after design rather than part of the design process itself"
+  ],
+  "interviewQuestions": [
+    "Walk me through how threat modeling actually shaped the design of this feature.",
+    "Is there a reference architecture or set of secure design patterns the team follows?",
+    "Has anyone analyzed this business flow for how an attacker or bad actor could abuse it, not just whether it works?",
+    "At what point in the process do security requirements get captured — before design, or after?"
+  ],
+  "relatedControls": ["A05", "A01"],
+  "sourceUrl": "https://top10.owasp.org/2025/A06_2025-Insecure_Design/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM01",
+  "controlName": "Prompt Injection",
+  "family": "LLM",
+  "purpose": "Prevents user or third-party input from manipulating the LLM into ignoring its intended instructions or producing unintended behavior.",
+  "summary": "A Prompt Injection vulnerability occurs when crafted input alters the LLM's behavior or output in unintended ways, whether through direct user input or indirect injection via external content the model processes (documents, web pages, tool outputs).",
+  "expectedStatementElements": [
+    "How user input and untrusted external content are distinguished from system instructions",
+    "What input validation, filtering, or sanitization is applied before reaching the model",
+    "How the application constrains what actions the model can take regardless of its output",
+    "How indirect injection risk from retrieved documents, tool results, or browsed content is addressed",
+    "How the system is tested against known prompt injection techniques"
+  ],
+  "evidenceExamples": [
+    "System architecture diagram showing input handling and privilege boundaries",
+    "Input validation or guardrail configuration (e.g., prompt shields, content filters)",
+    "Red-team or adversarial test results targeting prompt injection",
+    "Documentation of privilege limits enforced independent of model output"
+  ],
+  "commonGaps": [
+    "No distinction between trusted system instructions and untrusted user/external input",
+    "Model output is trusted to gate sensitive actions with no independent enforcement",
+    "Indirect injection via RAG documents or tool outputs isn't considered",
+    "No adversarial testing has been performed against the deployed system"
+  ],
+  "interviewQuestions": [
+    "How does the system prevent injected instructions in retrieved content from being followed?",
+    "What happens if a user tries to override the system prompt directly?",
+    "Are sensitive actions gated by anything other than the model's own output?",
+    "Has this system been tested against known prompt injection techniques?"
+  ],
+  "relatedControls": ["LLM02", "LLM06"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

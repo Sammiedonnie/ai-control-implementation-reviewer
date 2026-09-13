@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0005",
+  "controlName": "Stealth",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect adversary behavior specifically designed to blend in and avoid raising alerts, even while defenses remain technically intact.",
+  "summary": "Stealth (formerly part of Defense Evasion, split out in ATT&CK v19) consists of techniques adversaries use to avoid detection through behavioral camouflage, such as masquerading as legitimate processes, living-off-the-land using trusted system binaries, or obfuscating payloads, without actually disabling or breaking security tools.",
+  "expectedStatementElements": [
+    "How the organization detects living-off-the-land binary (LOLBin) abuse and masquerading of legitimate processes",
+    "What behavioral/anomaly-based detection exists beyond signature matching to catch obfuscated or camouflaged activity",
+    "How process and file integrity are monitored to detect impersonation of trusted system components",
+    "How the organization stays current on emerging stealth techniques since this tactic was newly separated in ATT&CK v19"
+  ],
+  "evidenceExamples": [
+    "Behavioral/anomaly detection rules covering LOLBin abuse and process masquerading",
+    "EDR configuration showing detection beyond signature-based matching",
+    "File and process integrity monitoring configuration",
+    "Evidence that detection content has been updated to reflect the Stealth/Defense Impairment split (v19)"
+  ],
+  "commonGaps": [
+    "Detection relies primarily on signatures and would miss obfuscated or living-off-the-land activity",
+    "No monitoring distinguishes a legitimate system binary's normal use from its abuse to blend in",
+    "File and process integrity aren't monitored closely enough to catch impersonation of trusted components",
+    "Detection content and coverage maps haven't been updated since the Stealth/Defense Impairment split in ATT&CK v19"
+  ],
+  "interviewQuestions": [
+    "Would you catch an attacker using a legitimate system tool to quietly carry out malicious activity?",
+    "Does your detection go beyond known signatures to catch obfuscated or camouflaged behavior?",
+    "How would you know if a trusted process were actually being impersonated?",
+    "Has your detection coverage been updated to reflect the newer Stealth tactic, separate from Defense Impairment?"
+  ],
+  "relatedControls": ["TA0112", "TA0004"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0005/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

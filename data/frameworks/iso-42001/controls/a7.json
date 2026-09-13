@@ -1,0 +1,37 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.7",
+    "controlName": "Data for AI systems",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization manages the data used by its AI systems with attention to acquisition, quality, provenance, and preparation throughout the data life cycle.",
+    "summary": "This objective requires the organization to establish practices for managing data used in AI systems, including how data is acquired, how its quality is assessed and maintained, how its provenance is tracked, and how it's prepared (e.g., cleaned, labeled, transformed) before use in training, validation, or operation.",
+    "expectedStatementElements": [
+        "How data acquisition sources are documented and vetted, including third-party and public datasets",
+        "What data quality criteria are defined and how they're measured before data is used",
+        "How data provenance (origin, chain of custody, consent basis) is tracked and documented",
+        "What data preparation steps (cleaning, labeling, transformation) are documented and version-controlled"
+    ],
+    "evidenceExamples": [
+        "Data source inventory with acquisition method and vetting records for each source",
+        "Data quality assessment criteria and results (e.g., completeness, accuracy, representativeness checks)",
+        "Data lineage/provenance documentation showing origin and chain of custody",
+        "Data preparation pipeline documentation, including versioning of cleaning/labeling/transformation steps"
+    ],
+    "commonGaps": [
+        "Data sources are used without documented vetting, especially third-party or scraped public data",
+        "No defined data quality criteria exist, so poor-quality data can silently degrade model performance",
+        "Data provenance isn't tracked, making it difficult to determine what a model was actually trained on",
+        "Data preparation steps aren't documented or versioned, making results hard to reproduce or audit"
+    ],
+    "interviewQuestions": [
+        "For a given AI system, could we produce a full list of where its training data came from?",
+        "Do we have defined quality checks data has to pass before it's used, or do we just use what we have?",
+        "If asked, could we trace a specific data point back to its original source and consent basis?",
+        "Is our data cleaning and labeling process documented well enough that someone else could reproduce it?"
+    ],
+    "relatedControls": ["A.6", "A.5"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

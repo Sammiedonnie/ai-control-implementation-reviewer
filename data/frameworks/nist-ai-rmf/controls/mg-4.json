@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MG-4",
+  "controlName": "Risk Treatments, Response, Recovery, and Communication Plans",
+  "family": "MG",
+  "purpose": "Ensures the organization has documented, regularly monitored plans for how it will respond to, recover from, and communicate about AI risk events — not just a theoretical incident response policy that's never been exercised.",
+  "summary": "Risk treatments, including response and recovery, and communication plans for the identified and measured AI risks are documented and monitored regularly, including post-deployment monitoring for anticipated and unanticipated impacts, response and recovery from AI incidents, and mechanisms for communicating incidents to affected stakeholders.",
+  "expectedStatementElements": [
+    "How post-deployment monitoring tracks both anticipated and unanticipated impacts",
+    "What the documented incident response and recovery process looks like for AI-specific incidents",
+    "How and to whom incidents are communicated once they occur, including affected stakeholders",
+    "How often risk treatment plans are reviewed and updated based on new information"
+  ],
+  "evidenceExamples": [
+    "Post-deployment monitoring plan covering both expected and unexpected impacts",
+    "AI incident response and recovery procedure documentation",
+    "Stakeholder communication plan or template for AI incidents",
+    "Review history showing risk treatment plans have been updated over time"
+  ],
+  "commonGaps": [
+    "Post-deployment monitoring only tracks metrics the team expected to see, missing unanticipated impacts",
+    "Incident response plans exist for general IT but nothing AI-specific",
+    "No plan exists for communicating an AI incident to affected external stakeholders",
+    "Risk treatment plans were written once and never revisited as circumstances changed"
+  ],
+  "interviewQuestions": [
+    "How would you catch an impact from this AI system that nobody anticipated in advance?",
+    "Walk me through your incident response process specifically for an AI-related incident.",
+    "If this AI system caused harm to an external user, how would that be communicated to them?",
+    "When was your risk treatment plan for this system last reviewed and updated?"
+  ],
+  "relatedControls": ["MG-1", "MG-2"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

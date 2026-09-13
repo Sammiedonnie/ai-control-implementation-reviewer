@@ -1,0 +1,37 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.10",
+    "controlName": "Third-party and customer relationships",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization allocates and documents AI-related responsibilities across its supply chain, including AI vendors, service providers, and customers who consume its AI systems.",
+    "summary": "This objective requires the organization to manage AI-related risks that arise from third-party relationships, including allocating responsibility across the AI supply chain, understanding how third-party AI components (models, data, tooling) affect the organization's own AI systems, and clarifying obligations toward customers who use or are affected by the organization's AI systems.",
+    "expectedStatementElements": [
+        "How AI-related responsibilities are allocated and documented between the organization and its AI vendors/suppliers",
+        "What due diligence is performed on third-party AI components (models, datasets, platforms) before integration",
+        "How the organization communicates AI-related obligations, limitations, and support terms to customers",
+        "How supply chain risk (e.g., a vendor's AI system being compromised or discontinued) is monitored and mitigated"
+    ],
+    "evidenceExamples": [
+        "Contracts or agreements documenting AI-related responsibility allocation with vendors and suppliers",
+        "Due diligence records/questionnaires completed for third-party AI components before integration",
+        "Customer-facing terms of service or documentation covering AI-related obligations and limitations",
+        "Supply chain risk register covering third-party AI dependencies"
+    ],
+    "commonGaps": [
+        "Contracts with AI vendors don't clearly allocate responsibility for AI-related risks or incidents",
+        "Third-party models or datasets are integrated without any documented due diligence process",
+        "Customers aren't clearly informed about the AI-related obligations or limitations that apply to them",
+        "No visibility exists into what happens if a key AI vendor is compromised or discontinues a critical service"
+    ],
+    "interviewQuestions": [
+        "If an AI vendor's model caused a problem, would our contract make clear who's responsible?",
+        "Before integrating a third-party model or dataset, do we do any kind of due diligence on it?",
+        "Do our customers know what AI-related obligations or limitations apply to them?",
+        "If a critical AI vendor got compromised or shut down tomorrow, would we know our exposure?"
+    ],
+    "relatedControls": ["A.9", "A.4"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

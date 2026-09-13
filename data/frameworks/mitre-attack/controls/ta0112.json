@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0112",
+  "controlName": "Defense Impairment",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect or prevent an adversary from actively disabling, tampering with, or breaking security defenses rather than simply hiding from them.",
+  "summary": "Defense Impairment (new tactic added in ATT&CK v19, split out from Defense Evasion) consists of techniques adversaries use to actively disable, weaken, or break security controls, such as disabling logging, killing security tools, tampering with EDR agents, or modifying firewall rules to lose visibility entirely rather than simply evading detection.",
+  "expectedStatementElements": [
+    "How the organization detects and alerts when security tools (EDR, logging, firewall) are disabled or tampered with",
+    "What tamper-protection features are enabled on endpoint security and logging agents",
+    "How the integrity of security configuration (firewall rules, logging pipelines) is monitored for unauthorized changes",
+    "How quickly a gap in security visibility caused by defense impairment would be noticed and investigated"
+  ],
+  "evidenceExamples": [
+    "Tamper-protection configuration for EDR and logging agents",
+    "Alerting configuration for security tool service stoppage or configuration changes",
+    "Firewall and logging pipeline change monitoring/integrity checks",
+    "Incident or test results showing detection of a deliberately disabled security control"
+  ],
+  "commonGaps": [
+    "Security tools and logging agents can be disabled or uninstalled without triggering any alert",
+    "Tamper protection isn't enabled on EDR agents, allowing them to be stopped by a privileged attacker",
+    "Firewall rule or logging pipeline changes aren't monitored for integrity, so a quiet change goes unnoticed",
+    "A gap in visibility caused by a disabled security tool could persist for a long time before being noticed"
+  ],
+  "interviewQuestions": [
+    "If someone disabled your EDR agent right now, would you find out, and how fast?",
+    "Is tamper protection actually enabled on your endpoint security tools, or could a local admin turn it off?",
+    "Would an unauthorized firewall rule or logging change get flagged?",
+    "How long could a gap in security visibility go unnoticed in your environment?"
+  ],
+  "relatedControls": ["TA0005", "TA0004"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0112/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

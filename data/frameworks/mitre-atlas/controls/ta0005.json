@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0005",
+    "controlName": "Execution",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can prevent or detect an adversary running malicious code embedded in AI artifacts or software, including unsafe model formats and LLM prompt-driven actions.",
+    "summary": "Execution consists of techniques that result in adversary-controlled code running on a local or remote system. This includes unsafe deserialization of AI model files, malicious packages, user execution via social engineering, LLM plugin compromise, and prompt injection that causes an LLM or AI agent to act outside its intended behavior.",
+    "expectedStatementElements": [
+        "How model files are validated before loading (e.g., scanning for unsafe serialization formats like unvetted pickle files)",
+        "What controls exist over LLM plugins, tools, or agent integrations to prevent execution of unauthorized actions",
+        "How the organization detects or mitigates prompt injection attempts, direct or indirect, against LLM-based systems",
+        "Whether package/dependency sources for AI software are restricted and verified before execution"
+    ],
+    "evidenceExamples": [
+        "Model file scanning or safe-loading configuration (e.g., safetensors adoption, pickle scanning tools)",
+        "LLM plugin/tool allow-listing and permission scoping documentation",
+        "Prompt injection testing or red-team results for LLM-based applications",
+        "Dependency and package source restrictions for AI/ML software environments"
+    ],
+    "commonGaps": [
+        "Model files are loaded using unsafe deserialization formats without scanning for embedded malicious code",
+        "LLM plugins or agent tools are granted broad permissions without scoping to only what's needed",
+        "No testing has been done for prompt injection against LLM-based applications before production deployment"
+    ],
+    "interviewQuestions": [
+        "Do we scan model files for unsafe code before loading them, or do we trust the source blindly?",
+        "What could an LLM plugin or agent tool do if it were tricked into acting on a malicious instruction?",
+        "Have we ever tested our LLM application against prompt injection attempts?",
+        "Where do our AI-related software packages come from, and do we verify them before use?"
+    ],
+    "relatedControls": ["AML.TA0004", "AML.TA0006", "AML.TA0007"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0005/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

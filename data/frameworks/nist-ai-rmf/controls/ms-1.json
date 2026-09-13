@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MS-1",
+  "controlName": "Appropriate Methods and Metrics Are Identified and Applied",
+  "family": "MS",
+  "purpose": "Ensures the right metrics are chosen to actually measure the risks that matter for a given AI system, rather than defaulting to generic or convenient measurements.",
+  "summary": "Appropriate methods and metrics are identified and applied, matched to the system's context and socio-technical impacts, regularly reassessed for continued validity, and applied by internal experts or independent assessors who weren't the system's front-line developers.",
+  "expectedStatementElements": [
+    "How metrics were selected to match the system's specific risk context, not just generic performance metrics",
+    "How often metrics are reassessed for continued appropriateness and validity",
+    "Whether evaluations are conducted by people independent of the system's original development",
+    "What socio-technical (not just technical) factors the chosen metrics account for"
+  ],
+  "evidenceExamples": [
+    "Metric selection rationale tied to the system's specific risk context",
+    "Metric review schedule and revision history",
+    "Documentation showing evaluators were independent of front-line development",
+    "Socio-technical impact considerations built into the measurement approach"
+  ],
+  "commonGaps": [
+    "Only generic accuracy metrics are tracked, missing context-specific risks",
+    "Metrics were chosen once at launch and never reassessed",
+    "The same developers who built the system are the only ones evaluating it",
+    "Measurement focuses purely on technical performance with no socio-technical dimension"
+  ],
+  "interviewQuestions": [
+    "How did you decide which metrics actually matter for this system's specific risks?",
+    "When was the last time you reassessed whether your metrics are still the right ones?",
+    "Who evaluates this system — is it independent from the people who built it?",
+    "Do your metrics capture anything beyond raw technical performance?"
+  ],
+  "relatedControls": ["MS-2", "MP-1"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

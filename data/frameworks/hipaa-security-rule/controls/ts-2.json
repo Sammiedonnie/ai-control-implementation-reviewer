@@ -1,0 +1,41 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "TS-2",
+  "controlName": "Audit Controls",
+  "family": "TS",
+  "purpose": "Enables the organization to record and examine activity in systems that contain or use ePHI.",
+  "summary": "The covered entity or business associate implements hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use ePHI, supporting detection of inappropriate access or activity.",
+  "expectedStatementElements": [
+    "What systems and activities generate audit logs (logins, access to records, configuration changes)",
+    "How long audit logs are retained",
+    "Who reviews audit logs and how often",
+    "How anomalies or suspicious activity identified in logs are escalated",
+    "How audit logs themselves are protected from tampering or deletion"
+  ],
+  "evidenceExamples": [
+    "Audit logging configuration for systems containing ePHI",
+    "Log retention policy",
+    "Sample audit log review report or checklist",
+    "Documentation of an alert or anomaly investigation triggered by log review",
+    "Access controls restricting who can modify or delete audit logs"
+  ],
+  "commonGaps": [
+    "Audit logging is enabled but logs are never actually reviewed",
+    "Log retention period is too short to support investigations",
+    "No defined process for escalating anomalies found in logs",
+    "Audit logs aren't protected from modification by privileged users",
+    "Logging doesn't cover all systems that touch ePHI"
+  ],
+  "interviewQuestions": [
+    "What activity gets logged on systems containing ePHI?",
+    "How long are audit logs retained, and where are they stored?",
+    "Who reviews these logs, and how often?",
+    "Can you walk me through what happens if a reviewer spots something suspicious?",
+    "What prevents someone from altering or deleting the audit logs themselves?"
+  ],
+  "relatedControls": ["TS-1", "TS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.312",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

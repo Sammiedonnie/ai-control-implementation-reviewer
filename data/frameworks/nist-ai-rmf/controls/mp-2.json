@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MP-2",
+  "controlName": "Categorization of the AI System Is Performed",
+  "family": "MP",
+  "purpose": "Ensures the AI system is properly categorized by task type, deployment context, and level of autonomy so that appropriate risk controls can be matched to it.",
+  "summary": "Categorization of the AI system is performed, including classification by learning task and method, understanding of the AI system's stage in its lifecycle, and identification of the degree of autonomy the system operates with relative to human oversight.",
+  "expectedStatementElements": [
+    "How the AI system is classified by task type and learning method (e.g., classification, generation, recommendation)",
+    "What lifecycle stage the AI system is currently in (design, development, deployment, decommissioning)",
+    "What degree of autonomy the system operates with and how much human oversight is built in",
+    "How this categorization informs which risk controls apply"
+  ],
+  "evidenceExamples": [
+    "System classification documentation (task type, learning method, autonomy level)",
+    "Lifecycle stage tracking for the AI system",
+    "Human-in-the-loop / human-on-the-loop / fully autonomous designation and justification",
+    "Mapping showing how categorization determined which risk controls were applied"
+  ],
+  "commonGaps": [
+    "The system was never formally classified by task type or autonomy level",
+    "Lifecycle stage isn't tracked, so it's unclear whether the system is still in development or fully deployed",
+    "Autonomy level is assumed rather than explicitly determined and documented",
+    "Risk controls applied don't actually reflect the system's categorization"
+  ],
+  "interviewQuestions": [
+    "How would you classify this system's task type and level of autonomy?",
+    "What lifecycle stage is this system currently in, and how do you know?",
+    "How much human oversight is actually built into this system's operation?",
+    "How did the system's categorization influence which controls you applied?"
+  ],
+  "relatedControls": ["MP-1", "MP-3"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

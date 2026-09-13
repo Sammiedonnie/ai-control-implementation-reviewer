@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0009",
+    "controlName": "Collection",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary gathering AI artifacts and other information relevant to their goals from sources such as repositories, registries, and object stores.",
+    "summary": "Collection consists of techniques adversaries may use to gather information and AI artifacts from sources relevant to their objectives. Frequently, the next goal after collection is to exfiltrate the artifacts or use the collected information to stage future operations. Common target sources include software repositories, container registries, model repositories, and object stores.",
+    "expectedStatementElements": [
+        "How access to software repositories, container registries, and model repositories is logged and monitored for bulk or unusual collection activity",
+        "What data loss prevention or monitoring controls exist over object stores containing AI artifacts",
+        "How the organization limits which internal systems/accounts can bulk-access AI artifact repositories",
+        "Whether collection of local system data (e.g., cached credentials, config files) relevant to AI systems is monitored"
+    ],
+    "evidenceExamples": [
+        "Access logs and anomaly alerting for repositories, registries, and object stores holding AI artifacts",
+        "DLP or monitoring configuration for bulk data access/download from AI artifact storage",
+        "Access control policy limiting which accounts/systems can bulk-collect from artifact repositories",
+        "Endpoint monitoring for local collection of AI-related configuration or credential files"
+    ],
+    "commonGaps": [
+        "No alerting exists for bulk or unusual access patterns against model repositories or object stores",
+        "DLP controls don't cover AI artifact storage the way they cover other sensitive data",
+        "Broad internal accounts have standing bulk-access permissions to artifact repositories with no monitoring"
+    ],
+    "interviewQuestions": [
+        "If someone bulk-downloaded our model repository overnight, would we notice?",
+        "Do our data loss prevention controls cover AI artifact stores the same way they cover other sensitive data?",
+        "Which accounts can bulk-access our artifact repositories, and is that access actually monitored?",
+        "Would we catch someone collecting local config or credential files related to our AI systems?"
+    ],
+    "relatedControls": ["AML.TA0008", "AML.TA0010", "AML.TA0001"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0009/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

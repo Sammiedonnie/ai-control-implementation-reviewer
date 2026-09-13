@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "OR-2",
+  "controlName": "Requirements for Group Health Plans",
+  "family": "OR",
+  "purpose": "Ensures group health plans require plan sponsors to protect ePHI they receive on the plan's behalf.",
+  "summary": "A group health plan must ensure its plan documents require the plan sponsor to implement administrative, physical, and technical safeguards for ePHI it creates, receives, maintains, or transmits on behalf of the plan, and to report any security incidents to the plan.",
+  "expectedStatementElements": [
+    "Whether the plan sponsor creates, receives, maintains, or transmits ePHI on the plan's behalf",
+    "What plan document language obligates the sponsor to implement safeguards",
+    "How the plan sponsor is required to report security incidents back to the plan",
+    "How access to ePHI is separated between the plan sponsor's health plan functions and its other business functions"
+  ],
+  "evidenceExamples": [
+    "Group health plan document containing sponsor safeguard obligations",
+    "Firewall/separation policy restricting plan sponsor access to ePHI for non-plan purposes",
+    "Evidence of incident reporting from the plan sponsor to the plan",
+    "Legal review confirming plan document meets Security Rule requirements"
+  ],
+  "commonGaps": [
+    "Plan document doesn't address ePHI safeguard obligations for the sponsor at all",
+    "No separation between plan sponsor staff who administer the plan and those in other business roles",
+    "No defined process for the sponsor to report security incidents to the plan",
+    "This control is marked not-applicable without verifying whether the sponsor actually touches ePHI"
+  ],
+  "interviewQuestions": [
+    "Does your organization act as a group health plan sponsor, and if so, does it receive ePHI?",
+    "What does the plan document say about the sponsor's safeguard obligations?",
+    "How is access to ePHI separated from other business functions within the sponsor organization?",
+    "How would the plan sponsor report a security incident back to the plan?"
+  ],
+  "relatedControls": ["OR-1"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.314",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

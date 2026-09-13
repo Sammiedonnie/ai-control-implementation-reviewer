@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0007",
+    "controlName": "Defense Evasion",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary's attempts to avoid detection by AI-enabled security software throughout a compromise.",
+    "summary": "Defense Evasion consists of techniques adversaries use to avoid detection throughout their compromise, including evading AI-enabled security software such as malware or anomaly detectors through adversarial perturbation or other manipulation designed to blind or bypass AI-based defenses.",
+    "expectedStatementElements": [
+        "Whether AI-enabled security tools (malware/anomaly/fraud detection) are tested against adversarial evasion techniques",
+        "How the organization monitors for signs that AI-based detection systems are being systematically probed or bypassed",
+        "What layered, non-AI-dependent detection controls exist so evasion of one AI-based control doesn't grant free rein",
+        "How model behavior drift is monitored as a potential indicator of evasion attempts"
+    ],
+    "evidenceExamples": [
+        "Adversarial evasion testing results against AI-based security/detection tools",
+        "Monitoring and alerting configuration for systematic probing of detection systems",
+        "Documentation of defense-in-depth controls that don't solely rely on AI-based detection",
+        "Model behavior drift monitoring reports or dashboards"
+    ],
+    "commonGaps": [
+        "AI-based security tools have never been tested against adversarial evasion techniques",
+        "Detection relies solely on AI-based tools with no non-AI fallback or layered control",
+        "No monitoring exists for behavior drift that could indicate an ongoing evasion attempt"
+    ],
+    "interviewQuestions": [
+        "Have we tested whether our AI-based security tools can be fooled by adversarial inputs?",
+        "If someone found a way to blind our AI-based detection, do we have any non-AI backstop?",
+        "Would we notice if someone was systematically probing our detection systems to find a bypass?",
+        "How do we monitor for gradual drift in model behavior that might signal evasion in progress?"
+    ],
+    "relatedControls": ["AML.TA0006", "AML.TA0008", "AML.TA0005"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0007/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

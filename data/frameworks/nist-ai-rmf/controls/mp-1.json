@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MP-1",
+  "controlName": "Context Is Established and Understood",
+  "family": "MP",
+  "purpose": "Ensures the AI system's business context, intended purpose, and legal/regulatory environment are documented before risk can meaningfully be assessed.",
+  "summary": "Context is established and understood, including the intended purposes, potentially beneficial uses, context-specific laws and norms, expectations from relevant AI actors, and the scope of the AI system within the broader system it's part of.",
+  "expectedStatementElements": [
+    "What business context and intended purpose the AI system is designed to serve",
+    "What legal, regulatory, and normative requirements specific to this context apply",
+    "Who the relevant AI actors are and what their expectations are for the system",
+    "How the AI system's scope is bounded within any larger system it's a component of"
+  ],
+  "evidenceExamples": [
+    "System context document defining intended purpose and business use case",
+    "Applicable legal/regulatory requirement analysis specific to the deployment context",
+    "Stakeholder expectation documentation",
+    "System boundary or scope diagram showing the AI component within the larger system"
+  ],
+  "commonGaps": [
+    "The AI system's intended purpose was never explicitly documented before development began",
+    "Context-specific legal or regulatory requirements weren't identified until after deployment",
+    "No one asked what the relevant AI actors actually expect from this system",
+    "System boundaries are unclear, making it hard to know what's actually being risk-assessed"
+  ],
+  "interviewQuestions": [
+    "What was this AI system originally intended to do, and is that documented anywhere?",
+    "What legal or regulatory requirements apply specifically to how this system is used?",
+    "Who are the people or groups with a stake in how this system performs, and what do they expect from it?",
+    "Where does this AI system's scope end and the rest of the larger system begin?"
+  ],
+  "relatedControls": ["MP-2", "GV-1"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

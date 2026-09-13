@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "PS-4",
+  "controlName": "Device and Media Controls",
+  "family": "PS",
+  "purpose": "Governs the receipt and removal of hardware and electronic media containing ePHI to prevent unauthorized exposure.",
+  "summary": "The covered entity or business associate implements policies and procedures that govern the receipt and removal of hardware and electronic media that contain ePHI into and out of a facility, and the movement of these items within the facility, including disposal, media re-use, accountability, and data backup/storage before equipment movement.",
+  "expectedStatementElements": [
+    "How ePHI is removed from devices/media before disposal or reuse",
+    "How the movement of hardware and media in and out of facilities is tracked",
+    "What accountability records are kept (who has custody of what device/media)",
+    "How data is backed up before equipment is moved or relocated"
+  ],
+  "evidenceExamples": [
+    "Media disposal and sanitization policy (e.g., wiping, degaussing, physical destruction)",
+    "Asset tracking log or inventory system showing device custody and location history",
+    "Certificate of destruction from a media disposal vendor",
+    "Backup procedure performed prior to equipment relocation"
+  ],
+  "commonGaps": [
+    "Devices are disposed of or resold without verified data wiping",
+    "No asset tracking log showing who has custody of removable media",
+    "No backup step before equipment is moved or decommissioned",
+    "Media reuse doesn't include a documented sanitization step"
+  ],
+  "interviewQuestions": [
+    "What's the process for wiping a device before it's disposed of or reused?",
+    "How do you track which devices or media contain ePHI and where they are?",
+    "Can you show me a certificate of destruction or sanitization record?",
+    "What happens to the data before a piece of equipment gets physically relocated?"
+  ],
+  "relatedControls": ["PS-1", "TS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.310",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

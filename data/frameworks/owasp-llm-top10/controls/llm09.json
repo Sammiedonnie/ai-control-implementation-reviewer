@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM09",
+  "controlName": "Misinformation",
+  "family": "LLM",
+  "purpose": "Reduces the risk of users over-trusting false or misleading LLM output, particularly for factual, legal, medical, or safety-critical use cases.",
+  "summary": "LLMs can produce confident-sounding output that is factually incorrect or fabricated (hallucination), and users often over-rely on this output without verification, especially in domains where the model presents information authoritatively.",
+  "expectedStatementElements": [
+    "What steps are taken to reduce hallucination for the system's specific use case (grounding, retrieval, citations)",
+    "How the interface communicates uncertainty or the possibility of error to users",
+    "What use cases are considered high-risk for misinformation (legal, medical, financial, safety-critical) and how those are handled differently",
+    "Whether outputs are validated against a source of truth before being acted upon in high-stakes workflows",
+    "How the system is evaluated for factual accuracy and hallucination rate"
+  ],
+  "evidenceExamples": [
+    "Grounding or retrieval-augmented generation configuration reducing hallucination",
+    "UI/UX showing disclaimers, confidence indicators, or citations presented to users",
+    "Accuracy evaluation results or hallucination rate benchmarks for the deployed system",
+    "Policy defining which use cases require human verification before acting on LLM output"
+  ],
+  "commonGaps": [
+    "No grounding or citation mechanism exists to reduce hallucinated output",
+    "Users aren't warned that outputs may be inaccurate, especially in high-stakes contexts",
+    "High-risk use cases (medical, legal, financial) aren't treated differently from general Q&A",
+    "No evaluation has measured the system's actual hallucination or accuracy rate"
+  ],
+  "interviewQuestions": [
+    "What's in place to reduce hallucinated or fabricated responses for this use case?",
+    "How does the interface let users know an answer might be wrong?",
+    "Are any of the use cases here high-stakes enough that a wrong answer could cause real harm?",
+    "Has anyone measured how often this system produces inaccurate information?"
+  ],
+  "relatedControls": ["LLM04", "LLM06"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

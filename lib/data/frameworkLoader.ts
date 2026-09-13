@@ -63,7 +63,7 @@ export function loadControls(frameworkId: string): Control[] {
       const raw = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
       return ControlSchema.parse(raw);
     })
-    .sort((a, b) => a.controlId.localeCompare(b.controlId));
+    .sort((a, b) => a.controlId.localeCompare(b.controlId, undefined, { numeric: true, sensitivity: "base" }));
 }
 
 export function loadControl(

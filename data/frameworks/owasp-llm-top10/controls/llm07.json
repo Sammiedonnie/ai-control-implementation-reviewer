@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM07",
+  "controlName": "System Prompt Leakage",
+  "family": "LLM",
+  "purpose": "Prevents the system prompt, including any embedded instructions or secrets, from being exposed to users or attackers.",
+  "summary": "Many applications assume system prompts are securely isolated from users, but techniques exist to extract them. If the system prompt contains sensitive logic, credentials, or internal rules, its exposure can undermine security controls or reveal exploitable information about how the system works.",
+  "expectedStatementElements": [
+    "Whether the system prompt contains any secrets, credentials, or sensitive business logic that shouldn't be exposed",
+    "What techniques or configurations are used to resist system prompt extraction attempts",
+    "How security-critical decisions are enforced outside the prompt itself, so a leaked prompt doesn't compromise security",
+    "Whether the system has been tested against known prompt extraction techniques"
+  ],
+  "evidenceExamples": [
+    "System prompt content review confirming no embedded secrets or credentials",
+    "Architecture documentation showing security enforcement happens outside the prompt (not solely relying on prompt secrecy)",
+    "Red-team results from attempts to extract the system prompt",
+    "Configuration for any prompt-leakage resistance measures in place"
+  ],
+  "commonGaps": [
+    "System prompt contains API keys, credentials, or internal business rules that would be damaging if exposed",
+    "Security controls rely on the assumption that the system prompt stays secret",
+    "No testing has been done to see if the prompt can be extracted via user input",
+    "Sensitive logic is described in the prompt rather than enforced in code"
+  ],
+  "interviewQuestions": [
+    "Does the system prompt contain anything that would be damaging if a user saw it?",
+    "If someone did manage to extract the system prompt, what would break?",
+    "Has anyone tried to extract this prompt using known techniques?",
+    "Where is security-critical logic enforced — in the prompt, or in code outside the model's control?"
+  ],
+  "relatedControls": ["LLM01", "LLM02"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

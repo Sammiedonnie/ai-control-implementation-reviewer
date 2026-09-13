@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MG-1",
+  "controlName": "AI Risks Are Prioritized, Responded To, and Managed",
+  "family": "MG",
+  "purpose": "Ensures that once risks are identified and measured, someone actually makes a documented decision about whether and how to treat them, rather than the risk simply sitting in a report.",
+  "summary": "AI risks based on assessments and other analytical output from the Map and Measure functions are prioritized, responded to, and managed, including a go/no-go determination on whether the system should proceed, prioritization based on impact and likelihood, and documented, planned responses to high-priority risks.",
+  "expectedStatementElements": [
+    "How a go/no-go determination is made about whether an AI system should proceed to or remain in deployment",
+    "How identified risks are prioritized based on impact, likelihood, and available resources",
+    "How responses to high-priority risks are planned and documented (mitigate, transfer, avoid, or accept)",
+    "Who has authority to make the final call on risk treatment decisions"
+  ],
+  "evidenceExamples": [
+    "Go/no-go decision documentation for AI system deployment",
+    "Risk prioritization matrix or scoring methodology",
+    "Documented risk response plans (mitigate, transfer, avoid, accept) for high-priority risks",
+    "Approval records showing who authorized each risk treatment decision"
+  ],
+  "commonGaps": [
+    "No formal go/no-go decision point exists before an AI system proceeds to deployment",
+    "Risks are listed but never actually prioritized against each other",
+    "High-priority risks are identified but no documented response plan follows",
+    "It's unclear who actually has authority to accept a given risk"
+  ],
+  "interviewQuestions": [
+    "Was there a formal decision point where someone had to approve this system moving forward, given its known risks?",
+    "How do you decide which risks get addressed first when you can't fix everything at once?",
+    "For your highest-priority risk right now, what's the documented plan to address it?",
+    "Who has the authority to say 'we accept this risk' versus 'we need to fix this first'?"
+  ],
+  "relatedControls": ["MS-3", "MG-2"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

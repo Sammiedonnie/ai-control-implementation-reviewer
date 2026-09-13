@@ -1,0 +1,38 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-1",
+  "controlName": "Security Management Process",
+  "family": "AS",
+  "purpose": "Establishes the foundational program to prevent, detect, contain, and correct security violations affecting ePHI.",
+  "summary": "The covered entity or business associate implements policies and procedures to prevent, detect, contain, and correct security violations, including conducting a risk analysis, managing identified risks, applying sanctions for noncompliance, and reviewing system activity.",
+  "expectedStatementElements": [
+    "When and how the risk analysis is performed and by whom",
+    "How identified risks are prioritized and tracked to remediation",
+    "What sanctions apply to workforce members who violate security policies",
+    "How system activity (logs, access reports) is reviewed and how often",
+    "How findings from risk analysis feed into the security program"
+  ],
+  "evidenceExamples": [
+    "Most recent risk analysis report and risk register",
+    "Sanction policy document and any applied sanction records",
+    "System activity review logs or audit reports with reviewer sign-off",
+    "Risk management/remediation tracking log"
+  ],
+  "commonGaps": [
+    "Risk analysis is outdated or was never formally documented",
+    "No clear owner or cadence for reviewing system activity logs",
+    "Sanction policy exists but has never been applied or tested",
+    "Risk register lacks remediation deadlines or ownership"
+  ],
+  "interviewQuestions": [
+    "When was the last risk analysis performed, and what was the scope?",
+    "Who reviews system activity logs, and how often?",
+    "Can you show an example of a risk being identified and remediated?",
+    "Has the sanction policy ever been enforced? What happened?"
+  ],
+  "relatedControls": ["AS-2", "AS-6", "AS-8", "TS-2"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

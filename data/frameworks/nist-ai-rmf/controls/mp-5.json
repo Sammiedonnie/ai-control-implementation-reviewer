@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MP-5",
+  "controlName": "Impacts on Individuals, Groups, and Society",
+  "family": "MP",
+  "purpose": "Ensures the AI system's potential impacts on individuals, groups, communities, organizations, and society are proactively identified — not just discovered after harm occurs.",
+  "summary": "Impacts to individuals, groups, communities, organizations, and society are characterized, including likely and potential intended and unintended impacts, drawing on impacted communities and available research to inform this understanding.",
+  "expectedStatementElements": [
+    "What likely intended and unintended impacts the AI system could have on individuals and groups",
+    "How impacted communities or affected parties were consulted in identifying these impacts",
+    "What research or precedent from similar systems informed this impact assessment",
+    "How disproportionate impacts on specific groups are identified and considered"
+  ],
+  "evidenceExamples": [
+    "Impact assessment document covering intended and unintended effects",
+    "Evidence of consultation with impacted communities or affected user groups",
+    "Reference to research or case studies from comparable AI systems",
+    "Disparate impact analysis across demographic or user groups"
+  ],
+  "commonGaps": [
+    "Impact assessment only considers intended effects, not plausible unintended ones",
+    "Impacted communities were never consulted before or during deployment",
+    "No research into how similar systems have affected people was considered",
+    "Disproportionate impact on specific groups wasn't analyzed before deployment"
+  ],
+  "interviewQuestions": [
+    "What unintended impacts on people could this system plausibly have, beyond what it's designed to do?",
+    "Were the people or communities affected by this system consulted at any point?",
+    "Did you look at how similar AI systems have affected people before deploying this one?",
+    "Could this system affect some groups more than others, and was that analyzed?"
+  ],
+  "relatedControls": ["MP-4", "GV-5"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

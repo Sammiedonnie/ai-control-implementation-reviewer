@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API5",
+  "controlName": "Broken Function Level Authorization",
+  "family": "API",
+  "purpose": "Prevents users from accessing administrative or privileged functions and endpoints that should be restricted to a different role.",
+  "summary": "Broken Function Level Authorization occurs when an API fails to properly restrict access to functions or endpoints based on the user's role, allowing regular users to reach administrative functions simply by calling the endpoint directly, even though it's not exposed in the normal UI.",
+  "expectedStatementElements": [
+    "How each endpoint's required role or permission level is defined and enforced server-side",
+    "Whether authorization checks rely only on hiding functionality in the UI, or are also enforced at the API layer",
+    "How administrative or privileged endpoints are distinguished and protected from regular user roles",
+    "How the API is tested for function-level authorization bypass (e.g., calling an admin endpoint as a regular user)"
+  ],
+  "evidenceExamples": [
+    "Role-based access control (RBAC) configuration mapping endpoints to required roles",
+    "Code or middleware enforcing function-level authorization server-side, independent of the UI",
+    "Test results attempting to call administrative endpoints with a non-admin account",
+    "Documentation distinguishing regular vs. administrative/privileged endpoints"
+  ],
+  "commonGaps": [
+    "Administrative functions are only hidden in the UI but still reachable by calling the API directly",
+    "New endpoints are added without an explicit role/permission check being defined",
+    "Authorization checks exist for some endpoints but not consistently across all administrative functions",
+    "No testing has attempted to access admin functionality using a lower-privileged account"
+  ],
+  "interviewQuestions": [
+    "If I called an admin-only endpoint directly with a regular user's credentials, what would stop me?",
+    "Is authorization enforced at the API level, or does it rely on the UI just not showing certain buttons?",
+    "When a new endpoint is added, how does the team decide and enforce what role can access it?",
+    "Has anyone tried accessing administrative functionality using a non-admin account?"
+  ],
+  "relatedControls": ["API1", "API2"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

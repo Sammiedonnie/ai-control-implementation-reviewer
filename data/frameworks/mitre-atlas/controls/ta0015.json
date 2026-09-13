@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0015",
+    "controlName": "Lateral Movement",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary moving through the AI environment to gain access to and control other systems or components, such as model registries, experiment trackers, or vector databases.",
+    "summary": "Lateral Movement consists of techniques adversaries may use to gain access to and control other systems or components in the environment. Adversaries may pivot toward AI Ops infrastructure such as model registries, experiment trackers, vector databases, notebooks, or training pipelines. AI agents may also be a valuable target since they commonly have more permissions than standard user accounts.",
+    "expectedStatementElements": [
+        "How the organization segments AI Ops infrastructure (model registries, experiment trackers, vector databases, notebooks) from broader network access",
+        "What monitoring exists for pivoting activity between AI-related systems and services",
+        "How permissions granted to AI agents are scoped to prevent them from being used as a lateral movement pathway",
+        "Whether shared credentials or trust relationships between AI training/deployment pipelines and other systems are minimized"
+    ],
+    "evidenceExamples": [
+        "Network segmentation documentation for AI Ops infrastructure (registries, trackers, vector DBs, notebooks)",
+        "Lateral movement detection/monitoring configuration across AI-related systems and services",
+        "AI agent permission scoping documentation showing least-privilege enforcement",
+        "Review records of trust relationships and shared credentials between AI pipeline components"
+    ],
+    "commonGaps": [
+        "AI Ops infrastructure (registries, experiment trackers, notebooks) sits on the same flat network as everything else",
+        "No monitoring exists for lateral pivoting activity between AI-related systems",
+        "AI agents hold broader permissions than needed, making them an attractive pivot point for an adversary"
+    ],
+    "interviewQuestions": [
+        "Are our model registries, experiment trackers, and notebooks segmented from the general network, or reachable from anywhere?",
+        "Would we notice if someone pivoted from one AI-related system to another?",
+        "Could a compromised AI agent be used to reach other systems it shouldn't have access to?",
+        "Do our AI training and deployment pipelines share credentials or trust relationships with other systems that could be exploited?"
+    ],
+    "relatedControls": ["AML.TA0008", "AML.TA0009", "AML.TA0012"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0015/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hipaa-security-rule",
+  "name": "HIPAA Security Rule",
+  "version": "45 CFR Part 164, Subpart C",
+  "description": "Administrative, physical, and technical safeguards required to protect the confidentiality, integrity, and availability of electronic protected health information (ePHI).",
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C",
+  "contentStatusNotice": "Standard identifiers and structure are public-domain federal regulatory content. Purpose, summary, and review guidance are application-authored to support compliance review workflows and are not official HHS guidance."
+}

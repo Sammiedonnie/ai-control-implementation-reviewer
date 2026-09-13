@@ -1,0 +1,37 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.12",
+    "controlName": "Record-keeping",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization's high-risk AI system is designed to automatically log events over its lifetime and whether those logs are retained appropriately to ensure traceability.",
+    "summary": "Article 12 requires high-risk AI systems to technically allow for the automatic recording of events (logs) over the system's lifetime, at a level that ensures a level of traceability appropriate to the system's intended purpose. Logging capabilities must, in particular, enable monitoring of the operation of the system with respect to the occurrence of situations that may result in the system presenting a risk or lead to a substantial modification.",
+    "expectedStatementElements": [
+        "Whether the AI system technically supports automatic event logging across its operational lifetime",
+        "What logging level is defined as appropriate to the system's intended purpose, and how that was determined",
+        "How logs are used to monitor for situations presenting risk or triggering a substantial modification",
+        "How log retention periods are set and enforced, and how logs are protected from tampering"
+    ],
+    "evidenceExamples": [
+        "System design documentation confirming automatic event logging capability",
+        "Documented rationale for the chosen logging level relative to intended purpose and risk",
+        "Monitoring reports or alerts derived from logs showing risk-relevant event detection",
+        "Log retention policy and access/tamper-protection controls for stored logs"
+    ],
+    "commonGaps": [
+        "The system logs some activity, but not at a level sufficient to reconstruct what happened during a risk-relevant event",
+        "No one has determined what logging level is actually 'appropriate' for this system's intended purpose — it's whatever the framework logs by default",
+        "Logs exist but aren't actively monitored, so risk-relevant events would only be found after the fact, if at all",
+        "Log retention isn't defined, so historical logs may already be gone by the time they're needed"
+    ],
+    "interviewQuestions": [
+        "If something went wrong with this AI system, could our logs actually reconstruct what happened?",
+        "Did we deliberately decide what level of logging this system needs, or are we just using whatever logs by default?",
+        "Is anyone actively watching these logs for signs of a risk-relevant event, or do they just sit there?",
+        "How long do we keep these logs, and could they be tampered with or deleted before an investigation needs them?"
+    ],
+    "relatedControls": ["Art.11", "Art.14"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/12/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

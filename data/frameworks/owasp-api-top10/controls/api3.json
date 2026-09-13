@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API3",
+  "controlName": "Broken Object Property Level Authorization",
+  "family": "API",
+  "purpose": "Prevents unauthorized reading or modification of specific properties within an object, even when overall object-level authorization is correctly enforced.",
+  "summary": "Broken Object Property Level Authorization combines two related issues: excessive data exposure, where the API returns more object properties than the client should see, and mass assignment, where the API blindly accepts client-supplied fields and updates properties the user should not be able to change.",
+  "expectedStatementElements": [
+    "How API responses are filtered to return only the properties the requesting user is authorized to see, rather than the full object",
+    "How the API validates which fields a client is allowed to set or update, rather than blindly binding all submitted fields",
+    "Whether sensitive or privileged properties (e.g., role, isAdmin, balance) are protected from client-side modification",
+    "How the API is tested for excessive data exposure and mass assignment specifically"
+  ],
+  "evidenceExamples": [
+    "API response schema showing explicit allow-listed properties per endpoint/role",
+    "Input validation or DTO (data transfer object) code showing which fields can be set on update",
+    "Test results attempting to modify a privileged field (like role or admin flag) via a standard update request",
+    "Documentation of sensitive properties and which roles can read or write them"
+  ],
+  "commonGaps": [
+    "API responses return entire internal objects, including fields the client shouldn't see",
+    "Update endpoints blindly bind all submitted JSON fields to the object, including ones users shouldn't be able to set",
+    "Sensitive fields like role or account balance can be modified through a generic update endpoint",
+    "No testing has attempted to submit unexpected fields to see if they get applied"
+  ],
+  "interviewQuestions": [
+    "Does this endpoint's response include any fields the requesting user shouldn't be able to see?",
+    "If I added an extra field like 'role': 'admin' to my update request, would it get applied?",
+    "Which fields are explicitly allow-listed for client updates, versus everything just being accepted?",
+    "Has anyone tried submitting unexpected fields to see what the API actually does with them?"
+  ],
+  "relatedControls": ["API1", "API6"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

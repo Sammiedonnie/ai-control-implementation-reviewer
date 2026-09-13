@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "GV-2",
+  "controlName": "Accountability Structures",
+  "family": "GV",
+  "purpose": "Ensures clear ownership of AI risk decisions so that responsibility doesn't diffuse across teams with no one actually accountable.",
+  "summary": "Accountability structures are in place so that the appropriate teams and individuals are empowered, responsible, and trained for mapping, measuring, and managing AI risks, including documented roles, AI risk management training, and executive-level accountability for AI system risk decisions.",
+  "expectedStatementElements": [
+    "How roles, responsibilities, and communication lines for AI risk are documented",
+    "What AI risk management training personnel and partners receive",
+    "How executive leadership is involved in and accountable for AI risk decisions",
+    "How accountability is enforced when AI risk responsibilities aren't met"
+  ],
+  "evidenceExamples": [
+    "RACI matrix or org chart showing AI risk roles and responsibilities",
+    "AI risk management training curriculum and completion records",
+    "Executive sign-off records on AI system risk acceptance decisions",
+    "Escalation path documentation for AI risk issues"
+  ],
+  "commonGaps": [
+    "AI risk responsibilities are informally understood but not documented anywhere",
+    "No training exists specifically covering AI risk management",
+    "Executive leadership isn't involved in AI risk decisions until something goes wrong",
+    "No clear escalation path exists when an AI risk issue is identified"
+  ],
+  "interviewQuestions": [
+    "Who is accountable for AI risk decisions, and is that documented anywhere?",
+    "What training do people who work with AI systems receive on managing AI risk?",
+    "At what point does executive leadership get involved in an AI risk decision?",
+    "What happens if an AI risk issue gets identified but nobody acts on it?"
+  ],
+  "relatedControls": ["GV-1", "GV-4"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronLeft, Loader2, AlertCircle } from "lucide-react";
-import type { Control, ControlFamily } from "@/lib/types/framework";
+import type { Control, ControlFamily, Framework } from "@/lib/types/framework";
 import type { FullAssessmentResult } from "@/lib/ai/outputSchema";
 import { ControlBrowser } from "@/components/review/ControlBrowser";
 import { ControlDetailPanel } from "@/components/review/ControlDetailPanel";
@@ -13,7 +13,6 @@ import { DownloadReportButton } from "@/components/review/DownloadReportButton";
 import { Card } from "@/components/ui/Card";
 import { saveReviewToHistory, type StoredReview } from "@/lib/storage/reviewHistory";
 
-const FRAMEWORK_ID = "nist-800-53-r5";
 
 type ReviewState =
   | { status: "idle" }
@@ -22,13 +21,29 @@ type ReviewState =
   | { status: "done"; result: FullAssessmentResult; stored: StoredReview };
 
 export function NewReviewClient({
+  frameworks,
+  frameworkId,
   controls,
   families,
 }: {
+  frameworks: Framework[];
+  frameworkId: string;
   controls: Control[];
   families: ControlFamily[];
 }) {
   const searchParams = useSearchParams();
+    const router = useRouter();
+    
+  function handleFrameworkChange(newFrameworkId: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (newFrameworkId === "nist-800-53-r5") {
+      params.delete("framework");
+    } else {
+      params.set("framework", newFrameworkId);
+    }
+    params.delete("control");
+    router.push(`/new-review${params.toString() ? `?${params.toString()}` : ""}`);
+  }
   const preselected = searchParams.get("control")?.toUpperCase();
   const [selectedId, setSelectedId] = useState<string | undefined>(
     controls.find((c) => c.controlId === preselected)?.controlId
@@ -48,7 +63,7 @@ export function NewReviewClient({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          frameworkId: FRAMEWORK_ID,
+          frameworkId: frameworkId,
           controlId: selected.controlId,
           statement,
           context,
@@ -60,7 +75,7 @@ export function NewReviewClient({
         return;
       }
       const stored = saveReviewToHistory({
-        frameworkId: FRAMEWORK_ID,
+        frameworkId: frameworkId,
         controlId: selected.controlId,
         controlName: selected.controlName,
         statement,
@@ -78,11 +93,23 @@ export function NewReviewClient({
   if (!selected) {
     return (
       <div className="p-6 md:p-10">
-        <p className="text-sm text-ink-soft mb-4">
-          Framework: <span className="font-medium text-ink">NIST SP 800-53 Rev. 5</span>{" "}
-          (the only framework in this MVP -- the data layer supports adding
-          more without rewriting this page).
-        </p>
+              <div className="mb-4 flex items-center gap-3 text-sm">
+        <label htmlFor="framework-select" className="text-ink-soft">
+          Framework:
+        </label>
+        <select
+          id="framework-select"
+          value={frameworkId}
+          onChange={(e) => handleFrameworkChange(e.target.value)}
+          className="border border-line rounded-md px-2 py-1 text-sm font-medium text-ink bg-paper-raised"
+        >
+          {frameworks.map((fw) => (
+            <option key={fw.id} value={fw.id}>
+              {fw.name} ({fw.version})
+            </option>
+          ))}
+        </select>
+      </div>
         <div className="border border-line rounded-[var(--radius)] overflow-hidden max-w-3xl h-[520px] bg-paper-raised">
           <ControlBrowser
             controls={controls}

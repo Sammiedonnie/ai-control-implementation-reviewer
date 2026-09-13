@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM04",
+  "controlName": "Data and Model Poisoning",
+  "family": "LLM",
+  "purpose": "Prevents malicious or tampered data from being introduced into training, fine-tuning, or embedding processes in ways that manipulate the model's behavior.",
+  "summary": "Data poisoning occurs when training, fine-tuning, or embedding data is manipulated to introduce vulnerabilities, backdoors, or biases that compromise the model's security, effectiveness, or ethical behavior.",
+  "expectedStatementElements": [
+    "How training and fine-tuning data sources are vetted for integrity and trustworthiness",
+    "What controls prevent unauthorized modification of training or embedding data",
+    "How the organization detects anomalous model behavior that could indicate poisoning",
+    "How data provenance is tracked from source through to model training",
+    "Whether the model is evaluated for backdoors or bias after fine-tuning"
+  ],
+  "evidenceExamples": [
+    "Data provenance and integrity verification documentation for training/fine-tuning sets",
+    "Access controls restricting who can modify training or embedding data",
+    "Model evaluation results checking for backdoors, bias, or anomalous behavior post-training",
+    "Data source vetting policy or vendor assessment for third-party datasets"
+  ],
+  "commonGaps": [
+    "Training or fine-tuning data is sourced with no integrity verification",
+    "Anyone with data pipeline access can modify training data undetected",
+    "No post-training evaluation looks for injected backdoors or bias",
+    "Data provenance isn't tracked from source to trained model"
+  ],
+  "interviewQuestions": [
+    "Where does your training or fine-tuning data come from, and how do you verify its integrity?",
+    "Who has the ability to modify data used in training, and is that access controlled?",
+    "How would you detect if the model had been poisoned during training?",
+    "Can you trace a given model back to the exact data it was trained on?"
+  ],
+  "relatedControls": ["LLM03", "LLM09"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

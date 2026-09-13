@@ -1,0 +1,37 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.14",
+    "controlName": "Human oversight",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization designs its high-risk AI system to be effectively overseen by natural persons, with appropriate tools and the ability to intervene or halt the system's operation.",
+    "summary": "Article 14 requires high-risk AI systems to be designed and developed, including with appropriate human-machine interface tools, such that they can be effectively overseen by natural persons during the period the system is in use. Human oversight must aim to prevent or minimize risks, and overseeing persons must be able to fully understand the system's capacities and limitations, remain aware of automation bias, correctly interpret outputs, decide not to use the system, and intervene in or interrupt its operation, including through a stop button or similar procedure.",
+    "expectedStatementElements": [
+        "What human-machine interface tools exist to support effective oversight during the system's use",
+        "How overseeing persons are trained to understand the system's capabilities, limitations, and the risk of automation bias",
+        "What mechanisms allow an overseeing person to decide not to use the system, override its output, or halt its operation",
+        "How the organization verifies that human oversight is meaningful in practice rather than a formality"
+    ],
+    "evidenceExamples": [
+        "Human-machine interface design documentation supporting oversight functions",
+        "Training materials and records for personnel responsible for overseeing the AI system, including automation bias awareness",
+        "Documented override/stop procedures and evidence they've been tested or exercised",
+        "Records or audits verifying human overseers meaningfully engage with outputs rather than rubber-stamping them"
+    ],
+    "commonGaps": [
+        "The interface gives overseeing persons no real way to understand why the system produced a given output",
+        "Overseers are never trained on automation bias, so they tend to defer to the system's output by default",
+        "A stop or override mechanism exists on paper but has never been tested or actually used",
+        "Human oversight is technically present but functions as a rubber stamp rather than genuine review"
+    ],
+    "interviewQuestions": [
+        "Can the person overseeing this system actually understand why it produced a particular output, or is it a black box to them too?",
+        "Have overseers been trained specifically on the risk of just trusting the system's output by default?",
+        "Has the stop or override mechanism for this system ever actually been used, even in a test?",
+        "If we're honest, is human oversight here meaningful review, or just a formality that rubber-stamps the system's output?"
+    ],
+    "relatedControls": ["Art.13", "Art.15"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/14/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

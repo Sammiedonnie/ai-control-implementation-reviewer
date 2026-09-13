@@ -1,0 +1,41 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "TS-1",
+  "controlName": "Access Control",
+  "family": "TS",
+  "purpose": "Ensures only authorized users and processes can access systems containing ePHI.",
+  "summary": "The covered entity or business associate implements technical policies and procedures for electronic information systems that maintain ePHI to allow access only to authorized persons or software programs, including unique user identification, emergency access procedures, automatic logoff, and encryption/decryption where reasonable and appropriate.",
+  "expectedStatementElements": [
+    "How each user is assigned a unique identifier for tracking system activity",
+    "How emergency access to ePHI is provided during a crisis",
+    "How automatic logoff is configured after a period of inactivity",
+    "Whether and how encryption/decryption is applied to ePHI at rest",
+    "How access permissions are provisioned, reviewed, and revoked"
+  ],
+  "evidenceExamples": [
+    "System configuration showing unique user IDs (no shared accounts)",
+    "Emergency access procedure documentation",
+    "Automatic logoff configuration settings",
+    "Encryption configuration for systems storing ePHI",
+    "Access review log or periodic access recertification report"
+  ],
+  "commonGaps": [
+    "Shared or generic accounts are used instead of unique user IDs",
+    "No documented emergency access procedure for when normal access fails",
+    "Automatic logoff isn't configured or timeout is excessively long",
+    "ePHI at rest isn't encrypted despite being reasonable and appropriate",
+    "Access reviews aren't performed on a regular cadence"
+  ],
+  "interviewQuestions": [
+    "Does every user have a unique login, or are any accounts shared?",
+    "What's the process for gaining emergency access to ePHI systems if normal access is unavailable?",
+    "What's the automatic logoff timeout for systems containing ePHI?",
+    "Is ePHI encrypted at rest, and if not, why was that determined not to be necessary?",
+    "How often are user access rights reviewed and by whom?"
+  ],
+  "relatedControls": ["AS-4", "TS-4"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.312",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

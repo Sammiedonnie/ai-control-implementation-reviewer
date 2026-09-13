@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MS-3",
+  "controlName": "Mechanisms for Tracking Identified Risks Over Time",
+  "family": "MS",
+  "purpose": "Ensures identified AI risks aren't just recorded once and forgotten, but are actively tracked and reassessed as the system and its context evolve.",
+  "summary": "Mechanisms for tracking identified AI risks over time are in place, ensuring risk trends are monitored, risks associated with high-priority AI system components are regularly reviewed, and measurable performance improvements or regressions are identified.",
+  "expectedStatementElements": [
+    "What mechanism tracks identified risks over time (risk register, dashboard, ticketing system)",
+    "How often high-priority risks are reviewed and by whom",
+    "How the organization identifies when a risk trend is worsening versus improving",
+    "How tracked risk data feeds into decisions about whether treatment is working"
+  ],
+  "evidenceExamples": [
+    "AI risk register or tracking system with historical entries",
+    "Review cadence and log for high-priority risk items",
+    "Trend analysis showing risk levels over time",
+    "Documentation linking risk tracking data to treatment decisions"
+  ],
+  "commonGaps": [
+    "Risks are documented once during initial assessment and never revisited",
+    "No regular review cadence exists for high-priority risk items",
+    "No mechanism exists to detect whether a risk is trending better or worse over time",
+    "Risk tracking data isn't actually used to inform any decisions"
+  ],
+  "interviewQuestions": [
+    "Where do identified AI risks get tracked, and is that tracking still active or a one-time list?",
+    "How often are your highest-priority AI risks actually reviewed?",
+    "How would you know if a particular risk has been getting worse over the past six months?",
+    "Does anyone actually use the risk tracking data to make decisions, or does it just sit there?"
+  ],
+  "relatedControls": ["MS-2", "MS-4"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

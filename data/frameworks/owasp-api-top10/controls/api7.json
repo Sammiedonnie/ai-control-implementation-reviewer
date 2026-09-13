@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API7",
+  "controlName": "Server Side Request Forgery (SSRF)",
+  "family": "API",
+  "purpose": "Prevents an API from being tricked into making unauthorized requests to internal systems or arbitrary external destinations on the attacker's behalf.",
+  "summary": "Server Side Request Forgery occurs when an API fetches a remote resource (a URL, webhook, or file) without validating the user-supplied destination, allowing an attacker to redirect the server into calling internal services, cloud metadata endpoints, or other unintended targets.",
+  "expectedStatementElements": [
+    "Which API features accept a user-supplied URL or destination (webhooks, file imports, link previews, PDF generation, etc.)",
+    "How those destinations are validated or restricted before the server makes the request (allow-lists, blocking internal IP ranges, disabling redirects)",
+    "Whether internal network segmentation limits what an SSRF exploit could actually reach even if a request is forced through",
+    "How the API is tested for SSRF (e.g., pointing a webhook or URL field at an internal address or cloud metadata service)"
+  ],
+  "evidenceExamples": [
+    "Inventory of endpoints/features that fetch remote resources based on user input",
+    "URL validation or allow-list configuration for outbound requests initiated by the API",
+    "Network segmentation documentation showing what internal resources are reachable from the API server",
+    "Security test results attempting SSRF against a webhook, import, or preview feature"
+  ],
+  "commonGaps": [
+    "Webhook or URL-fetching features accept any destination with no validation or allow-listing",
+    "No blocking of requests to internal IP ranges, localhost, or cloud metadata endpoints (e.g., 169.254.169.254)",
+    "Redirects aren't restricted, so a validated URL can redirect the server somewhere unintended",
+    "No testing has attempted to point a user-controlled URL field at an internal resource"
+  ],
+  "interviewQuestions": [
+    "Which features let a user supply a URL that your server then fetches on their behalf?",
+    "What stops that feature from being pointed at an internal service or the cloud metadata endpoint?",
+    "If a validated URL responded with a redirect, would your server follow it somewhere unintended?",
+    "Has anyone actually tested these features for SSRF by targeting an internal address?"
+  ],
+  "relatedControls": ["API8", "API4"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

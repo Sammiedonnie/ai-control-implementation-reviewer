@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MG-2",
+  "controlName": "Strategies to Maximize Benefits and Minimize Negative Impacts",
+  "family": "MG",
+  "purpose": "Ensures the organization has concrete, resourced mechanisms in place to sustain the value of a deployed AI system and respond when previously unknown risks emerge, including the ability to disengage a harmful system.",
+  "summary": "Strategies to maximize AI benefits and minimize negative impacts are planned, prepared, implemented, documented, and informed by input from relevant AI actors, including mechanisms to sustain system value over time, procedures for responding to newly identified risks, and the ability to supersede, disengage, or deactivate systems performing inconsistently with intended use.",
+  "expectedStatementElements": [
+    "What mechanisms sustain the value of the deployed AI system over time (retraining, updates, maintenance)",
+    "What procedures exist to respond to and recover from previously unknown risks once they're identified",
+    "Whether mechanisms and clear responsibility exist to supersede, disengage, or deactivate the system if it performs inconsistently with intended use",
+    "How input from relevant AI actors informs these strategies"
+  ],
+  "evidenceExamples": [
+    "System maintenance/retraining schedule and responsible owner",
+    "Incident response procedure specific to newly discovered AI risks",
+    "Documented kill-switch or deactivation procedure with clear ownership",
+    "Evidence that AI actor input shaped benefit-maximization or risk-minimization strategies"
+  ],
+  "commonGaps": [
+    "No plan exists for how the system will be maintained or updated to sustain its value over time",
+    "No procedure exists for responding when a previously unknown risk is discovered post-deployment",
+    "No documented 'kill switch' or clear owner responsible for deactivating a misbehaving system",
+    "Relevant AI actors have no input into how benefits and risks are balanced going forward"
+  ],
+  "interviewQuestions": [
+    "What's the plan to keep this system performing well over time — is it retrained, updated, maintained?",
+    "If a new risk with this system was discovered tomorrow that nobody anticipated, what's the response process?",
+    "If this system started behaving badly, who has the authority and mechanism to shut it down?",
+    "Whose input shaped how you're balancing this system's benefits against its risks?"
+  ],
+  "relatedControls": ["MG-1", "MG-4"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

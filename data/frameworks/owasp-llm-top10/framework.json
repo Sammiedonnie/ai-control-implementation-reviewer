@@ -1,0 +1,8 @@
+{
+  "id": "owasp-llm-top10",
+  "name": "OWASP Top 10 for LLM Applications",
+  "version": "2025",
+  "description": "OWASP's list of the ten most critical security risks specific to applications built on large language models.",
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "contentStatusNotice": "Category identifiers and structure are drawn from the public OWASP Top 10 for LLM Applications (2025). Purpose, summary, and review guidance are application-authored to support compliance review workflows and are not official OWASP guidance."
+}

@@ -1,0 +1,8 @@
+{
+    "id": "iso-42001",
+    "name": "ISO/IEC 42001",
+    "version": "2023",
+    "description": "The international standard for AI management systems (AIMS), specifying requirements and Annex A controls for organizations that develop, provide, or use AI systems.",
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "contentStatusNotice": "Control objectives and structure are drawn from ISO/IEC 42001:2023 Annex A, built at the 9 objective level (A.2 through A.10) rather than all 38 individual sub-controls. Purpose, summary, and other narrative content are application-authored."
+}

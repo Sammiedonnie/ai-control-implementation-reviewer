@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A10",
+  "controlName": "Mishandling of Exceptional Conditions",
+  "family": "WEB",
+  "purpose": "Prevents unhandled errors, edge cases, and resource exhaustion from causing security failures, information leakage, or denial of service.",
+  "summary": "Mishandling of Exceptional Conditions occurs when an application doesn't properly anticipate and handle errors, unexpected input, or resource exhaustion, leading to crashes, leaked internal details through stack traces or verbose errors, or an insecure fallback state instead of failing safely.",
+  "expectedStatementElements": [
+    "How the application handles unexpected errors and edge cases without crashing or entering an insecure state",
+    "Whether error messages shown to users are generic while detailed diagnostics are logged separately, not exposed",
+    "How the application handles resource exhaustion (memory, connections, disk) without failing insecurely",
+    "How exceptional conditions are tested for, including fuzzing or deliberately malformed input"
+  ],
+  "evidenceExamples": [
+    "Error handling code or framework configuration showing generic user-facing messages vs. detailed internal logs",
+    "Documentation or code showing the application fails to a secure default (deny/closed) on unexpected errors",
+    "Resource exhaustion handling configuration (connection limits, memory guards, graceful degradation)",
+    "Fuzzing or malformed-input test results covering exceptional condition handling"
+  ],
+  "commonGaps": [
+    "Unhandled exceptions expose stack traces or internal details directly to users",
+    "An unexpected error causes the application to fail open (e.g., granting access) instead of failing closed",
+    "No safeguards exist against resource exhaustion, allowing a crash or denial of service from unexpected load or input",
+    "No fuzzing or malformed-input testing has been done to see how the application behaves under unexpected conditions"
+  ],
+  "interviewQuestions": [
+    "If an unexpected error occurred right now, what would the user actually see?",
+    "When something fails unexpectedly, does the system fail closed, or could it end up granting access it shouldn't?",
+    "What happens to this application under resource exhaustion, like a flood of connections or requests?",
+    "Has anyone tested this application with deliberately malformed or unexpected input to see how it responds?"
+  ],
+  "relatedControls": ["A09", "A05"],
+  "sourceUrl": "https://top10.owasp.org/2025/A10_2025-Mishandling_of_Exceptional_Conditions/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

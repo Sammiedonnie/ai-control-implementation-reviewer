@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A01",
+  "controlName": "Broken Access Control",
+  "family": "WEB",
+  "purpose": "Prevents users from acting outside their intended permissions, such as viewing or modifying data and functionality that should be restricted to other users or roles.",
+  "summary": "Broken Access Control occurs when restrictions on what authenticated users are allowed to do are not properly enforced, allowing attackers to access other users' accounts, view sensitive files, modify data, or act as an administrator without being authorized to do so.",
+  "expectedStatementElements": [
+    "How access control rules are defined and enforced server-side for every request, not just hidden in the UI",
+    "How the application prevents users from accessing other users' data or resources by manipulating identifiers or parameters",
+    "How access control decisions default to deny rather than allow, unless explicitly granted",
+    "How the application is tested for access control bypass (e.g., forced browsing, parameter tampering, privilege escalation)"
+  ],
+  "evidenceExamples": [
+    "Access control policy or matrix mapping roles to permitted actions/resources",
+    "Server-side authorization code or middleware enforcing access checks on every request",
+    "Security test results attempting forced browsing, parameter tampering, or privilege escalation",
+    "Configuration showing default-deny behavior for undefined routes or resources"
+  ],
+  "commonGaps": [
+    "Access control is enforced only in the UI, with no server-side verification",
+    "Users can access other users' data by changing an ID or parameter in the request",
+    "The application defaults to allow rather than deny when an access rule isn't explicitly defined",
+    "No testing has specifically attempted to bypass access controls through forced browsing or tampering"
+  ],
+  "interviewQuestions": [
+    "If I removed the UI restriction and called the endpoint directly, would the access control still hold?",
+    "What stops a user from changing an ID in a request to access someone else's data?",
+    "Does the system default to denying access when a rule isn't explicitly defined?",
+    "Has this application been tested specifically for access control bypass?"
+  ],
+  "relatedControls": ["A06", "A02"],
+  "sourceUrl": "https://top10.owasp.org/2025/A01_2025-Broken_Access_Control/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

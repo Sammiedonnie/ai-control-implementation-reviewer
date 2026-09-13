@@ -1,0 +1,37 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.6",
+    "controlName": "AI system life cycle",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization defines, documents, and controls AI system objectives, design, development, verification, deployment, operation, and decommissioning across the full life cycle.",
+    "summary": "This objective requires the organization to manage AI systems through defined life cycle processes, including establishing objectives and requirements, documenting design and development decisions, performing verification and validation, controlling deployment and operational monitoring, maintaining technical documentation, and retaining event logs throughout the system's operational life.",
+    "expectedStatementElements": [
+        "How AI system objectives and requirements are defined and documented before development begins",
+        "What verification and validation activities are performed before deployment, and how results are documented",
+        "How deployment is controlled (e.g., staged rollout, approval gates) and operational monitoring is maintained afterward",
+        "What technical documentation and event logs are retained across the system's life cycle, including decommissioning"
+    ],
+    "evidenceExamples": [
+        "AI system requirements and design documentation for in-scope systems",
+        "Verification and validation test results/reports prior to deployment approval",
+        "Deployment approval records and post-deployment monitoring dashboards or reports",
+        "Technical documentation and event log retention records, including decommissioning procedures"
+    ],
+    "commonGaps": [
+        "AI systems move to production without a documented, repeatable verification and validation process",
+        "No deployment approval gate exists — systems go live based on informal readiness judgment",
+        "Event logs and technical documentation aren't retained long enough to support later investigation or audit",
+        "Decommissioning of retired AI systems has no defined process, leaving orphaned data or access behind"
+    ],
+    "interviewQuestions": [
+        "Before an AI system is built, do we document what it's supposed to do and how we'll know it works?",
+        "What has to happen before an AI system is approved to go into production?",
+        "How long do we keep event logs and technical documentation for a given AI system?",
+        "When we retire an AI system, is there a defined process, or does it just quietly stop being used?"
+    ],
+    "relatedControls": ["A.5", "A.7"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

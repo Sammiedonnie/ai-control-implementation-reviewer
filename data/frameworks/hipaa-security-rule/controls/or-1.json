@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "OR-1",
+  "controlName": "Business Associate Contracts (Organizational)",
+  "family": "OR",
+  "purpose": "Establishes the specific contractual terms a Business Associate Agreement must contain to satisfy the Security Rule.",
+  "summary": "The contract or other arrangement between a covered entity and a business associate must require the business associate to implement administrative, physical, and technical safeguards, ensure any subcontractors agree to the same restrictions, report security incidents, and make policies/procedures and PHI available to the Secretary of HHS as required.",
+  "expectedStatementElements": [
+    "What specific safeguard obligations are written into the BAA template",
+    "How the BAA requires subcontractors to agree to the same restrictions",
+    "What the BAA requires regarding reporting security incidents back to the covered entity",
+    "How the BAA addresses termination and return/destruction of ePHI at contract end"
+  ],
+  "evidenceExamples": [
+    "Standard Business Associate Agreement template used by the organization",
+    "Clause language covering safeguards, subcontractor flow-down, and incident reporting",
+    "Contract termination/data return or destruction clause",
+    "Legal review sign-off on BAA template"
+  ],
+  "commonGaps": [
+    "BAA template is outdated and missing current required safeguard language",
+    "No explicit subcontractor flow-down clause",
+    "BAA doesn't specify a timeframe for reporting security incidents",
+    "No clear data return/destruction obligation at contract termination"
+  ],
+  "interviewQuestions": [
+    "Can you walk me through what your standard BAA template requires of business associates?",
+    "How does the BAA ensure subcontractors are held to the same safeguards?",
+    "What does the BAA say about reporting a security incident, and within what timeframe?",
+    "What happens to ePHI under the BAA once the contract ends?"
+  ],
+  "relatedControls": ["AS-9", "OR-2"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.314",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

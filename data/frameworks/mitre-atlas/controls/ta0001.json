@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0001",
+    "controlName": "AI Attack Staging",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect or prevent an adversary from using knowledge of and access to a target AI system to tailor an attack before it's launched.",
+    "summary": "AI Attack Staging consists of techniques adversaries use to prepare an attack on the target model, including training proxy models, poisoning the target model, and crafting adversarial data. Some of these techniques can be performed entirely offline, making them difficult to detect or mitigate before the attack is deployed.",
+    "expectedStatementElements": [
+        "How the organization would detect an adversary training a proxy model against exposed inference APIs or public artifacts",
+        "What controls limit an adversary's ability to verify an adversarial attack works before deploying it",
+        "How adversarial-example robustness is tested and monitored for production models",
+        "What logging exists for API query patterns that resemble model replication or extraction attempts"
+    ],
+    "evidenceExamples": [
+        "Inference API query logs showing volume/pattern analysis for extraction-style behavior",
+        "Adversarial robustness testing results or red-team reports",
+        "Documentation of any offline model-hardening or adversarial training performed",
+        "Records of public artifact exposure (datasets, pretrained weights) reviewed for staging risk"
+    ],
+    "commonGaps": [
+        "No monitoring exists for query patterns consistent with model replication (e.g., high-volume systematic querying)",
+        "Adversarial robustness has never been tested against the production model",
+        "Publicly available artifacts (sample data, model cards) give more staging detail than necessary"
+    ],
+    "interviewQuestions": [
+        "Could someone build a working copy of our model just by querying our API? How would we know if they tried?",
+        "Have we ever tested our model against adversarial examples designed to fool it?",
+        "What public information exists about our model architecture or training data that an attacker could use to tailor an attack?",
+        "If an attacker verified their attack offline, would we see any trace of that before it's used against us?"
+    ],
+    "relatedControls": ["AML.TA0000", "AML.TA0002", "AML.TA0003"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0001/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

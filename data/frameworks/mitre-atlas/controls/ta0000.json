@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0000",
+    "controlName": "AI Model Access",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization controls and monitors the ways an adversary could gain access to an AI model, from full white-box access down to indirect access through a product built on the model.",
+    "summary": "AI Model Access consists of techniques adversaries use to gain some level of access to a model, ranging from full knowledge of its internals to physical access to the environment where input data is collected. Adversaries may use this access to gather information, develop attacks, or introduce data to the model, and may rely on differing access levels across the stages of their attack.",
+    "expectedStatementElements": [
+        "What access levels exist to production AI models (API-only, white-box, physical/sensor access) and how each is controlled",
+        "How inference API access is authenticated, rate-limited, and logged",
+        "Whether the organization tracks which internal or third-party systems share the same underlying foundation model",
+        "How physical or sensor-level access to AI data collection points is restricted"
+    ],
+    "evidenceExamples": [
+        "API authentication and rate-limiting configuration for model inference endpoints",
+        "Inventory of internal and third-party applications built on the same foundation model",
+        "Access control and audit logs for model artifacts and inference APIs",
+        "Physical security controls for sensor or data-collection hardware feeding the model"
+    ],
+    "commonGaps": [
+        "Inference APIs have no meaningful rate limiting, enabling high-volume querying for model extraction or inversion",
+        "No inventory exists of which products or services expose the same underlying model, so a vulnerability found in one isn't remediated everywhere it's used",
+        "Physical access to sensors or data-collection endpoints is unmonitored"
+    ],
+    "interviewQuestions": [
+        "If someone queried our model API thousands of times in an hour, would anyone notice?",
+        "Do we know every product or service that relies on this same model?",
+        "Who can physically access the hardware collecting data that feeds this model?",
+        "What's the difference in risk between our public API access and any white-box access we grant internally?"
+    ],
+    "relatedControls": ["AML.TA0001", "AML.TA0002", "AML.TA0008"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0000/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MP-3",
+  "controlName": "Capabilities, Targeted Usage, Goals, Benefits, and Costs",
+  "family": "MP",
+  "purpose": "Ensures the AI system's actual capabilities and limitations are understood and compared against appropriate benchmarks, so expectations match reality.",
+  "summary": "AI capabilities, targeted usage, goals, and expected benefits and costs compared with appropriate benchmarks are understood, including realistic assessments of what the system can and cannot do, its intended and unintended use cases, and the tradeoffs between benefits and costs.",
+  "expectedStatementElements": [
+    "What the AI system's actual demonstrated capabilities and limitations are, based on testing rather than vendor claims",
+    "What the system's intended use cases are, and what use cases would be considered out of scope or unintended",
+    "What benchmarks were used to evaluate expected performance and how the system compares",
+    "How costs (financial, operational, risk) are weighed against expected benefits"
+  ],
+  "evidenceExamples": [
+    "Capability and limitation assessment based on internal testing, not just vendor documentation",
+    "Documented intended use cases and explicitly out-of-scope use cases",
+    "Benchmark comparison results",
+    "Cost-benefit analysis for the AI system's deployment"
+  ],
+  "commonGaps": [
+    "System capabilities are assumed from vendor marketing rather than independently verified",
+    "Unintended or out-of-scope use cases were never explicitly documented",
+    "No benchmark comparison was performed before deployment",
+    "Costs beyond the initial purchase (maintenance, risk, oversight) weren't factored into the benefit analysis"
+  ],
+  "interviewQuestions": [
+    "How do you know what this system can and can't actually do — is that based on your own testing?",
+    "What use cases would be considered misuse or out of scope for this system?",
+    "What benchmarks did you compare this system's performance against?",
+    "What ongoing costs, beyond the initial deployment, were factored into the decision to use this system?"
+  ],
+  "relatedControls": ["MP-2", "MP-4"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

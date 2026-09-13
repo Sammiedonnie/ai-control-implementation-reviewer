@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0042",
+  "controlName": "Resource Development",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can identify infrastructure or capabilities being built by adversaries in preparation for an attack against it.",
+  "summary": "Resource Development consists of techniques adversaries use to establish resources they can use to support operations, such as acquiring infrastructure, developing or obtaining malware, compromising accounts, or building capabilities like phishing domains and certificates.",
+  "expectedStatementElements": [
+    "How the organization monitors for look-alike domains, typosquatting, or infrastructure impersonating its brand",
+    "Whether threat intelligence tracking known adversary infrastructure and campaigns relevant to the organization's sector is in place",
+    "How compromised credentials or accounts belonging to the organization (found in breach data or dark web monitoring) are detected",
+    "How the organization validates the authenticity of certificates, domains, and third-party services it relies on"
+  ],
+  "evidenceExamples": [
+    "Domain monitoring or brand protection service configuration (typosquatting, look-alike domain detection)",
+    "Threat intelligence subscription covering adversary infrastructure and campaign tracking",
+    "Dark web or credential-leak monitoring service configuration and alert history",
+    "Certificate and domain validation process documentation"
+  ],
+  "commonGaps": [
+    "No monitoring exists for look-alike or typosquatted domains that could be used to impersonate the organization",
+    "Threat intelligence doesn't track infrastructure specifically associated with adversaries targeting the sector",
+    "Compromised employee credentials found in breach dumps aren't discovered until they're actively used",
+    "No process validates that certificates and domains associated with the organization are legitimate and haven't been misused"
+  ],
+  "interviewQuestions": [
+    "Would you know if someone registered a look-alike domain to impersonate your organization?",
+    "Does your threat intelligence actually track infrastructure used by adversaries relevant to your sector?",
+    "How would you find out that an employee's credentials showed up in a breach before they were used against you?",
+    "How do you verify that certificates and domains tied to your organization are legitimate?"
+  ],
+  "relatedControls": ["TA0043", "TA0001"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0042/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,36 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.4",
+    "controlName": "Resources for AI systems",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization identifies and documents the data, tooling, computing, and human resources needed to develop, deploy, and operate its AI systems responsibly.",
+    "summary": "This objective requires the organization to determine and document the resources necessary for its AI systems throughout their life cycle, including data resources, tooling resources, system and computing resources, and human resources with the appropriate competence.",
+    "expectedStatementElements": [
+        "How data resources required for AI systems are identified, documented, and provisioned",
+        "How tooling and computing resources (including third-party or cloud infrastructure) are documented and capacity-planned",
+        "What competence requirements exist for personnel involved in developing, deploying, or operating AI systems",
+        "How resource gaps or shortfalls are identified and addressed before they impact an AI system's reliability or safety"
+    ],
+    "evidenceExamples": [
+        "Resource inventory documenting data, tooling, and compute allocated to each AI system",
+        "Capacity planning records for compute/infrastructure supporting AI workloads",
+        "Competence matrix or training records for personnel with AI development/operations responsibilities",
+        "Records of identified resource gaps and remediation actions taken"
+    ],
+    "commonGaps": [
+        "No documented inventory exists of what data, tooling, or compute a given AI system actually depends on",
+        "Personnel operating or maintaining AI systems lack documented competence requirements or training records",
+        "Resource shortfalls (e.g., insufficient compute for monitoring) are discovered only after an incident, not proactively"
+    ],
+    "interviewQuestions": [
+        "If I asked what data, tools, and compute a specific AI system depends on, could you produce that list?",
+        "Do the people running our AI systems have documented training or competence requirements, or is it assumed?",
+        "How would we know in advance if we were under-resourced to safely operate an AI system, rather than finding out during an incident?",
+        "Who's responsible for capacity planning as our AI systems scale?"
+    ],
+    "relatedControls": ["A.3", "A.6"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

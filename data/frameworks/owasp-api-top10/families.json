@@ -1,0 +1,3 @@
+[
+  { "id": "API", "name": "API Risks", "description": "The ten critical security risks specific to APIs, covering authorization, authentication, resource consumption, business logic, and configuration." }
+]

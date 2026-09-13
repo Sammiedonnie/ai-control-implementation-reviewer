@@ -1,0 +1,37 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.9",
+    "controlName": "Risk management system",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization has established, implemented, documented, and maintained a continuous risk management system throughout the entire life cycle of its high-risk AI system.",
+    "summary": "Article 9 requires providers of high-risk AI systems to run an iterative risk management process spanning the system's entire life cycle, including identification and analysis of known and foreseeable risks, estimation and evaluation of risks that may emerge from intended use and reasonably foreseeable misuse, adoption of risk mitigation measures, and testing to verify those measures are effective. Note: under the Digital Omnibus (Regulation (EU) 2026/1744), the compliance deadline for stand-alone high-risk systems under Annex III has been deferred to December 2, 2027, though the underlying obligation is unchanged.",
+    "expectedStatementElements": [
+        "How risks are identified and analyzed across the AI system's entire life cycle, not just at initial design",
+        "How the organization evaluates risks from both intended use and reasonably foreseeable misuse",
+        "What risk mitigation measures are adopted and how their effectiveness is tested and verified",
+        "How the risk management process is kept current as the system evolves post-deployment"
+    ],
+    "evidenceExamples": [
+        "Documented risk management plan covering the AI system's full life cycle",
+        "Risk identification and analysis records, including foreseeable misuse scenarios",
+        "Risk mitigation measure documentation and testing/verification results",
+        "Records showing periodic review and update of the risk management process post-deployment"
+    ],
+    "commonGaps": [
+        "Risk assessment is performed once at design time and never revisited as the system is used in production",
+        "Foreseeable misuse scenarios aren't considered — only the system's intended use case is evaluated",
+        "Mitigation measures are documented but never actually tested to confirm they work",
+        "Teams assume the Digital Omnibus deadline extension to December 2027 means risk management work can be deprioritized now"
+    ],
+    "interviewQuestions": [
+        "Is risk management for this AI system a one-time exercise, or does it continue throughout the system's life?",
+        "Have we thought through how this system could be misused, not just how it's meant to be used?",
+        "When we put a mitigation in place, do we test that it actually reduces the risk we identified?",
+        "Given the extended 2027 deadline, are we still making steady progress, or has this work stalled?"
+    ],
+    "relatedControls": ["Art.10", "Art.15"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/9/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MG-3",
+  "controlName": "AI Risks and Benefits From Third-Party Entities Are Managed",
+  "family": "MG",
+  "purpose": "Ensures third-party AI risks are actively managed on an ongoing basis, not just assessed once at procurement and then forgotten.",
+  "summary": "AI risks and benefits from third-party entities are managed, including regularly reviewing third-party risks against organizational risk tolerance and having contingency processes in place for handling third-party AI system failures or high-priority risks.",
+  "expectedStatementElements": [
+    "How third-party AI risks are reviewed on an ongoing basis, not just at initial procurement",
+    "How third-party risk levels are compared against the organization's stated risk tolerance",
+    "What contingency processes exist if a third-party AI component fails or introduces a high-priority risk",
+    "Who owns the relationship and ongoing risk monitoring for each third-party AI dependency"
+  ],
+  "evidenceExamples": [
+    "Third-party AI risk review schedule and records",
+    "Documented risk tolerance criteria applied to third-party AI relationships",
+    "Contingency plan for third-party AI system failure or risk escalation",
+    "Ownership assignment for each third-party AI vendor relationship"
+  ],
+  "commonGaps": [
+    "Third-party AI risk was assessed once at procurement and never revisited",
+    "No defined risk tolerance exists to compare third-party AI risk against",
+    "No contingency plan exists if a critical third-party AI vendor fails or is compromised",
+    "No one is clearly responsible for ongoing monitoring of a given third-party AI relationship"
+  ],
+  "interviewQuestions": [
+    "When did you last review the risk from your third-party AI vendors, versus just at initial signing?",
+    "How do you know if a third-party AI vendor's risk level is within your organization's tolerance?",
+    "What's your contingency plan if a critical third-party AI vendor has an outage or security incident?",
+    "Who owns the ongoing relationship and risk monitoring for each of your AI vendors?"
+  ],
+  "relatedControls": ["GV-6", "MG-1"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

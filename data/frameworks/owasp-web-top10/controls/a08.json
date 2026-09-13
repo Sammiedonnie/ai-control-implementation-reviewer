@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A08",
+  "controlName": "Software or Data Integrity Failures",
+  "family": "WEB",
+  "purpose": "Prevents code and infrastructure that don't verify integrity from allowing malicious or unauthorized changes to be introduced through updates, CI/CD pipelines, or insecure deserialization.",
+  "summary": "Software or Data Integrity Failures relate to code and infrastructure that fails to protect against integrity violations, such as applying updates or critical data without verifying their source and authenticity, insecure deserialization of untrusted data, or auto-update mechanisms without sufficient verification.",
+  "expectedStatementElements": [
+    "How software updates, plugins, and libraries are verified for authenticity before being applied (digital signatures, checksums)",
+    "Whether the application deserializes data from untrusted sources, and if so, how that's done safely",
+    "What integrity controls exist in the CI/CD pipeline to prevent unauthorized or unreviewed code changes from being deployed",
+    "How auto-update mechanisms verify the source and integrity of updates before applying them"
+  ],
+  "evidenceExamples": [
+    "Signature or checksum verification process for updates, plugins, and dependencies",
+    "Code or configuration showing safe deserialization practices, or avoidance of deserializing untrusted data",
+    "CI/CD pipeline configuration requiring code review and restricting who can trigger deployments",
+    "Auto-update mechanism documentation showing source/integrity verification before applying updates"
+  ],
+  "commonGaps": [
+    "Updates or plugins are applied without verifying digital signatures or checksums",
+    "The application deserializes data from untrusted sources without safeguards, risking remote code execution",
+    "CI/CD pipelines allow deployments without mandatory code review or approval",
+    "Auto-update mechanisms apply updates without confirming they came from a legitimate, unmodified source"
+  ],
+  "interviewQuestions": [
+    "How do you verify that an update or plugin actually came from a legitimate source before applying it?",
+    "Does this application deserialize data from untrusted sources, and if so, what protects it from a malicious payload?",
+    "Can code reach production without being reviewed and approved by someone else first?",
+    "If your auto-update mechanism were pointed at a tampered update, would anything catch that before it was applied?"
+  ],
+  "relatedControls": ["A03", "A02"],
+  "sourceUrl": "https://top10.owasp.org/2025/A08_2025-Software_or_Data_Integrity_Failures/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

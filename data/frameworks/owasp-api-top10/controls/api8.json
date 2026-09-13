@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API8",
+  "controlName": "Security Misconfiguration",
+  "family": "API",
+  "purpose": "Prevents insecure default settings, incomplete configurations, misconfigured HTTP headers, or unnecessary exposed features from creating exploitable weaknesses in the API.",
+  "summary": "Security Misconfiguration covers the broad set of issues that arise when an API's security settings — headers, permissions, error handling, patching, unnecessary features — are left at insecure defaults or inconsistently applied across environments, giving attackers an easier path in without needing to find a code-level bug.",
+  "expectedStatementElements": [
+    "How a secure configuration baseline (headers, TLS, CORS, permissions) is defined and applied consistently across environments",
+    "How configuration drift between development, staging, and production is detected and prevented",
+    "Whether unnecessary HTTP methods, features, or verbose error/debug output are disabled in production",
+    "How the API stack (frameworks, dependencies, infrastructure) is kept patched and how configuration is checked for known weaknesses"
+  ],
+  "evidenceExamples": [
+    "Security configuration baseline or hardening checklist applied to the API",
+    "Configuration management or infrastructure-as-code showing consistent settings across environments",
+    "Evidence that debug mode, verbose errors, and unused HTTP methods are disabled in production",
+    "Patch management records or automated scanning results for outdated dependencies/configuration"
+  ],
+  "commonGaps": [
+    "Security headers (CORS, CSP, HSTS) are missing or misconfigured, especially inconsistently between environments",
+    "Debug mode or verbose error messages are left enabled in production, leaking stack traces or internals",
+    "No process catches configuration drift between what's documented and what's actually deployed",
+    "Dependencies or platform components are outdated with known vulnerabilities that haven't been patched"
+  ],
+  "interviewQuestions": [
+    "What's your baseline for secure configuration, and how do you know production actually matches it?",
+    "Is debug mode or verbose error output ever enabled in a production-facing environment?",
+    "How would you catch it if a configuration change introduced drift between staging and production?",
+    "How current are your dependencies, and how do you find out about known vulnerabilities in them?"
+  ],
+  "relatedControls": ["API7", "API9"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

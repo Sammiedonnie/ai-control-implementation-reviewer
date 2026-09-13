@@ -1,0 +1,8 @@
+{
+  "id": "mitre-attack",
+  "name": "MITRE ATT&CK (Enterprise)",
+  "version": "v19",
+  "description": "MITRE's knowledge base of adversary tactics and techniques based on real-world observations, used here at the tactic level to assess whether an organization's controls address each stage of the attack lifecycle.",
+  "sourceUrl": "https://attack.mitre.org/matrices/enterprise/",
+  "contentStatusNotice": "Tactic identifiers and structure are drawn from the public MITRE ATT&CK Enterprise Matrix (v19). Purpose, summary, and review guidance are application-authored to support compliance review workflows and are not official MITRE guidance."
+}

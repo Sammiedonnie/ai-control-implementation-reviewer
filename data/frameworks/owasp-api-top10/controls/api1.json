@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API1",
+  "controlName": "Broken Object Level Authorization",
+  "family": "API",
+  "purpose": "Prevents users from accessing or modifying data objects belonging to other users by manipulating object identifiers in API requests.",
+  "summary": "Broken Object Level Authorization (BOLA) occurs when an API endpoint fails to properly verify that the requesting user is actually authorized to access the specific object identified in the request, allowing attackers to access other users' data simply by changing an ID.",
+  "expectedStatementElements": [
+    "How object-level authorization checks are enforced on every endpoint that accesses a specific object by ID",
+    "Whether authorization checks happen server-side on every request, rather than relying on the client or on obscure IDs",
+    "How object ownership is verified as part of the authorization check, not just whether the user is logged in",
+    "How the system is tested for BOLA vulnerabilities (e.g., changing an ID in a request to access another user's object)"
+  ],
+  "evidenceExamples": [
+    "Authorization middleware or code showing per-object ownership checks on data-access endpoints",
+    "API security test results specifically probing for BOLA (ID substitution testing)",
+    "Architecture documentation showing authorization is enforced server-side, not client-side",
+    "Code review checklist item requiring object-level authorization on new endpoints"
+  ],
+  "commonGaps": [
+    "Endpoints check that a user is authenticated but not that they own the specific object requested",
+    "Authorization logic is duplicated inconsistently across endpoints instead of centrally enforced",
+    "IDs are sequential or guessable, making enumeration attacks easier alongside missing authorization",
+    "No testing has specifically probed for BOLA by substituting object IDs"
+  ],
+  "interviewQuestions": [
+    "If I changed the ID in a request to another user's object, what would stop me from accessing it?",
+    "Is object ownership checked on every request, or just whether the user is logged in?",
+    "Is authorization logic centralized, or does each endpoint implement its own check?",
+    "Has this API actually been tested for BOLA by trying to access another user's data?"
+  ],
+  "relatedControls": ["API3", "API5"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

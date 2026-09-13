@@ -17,19 +17,19 @@ export function SiteNav() {
   return (
     <nav
       aria-label="Main navigation"
-      className="md:w-60 md:min-h-screen border-b md:border-b-0 md:border-r border-line bg-paper-raised"
-    >
-      <div className="px-5 py-5 border-b border-line">
-        <Link href="/" className="flex items-center gap-2">
+     className="md:w-60 md:min-h-screen border-b md:border-b-0 md:border-r border-line bg-sidebar-bg" 
+>
+<div className="px-5 py-5 border-b border-sidebar-active-bg">
+            <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-accent" aria-hidden="true" />
-          <span className="font-display font-semibold text-[15px] leading-tight text-ink">
+          <span className="font-display font-semibold text-[15px] leading-tight text-sidebar-ink">
             Control Implementation
             <br />
             Reviewer
           </span>
         </Link>
       </div>
-              <ul className="p-2 flex md:flex-col overflow-x-auto md:overflow-visible">
+        <ul className="p-2 flex md:flex-col overflow-x-auto md:overflow-visible">
           {links.map(({ href, label, icon: Icon }) => (
             <li key={href} className="shrink-0">
               <Link
@@ -38,8 +38,8 @@ export function SiteNav() {
                 className={cn(
                   "flex items-center gap-2.5 px-3 py-2.5 rounded-md text-sm transition-colors",
                   pathname === href
-                    ? "bg-accent-soft text-accent font-medium"
-                    : "text-ink-soft hover:bg-accent-soft hover:text-accent"
+                    ? "bg-sidebar-active-bg text-white font-medium"
+                    : "text-sidebar-ink-soft hover:bg-sidebar-active-bg hover:text-white"
                 )}
               >
                 <Icon className="size-4" aria-hidden="true" />
@@ -48,9 +48,9 @@ export function SiteNav() {
             </li>
           ))}
         </ul>
-      <div className="hidden md:block px-5 py-4 mt-auto text-xs text-ink-faint border-t border-line">
-        NIST SP 800-53 Rev. 5 · MCP-validated
-      </div>
+        <div className="hidden md:block px-5 py-4 mt-auto text-xs text-sidebar-ink-soft border-t border-sidebar-active-bg">
+          NIST SP 800-53 Rev. 5 · MCP-validated
+        </div>
     </nav>
   );
 }

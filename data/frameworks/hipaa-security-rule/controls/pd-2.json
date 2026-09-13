@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "PD-2",
+  "controlName": "Documentation",
+  "family": "PD",
+  "purpose": "Ensures required security actions, activities, and assessments are documented and retained for accountability and audit purposes.",
+  "summary": "The covered entity or business associate maintains written (which may be electronic) documentation of policies, procedures, actions, activities, and assessments required by the Security Rule, retains that documentation for six years from creation or last effective date, makes it available to those responsible for implementing it, and reviews and updates it periodically.",
+  "expectedStatementElements": [
+    "What documentation is retained (policies, risk assessments, training records, incident reports)",
+    "How the six-year retention requirement is met and tracked",
+    "How documentation is made available to those responsible for implementing related procedures",
+    "How documentation is periodically reviewed and updated"
+  ],
+  "evidenceExamples": [
+    "Document retention policy specifying the six-year requirement",
+    "Records management system or repository housing compliance documentation",
+    "Access log showing responsible staff can retrieve required documentation",
+    "Evidence of a periodic documentation review cycle"
+  ],
+  "commonGaps": [
+    "No formal retention policy, or retention is shorter than the required six years",
+    "Documentation is scattered across individuals rather than centrally retained",
+    "Staff responsible for implementing a procedure can't easily access its documentation",
+    "Documentation isn't reviewed on a set cycle and becomes stale"
+  ],
+  "interviewQuestions": [
+    "How long do you retain security policy and assessment documentation, and how is that tracked?",
+    "Where is this documentation stored, and who can access it?",
+    "How would a staff member find the current procedure for something like incident response?",
+    "How often is your documentation reviewed to confirm it's still accurate?"
+  ],
+  "relatedControls": ["PD-1", "AS-8"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.316",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

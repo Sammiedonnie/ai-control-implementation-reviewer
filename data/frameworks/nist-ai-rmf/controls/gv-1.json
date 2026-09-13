@@ -1,0 +1,38 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "GV-1",
+  "controlName": "Policies, Processes, Procedures, and Practices",
+  "family": "GV",
+  "purpose": "Ensures organization-wide policies and procedures for managing AI risk are documented, transparent, and actually implemented — not just aspirational.",
+  "summary": "Policies, processes, procedures, and practices across the organization related to mapping, measuring, and managing AI risks are in place, transparent, and implemented effectively, including understanding legal and regulatory requirements, integrating trustworthy AI characteristics, and maintaining an inventory of AI systems.",
+  "expectedStatementElements": [
+    "How legal and regulatory requirements involving AI are identified, tracked, and documented",
+    "How trustworthy AI characteristics (validity, safety, fairness, privacy, etc.) are reflected in organizational policy",
+    "How the organization determines the level of risk management activity appropriate to a given AI system",
+    "How AI systems across the organization are inventoried and tracked",
+    "How policies are reviewed and updated over time"
+  ],
+  "evidenceExamples": [
+    "AI governance policy document(s)",
+    "Legal/regulatory requirement tracking log specific to AI",
+    "AI system inventory or registry",
+    "Policy review and revision history"
+  ],
+  "commonGaps": [
+    "No central inventory of AI systems in use across the organization",
+    "AI policy exists but hasn't been reviewed since it was first written",
+    "No process tracks new AI-related legal or regulatory requirements as they emerge",
+    "Trustworthy AI characteristics aren't reflected in any concrete policy language"
+  ],
+  "interviewQuestions": [
+    "Do you have a current inventory of every AI system in use across the organization?",
+    "How do you track new AI-related laws or regulations that might apply to you?",
+    "When was your AI governance policy last reviewed or updated?",
+    "How does your policy define what 'trustworthy AI' means for your organization?"
+  ],
+  "relatedControls": ["GV-2", "GV-6"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

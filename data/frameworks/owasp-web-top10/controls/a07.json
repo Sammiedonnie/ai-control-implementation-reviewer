@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A07",
+  "controlName": "Authentication Failures",
+  "family": "WEB",
+  "purpose": "Prevents attackers from compromising authentication mechanisms to assume other users' identities through credential attacks, session flaws, or weak authentication implementation.",
+  "summary": "Authentication Failures occur when application functions related to authentication and session management are implemented incorrectly, allowing attackers to compromise passwords, session tokens, or exploit other implementation flaws to assume other users' identities, whether temporarily or permanently.",
+  "expectedStatementElements": [
+    "What protections exist against credential stuffing, brute-force, and weak/default passwords",
+    "How session tokens are generated, stored, transmitted, and invalidated (on logout, timeout, or password change)",
+    "Whether multi-factor authentication is available or required for sensitive accounts and actions",
+    "How authentication failures and anomalies are logged and monitored for signs of attack"
+  ],
+  "evidenceExamples": [
+    "Rate limiting, account lockout, or CAPTCHA configuration on authentication endpoints",
+    "Session management configuration (token generation, secure/HttpOnly flags, expiration, invalidation on logout)",
+    "MFA configuration and enrollment policy for applicable accounts",
+    "Logging and monitoring configuration for failed logins and authentication anomalies"
+  ],
+  "commonGaps": [
+    "No rate limiting or lockout exists on login endpoints, allowing credential stuffing or brute force",
+    "Session tokens don't expire, aren't invalidated on logout, or are exposed in URLs",
+    "Multi-factor authentication isn't offered or enforced for privileged or sensitive accounts",
+    "Failed authentication attempts aren't logged or monitored, so an attack in progress wouldn't be noticed"
+  ],
+  "interviewQuestions": [
+    "What stops an attacker from brute-forcing or credential-stuffing your login page?",
+    "When a user logs out, is their session token actually invalidated, or does it still work if reused?",
+    "Is MFA available, and is it required for any accounts or actions?",
+    "How would you know if someone was actively trying to brute-force logins right now?"
+  ],
+  "relatedControls": ["A01", "A04"],
+  "sourceUrl": "https://top10.owasp.org/2025/A07_2025-Authentication_Failures/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

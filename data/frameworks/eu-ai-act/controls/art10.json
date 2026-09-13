@@ -1,0 +1,36 @@
+{
+    "frameworkId": "eu-ai-act",
+    "frameworkVersion": "Regulation (EU) 2024/1689",
+    "controlId": "Art.10",
+    "controlName": "Data and data governance",
+    "family": "CHAPTER_III_HIGH_RISK",
+    "purpose": "Assesses whether the organization applies appropriate data governance practices to the training, validation, and testing datasets used by its high-risk AI system.",
+    "summary": "Article 10 requires that training, validation, and testing datasets for high-risk AI systems be subject to data governance and management practices covering relevant design choices, data collection processes, data preparation operations, an examination for possible biases, and identification of data gaps or shortcomings, with datasets that are relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose.",
+    "expectedStatementElements": [
+        "What data governance practices cover design choices, collection, and preparation for training/validation/testing datasets",
+        "How datasets are examined for possible biases that could affect health, safety, or fundamental rights, or lead to discrimination",
+        "How data gaps or shortcomings are identified and addressed relative to the system's intended purpose",
+        "What criteria establish that datasets are relevant, representative, and appropriately free of errors for their intended purpose"
+    ],
+    "evidenceExamples": [
+        "Data governance policy covering dataset design, collection, and preparation for AI training",
+        "Bias examination results for training/validation/testing datasets, including any corrective actions taken",
+        "Data gap analysis documentation relative to the system's intended purpose and deployment context",
+        "Dataset quality criteria and validation results (representativeness, error rate, completeness)"
+    ],
+    "commonGaps": [
+        "Datasets are used without a documented bias examination, especially for characteristics tied to protected groups",
+        "No process exists to identify gaps between the training data and the population the system will actually be used on",
+        "Data quality is assumed rather than measured against defined criteria before the dataset is used"
+    ],
+    "interviewQuestions": [
+        "Have we actually examined our training data for bias that could disadvantage certain groups, or do we assume it's fine?",
+        "Is our training data representative of the population this system will be used on in the real world?",
+        "What would tell us our dataset has a gap or shortcoming before it causes a problem in production?",
+        "Do we have defined quality criteria for a dataset, or do we just use what's available?"
+    ],
+    "relatedControls": ["Art.9", "Art.11"],
+    "sourceUrl": "https://artificialintelligenceact.eu/article/10/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

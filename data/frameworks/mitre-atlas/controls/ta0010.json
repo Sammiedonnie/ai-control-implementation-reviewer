@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0010",
+    "controlName": "Exfiltration",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect an adversary stealing AI artifacts or other information about the AI system, whether over a command and control channel or an alternate channel.",
+    "summary": "Exfiltration consists of techniques adversaries may use to steal data from the network. Data may be stolen for its valuable intellectual property or for use in staging future operations. Techniques typically include transferring data over a command and control channel or an alternate channel, and may include putting size limits on transmissions to avoid detection.",
+    "expectedStatementElements": [
+        "How outbound data transfer from AI artifact stores and model registries is monitored for volume and destination anomalies",
+        "What controls exist to detect exfiltration via legitimate-looking channels (e.g., inference API responses used to smuggle data)",
+        "Whether the organization can distinguish between normal model output volume and abnormal, exfiltration-sized responses",
+        "How network egress from systems hosting AI artifacts is restricted and monitored"
+    ],
+    "evidenceExamples": [
+        "Outbound network monitoring/DLP configuration for AI artifact stores and model registries",
+        "Egress filtering and allow-listing rules for systems hosting AI models and training data",
+        "Anomaly detection thresholds for inference API response size/volume",
+        "Incident response records for suspected data exfiltration involving AI systems"
+    ],
+    "commonGaps": [
+        "No egress filtering restricts outbound traffic from systems hosting AI artifacts",
+        "Inference API responses aren't monitored for abnormal size or volume that could indicate data smuggling",
+        "DLP tooling isn't configured to recognize AI artifact file types or formats as sensitive data"
+    ],
+    "interviewQuestions": [
+        "If someone tried to exfiltrate our training data or model weights, what would stop or flag it?",
+        "Could sensitive data be smuggled out through our inference API's normal responses without us noticing?",
+        "Is outbound traffic from systems hosting our AI artifacts restricted, or can they reach anywhere?",
+        "Does our DLP tooling actually recognize AI model files and datasets as sensitive data to protect?"
+    ],
+    "relatedControls": ["AML.TA0009", "AML.TA0014", "AML.TA0011"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0010/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

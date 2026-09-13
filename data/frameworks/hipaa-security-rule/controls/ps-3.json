@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "PS-3",
+  "controlName": "Workstation Security",
+  "family": "PS",
+  "purpose": "Restricts physical access to workstations that can access ePHI to authorized users only.",
+  "summary": "The covered entity or business associate implements physical safeguards for all workstations that access ePHI to restrict access to authorized users, addressing the physical security of the device itself rather than the functions performed on it.",
+  "expectedStatementElements": [
+    "What physical safeguards protect workstations from unauthorized access (locks, cable locks, locked offices)",
+    "How screen locks or automatic logoff are configured and enforced",
+    "How laptops or mobile workstations are physically secured, especially outside the office",
+    "How unattended workstations are handled"
+  ],
+  "evidenceExamples": [
+    "Screen lock / automatic logoff configuration policy or screenshot of enforced setting",
+    "Physical security controls for devices (cable locks, locked rooms, cabinets)",
+    "Laptop encryption and physical security policy for remote/mobile use",
+    "Clean desk or unattended workstation policy"
+  ],
+  "commonGaps": [
+    "Automatic screen lock timeout is set too long or not enforced",
+    "Laptops leave the office with no physical security requirement",
+    "No policy addressing unattended workstations in shared spaces",
+    "Physical security relies solely on the facility, with no device-level controls"
+  ],
+  "interviewQuestions": [
+    "What's the automatic screen lock timeout, and is it centrally enforced?",
+    "How are laptops physically secured when taken outside the office?",
+    "What's the policy if someone leaves their workstation unattended and unlocked?",
+    "Are there device-level physical controls, like cable locks, on workstations?"
+  ],
+  "relatedControls": ["PS-1", "PS-2"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.310",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

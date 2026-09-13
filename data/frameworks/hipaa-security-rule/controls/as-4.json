@@ -1,0 +1,35 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-4",
+  "controlName": "Information Access Management",
+  "family": "AS",
+  "purpose": "Restricts access to ePHI to only what is necessary for each workforce member's job function.",
+  "summary": "The covered entity or business associate implements policies and procedures for authorizing access to ePHI consistent with the minimum necessary standard, including how access is requested, granted, modified, and documented.",
+  "expectedStatementElements": [
+    "How access requests are submitted and approved",
+    "How the minimum necessary standard is applied when granting access",
+    "Who has authority to approve or deny access requests",
+    "How access levels differ by role or job function",
+    "How access grants are documented and auditable"
+  ],
+  "evidenceExamples": [
+    "Access request/approval forms or ticketing system exports",
+    "Role-based access matrix showing access levels by job function",
+    "Sample of granted access requests with approver names and dates"
+  ],
+  "commonGaps": [
+    "Access is granted based on convenience rather than job need",
+    "No formal minimum-necessary review before granting broad access",
+    "Access approvals aren't consistently documented"
+  ],
+  "interviewQuestions": [
+    "How do you decide how much access a new role should have?",
+    "Who approves access requests, and what do they check before approving?",
+    "Can you show me a recent example of an access request and its approval?"
+  ],
+  "relatedControls": ["AS-3", "TS-1"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

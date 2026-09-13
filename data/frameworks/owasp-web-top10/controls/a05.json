@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A05",
+  "controlName": "Injection",
+  "family": "WEB",
+  "purpose": "Prevents untrusted input from being interpreted as code or query logic, covering SQL injection, command injection, cross-site scripting (XSS), and related flaws.",
+  "summary": "Injection occurs when untrusted data is sent to an interpreter as part of a command or query, allowing an attacker to trick the interpreter into executing unintended commands or accessing data without authorization; this includes SQL, NoSQL, OS command injection, and cross-site scripting.",
+  "expectedStatementElements": [
+    "How user input is validated, sanitized, and encoded before being used in queries, commands, or rendered output",
+    "Whether parameterized queries or an equivalent safe API is used consistently instead of string-concatenated queries",
+    "How output is encoded/escaped based on context (HTML, JavaScript, URL) to prevent XSS",
+    "How the application is tested for injection vulnerabilities across all input surfaces, including headers and file uploads"
+  ],
+  "evidenceExamples": [
+    "Code showing parameterized queries or ORM usage instead of raw string concatenation",
+    "Input validation and output encoding library/framework configuration",
+    "Content Security Policy (CSP) or other XSS mitigation configuration",
+    "Security test results (SAST/DAST or manual) covering injection across input surfaces"
+  ],
+  "commonGaps": [
+    "Some queries are still built through string concatenation rather than parameterization",
+    "User input is rendered into HTML or JavaScript without context-appropriate encoding",
+    "Input validation exists on obvious form fields but not on headers, file names, or less obvious input surfaces",
+    "No systematic testing (automated or manual) specifically targets injection vulnerabilities"
+  ],
+  "interviewQuestions": [
+    "Are all your database queries parameterized, or are any still built by concatenating strings?",
+    "If I entered a script tag into a form field, would it execute when rendered back to another user?",
+    "Does input validation cover less obvious input surfaces like headers, cookies, and file names?",
+    "Has this application been systematically tested for injection vulnerabilities?"
+  ],
+  "relatedControls": ["A01", "A06"],
+  "sourceUrl": "https://top10.owasp.org/2025/A05_2025-Injection/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

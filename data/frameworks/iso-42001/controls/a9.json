@@ -1,0 +1,36 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.9",
+    "controlName": "Use of AI systems",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization defines responsible processes, objectives, and intended-use boundaries for how its AI systems are actually used in operation, including human oversight.",
+    "summary": "This objective requires the organization to establish and document processes for the responsible use of AI systems, define clear objectives for that use, specify the intended use and any known limitations or prohibited uses, and ensure appropriate human oversight is maintained during operation.",
+    "expectedStatementElements": [
+        "Whether intended use and explicitly prohibited/out-of-scope uses are documented for each AI system",
+        "What human oversight mechanisms exist during operation (e.g., human-in-the-loop review for high-stakes decisions)",
+        "How usage objectives are defined and monitored to confirm the system is being used as intended",
+        "How misuse or use outside documented boundaries is detected and addressed"
+    ],
+    "evidenceExamples": [
+        "Intended use and prohibited-use documentation for each in-scope AI system",
+        "Human oversight procedures and records (e.g., review logs for human-in-the-loop decisions)",
+        "Usage monitoring reports confirming AI systems are used within their intended scope",
+        "Records of detected misuse or out-of-scope use and corrective actions taken"
+    ],
+    "commonGaps": [
+        "AI systems have no documented statement of intended use, so scope creep goes unnoticed and unmanaged",
+        "Human oversight exists on paper but isn't actually exercised in practice for high-stakes decisions",
+        "No monitoring exists to catch when an AI system is being used outside its intended or approved purpose"
+    ],
+    "interviewQuestions": [
+        "For our AI systems, is there a written statement of what they're for and what they explicitly shouldn't be used for?",
+        "Where human oversight is supposed to happen, is it actually happening, or is it a rubber stamp?",
+        "How would we know if an AI system was being used for something outside its intended purpose?",
+        "If misuse were detected, what's the process for addressing it?"
+    ],
+    "relatedControls": ["A.8", "A.2"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

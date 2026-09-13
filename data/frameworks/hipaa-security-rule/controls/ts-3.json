@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "TS-3",
+  "controlName": "Integrity",
+  "family": "TS",
+  "purpose": "Protects ePHI from being improperly altered or destroyed, whether by malicious action or accident.",
+  "summary": "The covered entity or business associate implements policies and procedures to protect ePHI from improper alteration or destruction, including mechanisms to authenticate ePHI and corroborate that it has not been altered or destroyed in an unauthorized manner.",
+  "expectedStatementElements": [
+    "What technical mechanisms verify ePHI hasn't been improperly altered (checksums, hashing, versioning)",
+    "How the organization detects unauthorized changes to ePHI",
+    "What role backups play in recovering from an integrity violation",
+    "How data integrity is maintained during transmission and storage"
+  ],
+  "evidenceExamples": [
+    "System documentation describing integrity verification mechanisms (checksums, hashing, digital signatures)",
+    "Database or file system audit trail showing change history",
+    "Evidence of an integrity check catching or preventing unauthorized alteration",
+    "Backup and recovery procedure supporting restoration after data corruption"
+  ],
+  "commonGaps": [
+    "No technical mechanism exists to detect unauthorized alteration of ePHI",
+    "Integrity is assumed based on access controls alone, with no verification method",
+    "No process to determine whether corrupted or altered data has restorable, unaffected backups",
+    "Integrity controls exist for storage but not for data in transit"
+  ],
+  "interviewQuestions": [
+    "How would you know if ePHI had been improperly altered without authorization?",
+    "What technical controls verify that data hasn't been tampered with?",
+    "If ePHI were found to be corrupted or altered, how would you recover a clean version?",
+    "Are integrity checks applied to data in transit, not just data at rest?"
+  ],
+  "relatedControls": ["TS-2", "TS-5"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.312",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

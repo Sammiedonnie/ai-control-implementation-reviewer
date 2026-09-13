@@ -1,0 +1,38 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-5",
+  "controlName": "Security Awareness and Training",
+  "family": "AS",
+  "purpose": "Ensures all workforce members understand security responsibilities and threats such as phishing and malware.",
+  "summary": "The covered entity or business associate implements a security awareness and training program for all workforce members, including management, covering periodic reminders, protection from malicious software, login monitoring, and password management.",
+  "expectedStatementElements": [
+    "Who is required to take training and how often",
+    "What topics the training covers (phishing, malware, password hygiene, login monitoring)",
+    "How completion is tracked and enforced",
+    "How the program is updated in response to new threats",
+    "How periodic security reminders are delivered between full trainings"
+  ],
+  "evidenceExamples": [
+    "Training curriculum or vendor training materials",
+    "Completion tracking report or LMS export",
+    "Sample periodic security reminder (email, newsletter, poster)",
+    "Records showing follow-up for non-completion"
+  ],
+  "commonGaps": [
+    "Training is a one-time onboarding event with no recurring cadence",
+    "No tracking of who has or hasn't completed training",
+    "Training content hasn't been updated in years",
+    "No periodic reminders between annual training cycles"
+  ],
+  "interviewQuestions": [
+    "How often is security training required, and for whom?",
+    "What happens if someone doesn't complete required training?",
+    "Can you show me the most recent training materials used?",
+    "How do you keep the workforce aware of new threats like phishing between trainings?"
+  ],
+  "relatedControls": ["AS-1", "AS-6"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

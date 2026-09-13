@@ -1,0 +1,37 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "PS-1",
+  "controlName": "Facility Access Controls",
+  "family": "PS",
+  "purpose": "Limits physical access to facilities and equipment housing ePHI to authorized individuals only.",
+  "summary": "The covered entity or business associate implements policies and procedures to limit physical access to its facilities and the equipment therein while ensuring properly authorized access is allowed, including contingency operations, facility security plans, access control and validation procedures, and maintenance records.",
+  "expectedStatementElements": [
+    "How physical access to facilities housing ePHI systems is restricted and monitored",
+    "How access is granted, validated, and revoked for employees and visitors",
+    "How facility access is handled during emergencies (contingency operations)",
+    "How repairs and modifications to physical security components are documented"
+  ],
+  "evidenceExamples": [
+    "Facility security plan or physical access control policy",
+    "Badge access logs or visitor sign-in records",
+    "Maintenance/repair log for locks, alarms, or access control hardware",
+    "Documented process for granting and revoking facility access"
+  ],
+  "commonGaps": [
+    "No visitor log or visitors aren't escorted in areas housing ePHI systems",
+    "Terminated employees' facility access isn't promptly revoked",
+    "No documented facility security plan",
+    "Maintenance to physical security systems isn't logged"
+  ],
+  "interviewQuestions": [
+    "How is physical access to your server room or data center controlled?",
+    "What happens to a departing employee's badge access, and how quickly?",
+    "How do visitors get access to areas with ePHI systems, and are they escorted?",
+    "How would facility access work if you needed to operate under emergency conditions?"
+  ],
+  "relatedControls": ["PS-2", "PS-3"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.310",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

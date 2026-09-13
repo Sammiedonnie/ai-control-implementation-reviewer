@@ -1,0 +1,3 @@
+[
+  { "id": "TACTIC", "name": "Tactics", "description": "The 16 adversary tactics in MITRE ATLAS, representing the stages of an attack against AI/ML systems from reconnaissance through impact." }
+]

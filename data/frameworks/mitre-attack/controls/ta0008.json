@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0008",
+  "controlName": "Lateral Movement",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect or contain an adversary moving from one system to another within the environment.",
+  "summary": "Lateral Movement consists of techniques adversaries use to move through the environment, such as using remote services, exploiting shared credentials, or pivoting through internal systems to reach additional targets after an initial foothold.",
+  "expectedStatementElements": [
+    "How network segmentation limits how far an adversary can move after compromising one system",
+    "How remote service usage (RDP, SSH, WMI, SMB) is monitored for unusual or unauthorized lateral connections",
+    "How shared local administrator credentials or password reuse across systems is prevented",
+    "How the organization detects an account authenticating to unusual systems it doesn't normally access"
+  ],
+  "evidenceExamples": [
+    "Network segmentation architecture documentation and segmentation testing results",
+    "Monitoring/alerting configuration for remote service usage and unusual internal connections",
+    "Local administrator password management (e.g., LAPS or equivalent) configuration",
+    "User and entity behavior analytics (UEBA) configuration flagging atypical lateral authentication"
+  ],
+  "commonGaps": [
+    "Flat network architecture allows an adversary to reach many systems from a single compromised host",
+    "Remote service usage (RDP, SSH, WMI) isn't monitored closely enough to catch unusual lateral connections",
+    "Local administrator passwords are shared or identical across many systems, enabling easy lateral movement",
+    "No behavioral analytics would flag an account suddenly authenticating to systems it's never touched before"
+  ],
+  "interviewQuestions": [
+    "If one system were compromised, how far could an attacker actually move from there?",
+    "Would unusual RDP, SSH, or WMI activity between internal systems get flagged?",
+    "Are local administrator passwords unique per system, or shared/identical across the environment?",
+    "Would you notice if an account suddenly started authenticating to systems it's never accessed before?"
+  ],
+  "relatedControls": ["TA0007", "TA0009"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0008/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

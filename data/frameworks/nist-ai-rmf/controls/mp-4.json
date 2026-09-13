@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MP-4",
+  "controlName": "Risks and Benefits for All Components",
+  "family": "MP",
+  "purpose": "Ensures risk assessment covers every component of the AI system, including third-party software and data — not just the parts the organization built itself.",
+  "summary": "Risks and benefits are mapped for all components of the AI system including third-party software and data, ensuring that risk assessment doesn't stop at the boundary of internally-developed code and instead accounts for the full composition of the deployed system.",
+  "expectedStatementElements": [
+    "How risks are identified for third-party models, libraries, and data sources that are part of the system",
+    "How the benefits and risks of each component are weighed, not just the system as a whole",
+    "How the organization maintains visibility into what components make up the deployed AI system",
+    "Whether risk assessment was performed at the component level or only at the whole-system level"
+  ],
+  "evidenceExamples": [
+    "Component-level risk assessment covering third-party models, data, and libraries",
+    "Bill of materials or component inventory for the AI system",
+    "Documentation showing benefits and risks were weighed per component, not just overall",
+    "Risk assessment history showing when component-level review occurred"
+  ],
+  "commonGaps": [
+    "Risk assessment only covers the system as a whole, ignoring individual third-party components",
+    "No component inventory exists, so it's unclear what's actually inside the deployed system",
+    "Third-party components are assumed low-risk without individual assessment",
+    "Component-level risk isn't revisited when a dependency is updated or replaced"
+  ],
+  "interviewQuestions": [
+    "Was risk assessed for each third-party component individually, or only for the system as a whole?",
+    "Do you have a full inventory of what components — models, data, libraries — make up this system?",
+    "How do you know a given third-party component is actually low-risk, versus just assuming it?",
+    "What happens to your risk assessment when a component gets updated or swapped out?"
+  ],
+  "relatedControls": ["MP-3", "MP-5"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

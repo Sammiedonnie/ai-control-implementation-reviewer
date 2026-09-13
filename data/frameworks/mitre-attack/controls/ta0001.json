@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0001",
+  "controlName": "Initial Access",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can prevent or detect an adversary's attempts to gain an initial foothold in the environment.",
+  "summary": "Initial Access consists of techniques adversaries use to gain an initial foothold in a network, such as phishing, exploiting public-facing applications, using valid accounts, or compromising the supply chain.",
+  "expectedStatementElements": [
+    "What email and phishing defenses are in place, and how effective they've been shown to be (e.g., through phishing simulations)",
+    "How public-facing applications are hardened and monitored for exploitation attempts",
+    "How valid account abuse is prevented, including protections against credential reuse and default accounts",
+    "What supply chain and third-party access controls limit initial access through trusted relationships"
+  ],
+  "evidenceExamples": [
+    "Email security gateway configuration and phishing simulation results",
+    "Vulnerability scanning and patch management records for public-facing applications",
+    "MFA enforcement and conditional access policy configuration for all account types",
+    "Third-party/vendor access review process and results"
+  ],
+  "commonGaps": [
+    "Phishing simulations show a high click-through rate with no corrective training program",
+    "Public-facing applications aren't regularly scanned or patched against known exploited vulnerabilities",
+    "MFA isn't enforced consistently across all accounts, especially service and legacy accounts",
+    "Third parties have broader access than needed, with no periodic review of that access"
+  ],
+  "interviewQuestions": [
+    "What happens when an employee clicks a phishing link — would you know, and what stops it from going further?",
+    "How current is patching on your externally facing applications?",
+    "Is MFA enforced on every account type, including service accounts and legacy systems?",
+    "How often is third-party or vendor access to your systems actually reviewed?"
+  ],
+  "relatedControls": ["TA0042", "TA0002"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0001/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

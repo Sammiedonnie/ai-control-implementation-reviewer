@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM03",
+  "controlName": "Supply Chain",
+  "family": "LLM",
+  "purpose": "Manages risk from third-party models, datasets, packages, and plugins that could introduce vulnerabilities or malicious components into the LLM application.",
+  "summary": "LLM applications rarely rely on a single self-contained model; they depend on pre-trained models, fine-tuning datasets, open-source libraries, and plugins from external sources, any of which can be compromised, outdated, or malicious.",
+  "expectedStatementElements": [
+    "How third-party models and datasets are vetted before use",
+    "How model and dependency provenance is tracked (e.g., model cards, SBOMs)",
+    "How the organization monitors for vulnerabilities in dependencies and plugins used by the LLM stack",
+    "What process exists for evaluating and approving new plugins or third-party integrations",
+    "How outdated or deprecated models/dependencies are identified and replaced"
+  ],
+  "evidenceExamples": [
+    "Model and dataset vetting or approval process documentation",
+    "Software bill of materials (SBOM) or dependency inventory for the LLM stack",
+    "Vulnerability scanning results for libraries and plugins in use",
+    "Plugin/integration approval records"
+  ],
+  "commonGaps": [
+    "Third-party models or datasets are adopted with no vetting process",
+    "No inventory exists of what models, libraries, and plugins the system depends on",
+    "Dependencies aren't monitored for newly disclosed vulnerabilities",
+    "Plugins are integrated without a review or approval step"
+  ],
+  "interviewQuestions": [
+    "How do you vet a third-party model or dataset before adopting it?",
+    "Do you maintain an inventory of the models, libraries, and plugins this system depends on?",
+    "How would you find out if one of those dependencies had a newly disclosed vulnerability?",
+    "What's the approval process before a new plugin gets integrated?"
+  ],
+  "relatedControls": ["LLM04", "LLM08"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

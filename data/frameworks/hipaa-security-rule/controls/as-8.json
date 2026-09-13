@@ -1,0 +1,38 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-8",
+  "controlName": "Evaluation",
+  "family": "AS",
+  "purpose": "Ensures the security program keeps pace with technical and environmental changes affecting ePHI.",
+  "summary": "The covered entity or business associate performs periodic technical and non-technical evaluations, based initially on the standards implemented and subsequently in response to environmental or operational changes affecting ePHI, to determine whether existing security measures remain adequate.",
+  "expectedStatementElements": [
+    "How often periodic evaluations are performed",
+    "What triggers an out-of-cycle evaluation (new systems, breaches, regulatory changes)",
+    "What is assessed during an evaluation (technical and non-technical safeguards)",
+    "Who performs the evaluation (internal team, external auditor)",
+    "How evaluation findings are tracked to remediation"
+  ],
+  "evidenceExamples": [
+    "Most recent security evaluation or risk assessment report",
+    "Evaluation schedule or policy defining cadence and triggers",
+    "Remediation tracking log tied to prior evaluation findings",
+    "Evidence of an evaluation triggered by a specific change (new system, incident)"
+  ],
+  "commonGaps": [
+    "Evaluation was performed once at initial implementation and never repeated",
+    "No defined trigger for evaluating after major environmental changes",
+    "Findings from past evaluations were never remediated or tracked",
+    "Evaluation only covers technical controls, ignoring policy and process gaps"
+  ],
+  "interviewQuestions": [
+    "When was the last security evaluation performed, and by whom?",
+    "What would trigger you to run an evaluation outside the normal schedule?",
+    "Can you show me findings from the last evaluation and their remediation status?",
+    "Does the evaluation cover non-technical safeguards, like policies and training?"
+  ],
+  "relatedControls": ["AS-1", "AS-7"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,37 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.8",
+    "controlName": "Information for interested parties",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization provides appropriate information to users, regulators, and other interested parties about its AI systems, including documentation, incident communication, and general transparency.",
+    "summary": "This objective requires the organization to provide clear information to interested parties throughout an AI system's life cycle, including user-facing documentation, external reporting where required, communication in the event of AI-related incidents, and general information that helps interested parties understand the system's capabilities, limitations, and appropriate use.",
+    "expectedStatementElements": [
+        "What user-facing documentation exists explaining an AI system's capabilities, limitations, and appropriate use",
+        "How external regulatory or compliance reporting obligations related to AI systems are tracked and fulfilled",
+        "What communication plan or process exists for notifying affected parties in the event of an AI-related incident",
+        "How the organization determines what information different interested parties (users, regulators, auditors) need and ensures it's provided"
+    ],
+    "evidenceExamples": [
+        "User-facing documentation (e.g., model cards, usage guidelines) for in-scope AI systems",
+        "Regulatory reporting log or tracker showing obligations and fulfillment status",
+        "Incident communication plan/template specific to AI-related incidents",
+        "Stakeholder information-needs mapping showing what's provided to whom"
+    ],
+    "commonGaps": [
+        "AI systems are deployed with no user-facing documentation explaining limitations or appropriate use",
+        "Regulatory reporting obligations related to AI aren't tracked, risking missed or late filings",
+        "There's no defined communication plan for notifying affected users if an AI system causes harm or malfunctions",
+        "Different interested parties (users vs. regulators vs. auditors) are given the same generic information regardless of what they actually need"
+    ],
+    "interviewQuestions": [
+        "If a user wanted to understand what our AI system can and can't do, is there documentation for that?",
+        "Do we track what regulatory reporting we owe related to our AI systems, and are we current on it?",
+        "If an AI system caused a real problem for users, do we have a plan for how and when we'd tell them?",
+        "Do we tailor what information we give to users versus regulators versus auditors, or send everyone the same thing?"
+    ],
+    "relatedControls": ["A.7", "A.9"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

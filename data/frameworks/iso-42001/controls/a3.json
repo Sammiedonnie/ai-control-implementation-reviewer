@@ -1,0 +1,36 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.3",
+    "controlName": "Internal organization",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization has defined and assigned AI-related roles and responsibilities, and established a mechanism for employees to report concerns about AI systems.",
+    "summary": "This objective requires the organization to establish clear roles, responsibilities, and authorities for AI governance across the organization, and to provide a channel through which employees and other stakeholders can report concerns about the impact of AI systems throughout their life cycle.",
+    "expectedStatementElements": [
+        "How AI-related roles and responsibilities are defined, assigned, and documented (e.g., RACI matrix for AI governance)",
+        "Whether accountability for AI risk decisions sits with a specific role or committee, and how that's evidenced",
+        "What channel exists for employees or other stakeholders to raise concerns about an AI system's impact",
+        "How reported concerns are tracked, triaged, and resolved"
+    ],
+    "evidenceExamples": [
+        "AI governance organizational chart or RACI matrix showing assigned roles and responsibilities",
+        "Charter or terms of reference for an AI governance committee or equivalent body",
+        "Documented concern-reporting channel (e.g., internal form, ethics hotline) specific to or covering AI systems",
+        "Log of reported AI-related concerns with resolution status"
+    ],
+    "commonGaps": [
+        "AI governance responsibilities are informally understood but not documented anywhere",
+        "No single role or body is accountable for AI risk decisions, so issues fall through organizational cracks",
+        "Employees have no clear channel to report concerns about an AI system's behavior or impact"
+    ],
+    "interviewQuestions": [
+        "If I asked you who's accountable for AI governance decisions, could you point to a specific person or role?",
+        "Is that responsibility written down anywhere, or is it just generally understood?",
+        "If an employee noticed an AI system behaving unfairly, would they know where to report it?",
+        "What happens after a concern about an AI system gets reported — who picks it up?"
+    ],
+    "relatedControls": ["A.2", "A.4"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

@@ -1,0 +1,36 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-3",
+  "controlName": "Workforce Security",
+  "family": "AS",
+  "purpose": "Ensures that only appropriately authorized workforce members have access to ePHI, and that access is removed when it is no longer needed.",
+  "summary": "The covered entity or business associate implements policies and procedures to ensure all workforce members have appropriate access to ePHI, to authorize and supervise workforce members who work with ePHI, and to terminate access when employment ends or roles change.",
+  "expectedStatementElements": [
+    "How workforce members are authorized for ePHI access before they start",
+    "How supervision of workforce members with ePHI access is handled",
+    "What triggers an access termination (resignation, termination, role change)",
+    "How quickly access is revoked after a termination trigger",
+    "How access changes are documented"
+  ],
+  "evidenceExamples": [
+    "New-hire access authorization forms or workflow records",
+    "Termination checklist showing access revocation steps",
+    "Sample of recent terminations with revocation timestamps",
+    "Access review reports"
+  ],
+  "commonGaps": [
+    "No defined timeframe for revoking access after termination",
+    "Role changes don't trigger a corresponding access review",
+    "Authorization process is verbal/informal with no record"
+  ],
+  "interviewQuestions": [
+    "Walk me through what happens on someone's first day, access-wise",
+    "What happens to a departing employee's access, and how fast?",
+    "How do you handle access when someone changes roles internally?"
+  ],
+  "relatedControls": ["AS-2", "AS-4", "TS-1"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

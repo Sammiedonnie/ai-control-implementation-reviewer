@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM10",
+  "controlName": "Unbounded Consumption",
+  "family": "LLM",
+  "purpose": "Prevents uncontrolled resource or query consumption that could enable denial of service, denial of wallet, or excessive operational cost.",
+  "summary": "LLM inference is computationally expensive, and attackers can exploit the pay-per-use nature of many AI services by driving excessive requests, overloading context windows, or triggering resource-intensive operations, causing service disruption or runaway cost (Denial of Wallet).",
+  "expectedStatementElements": [
+    "What rate limiting or throttling is applied per user, API key, or session",
+    "How maximum input size (context window usage) and output length are bounded",
+    "What monitoring exists to detect abnormal usage spikes that could indicate abuse",
+    "How cost is capped or alerted on to prevent runaway spend from excessive usage",
+    "What happens when limits are exceeded (graceful degradation vs. hard failure)"
+  ],
+  "evidenceExamples": [
+    "Rate limiting / throttling configuration per user or API key",
+    "Input/output size limits enforced at the application or API gateway layer",
+    "Usage monitoring dashboard or alerting configuration for cost/volume spikes",
+    "Billing alerts or hard spend caps configured with the model provider"
+  ],
+  "commonGaps": [
+    "No rate limiting exists, allowing unlimited requests from a single user or key",
+    "Context window and output length aren't bounded, allowing resource-intensive requests",
+    "No monitoring would catch an abnormal spike in usage before the bill arrives",
+    "No hard spend cap exists with the model provider to prevent runaway cost"
+  ],
+  "interviewQuestions": [
+    "What stops a single user from sending an unlimited number of requests?",
+    "Are there limits on how large an input or how long an output can be?",
+    "How would you find out about an unusual spike in usage before it becomes a large bill?",
+    "Is there a hard cap on spend with your model provider, or just monitoring after the fact?"
+  ],
+  "relatedControls": ["LLM01", "LLM04"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

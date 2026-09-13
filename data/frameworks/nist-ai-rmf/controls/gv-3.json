@@ -1,0 +1,36 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "GV-3",
+  "controlName": "Workforce Diversity, Equity, Inclusion, and Accessibility",
+  "family": "GV",
+  "purpose": "Ensures diverse perspectives inform AI risk decisions and that human-AI oversight roles are clearly defined, reducing blind spots that a homogeneous team might miss.",
+  "summary": "Workforce diversity, equity, inclusion, and accessibility processes are prioritized in the mapping, measuring, and managing of AI risks throughout the lifecycle, including ensuring decision-making draws on diverse perspectives and that human-AI configuration roles are clearly defined.",
+  "expectedStatementElements": [
+    "How diverse perspectives (demographics, disciplines, experience, backgrounds) are incorporated into AI risk decisions",
+    "How roles and responsibilities for human-AI configurations and oversight are defined and differentiated",
+    "What accessibility considerations are built into AI system design and review processes"
+  ],
+  "evidenceExamples": [
+    "Team composition records for AI review or design teams",
+    "Documented human-AI oversight role definitions",
+    "Accessibility review checklist or guidelines applied to AI systems",
+    "Evidence of diverse stakeholder input into AI system design decisions"
+  ],
+  "commonGaps": [
+    "AI review and design teams lack diversity in discipline or background, missing blind spots",
+    "No clear definition exists for what human oversight of a given AI system actually looks like",
+    "Accessibility isn't considered as part of AI system design or review",
+    "Diverse input is sought informally but not built into any repeatable process"
+  ],
+  "interviewQuestions": [
+    "Who's involved in reviewing and designing this AI system, and how varied are their backgrounds?",
+    "What does human oversight of this AI system actually look like in practice?",
+    "Is accessibility considered as part of your AI system review process?",
+    "How do you make sure diverse perspectives get heard before a system ships?"
+  ],
+  "relatedControls": ["GV-2", "GV-5"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

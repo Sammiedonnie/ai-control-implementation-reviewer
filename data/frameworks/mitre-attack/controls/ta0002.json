@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0002",
+  "controlName": "Execution",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can prevent or detect adversary-controlled code from running on systems in the environment.",
+  "summary": "Execution consists of techniques adversaries use to run malicious code, such as tricking a user into executing a payload, abusing scripting interpreters, or exploiting scheduled tasks and remote services to trigger execution.",
+  "expectedStatementElements": [
+    "What application allowlisting or execution control (e.g., endpoint protection, script blocking) is in place",
+    "How scripting interpreters (PowerShell, command shells, macros) are restricted or monitored for suspicious use",
+    "How user-triggered execution (malicious attachments, links, macros) is prevented or contained",
+    "How endpoint detection and response (EDR) tooling flags anomalous process execution"
+  ],
+  "evidenceExamples": [
+    "Application allowlisting or endpoint protection configuration",
+    "PowerShell/script logging and constrained language mode configuration",
+    "Email/attachment sandboxing or macro-blocking policy",
+    "EDR alert configuration and sample detections for suspicious execution"
+  ],
+  "commonGaps": [
+    "No application allowlisting exists, so any executable or script can run unrestricted",
+    "PowerShell and other scripting interpreters run with full privileges and no logging",
+    "Macros in documents from external sources are enabled by default",
+    "EDR tooling isn't tuned to flag unusual execution patterns, relying only on signature-based detection"
+  ],
+  "interviewQuestions": [
+    "Could an unapproved executable or script actually run on your endpoints today?",
+    "Is PowerShell usage logged and restricted, or does it run wide open?",
+    "Are macros in externally sourced documents enabled or blocked by default?",
+    "Would your EDR tooling catch a novel, never-seen-before execution technique, or only known signatures?"
+  ],
+  "relatedControls": ["TA0001", "TA0003"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0002/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

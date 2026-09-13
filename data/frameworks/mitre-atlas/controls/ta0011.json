@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0011",
+    "controlName": "Impact",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can detect or limit an adversary's attempts to manipulate, interrupt, erode confidence in, or destroy its AI systems and data.",
+    "summary": "Impact consists of techniques adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes. This can include destroying or tampering with data, eroding model integrity over time, denying AI service through resource exhaustion, or causing downstream financial, reputational, or societal harm.",
+    "expectedStatementElements": [
+        "How the organization detects denial-of-service conditions targeting AI inference endpoints (e.g., cost harvesting, resource exhaustion)",
+        "What monitoring exists for gradual erosion of model integrity/accuracy over time versus sudden failure",
+        "How business continuity plans account for AI system unavailability or compromised output",
+        "What controls limit financial exposure from adversary-driven cost harvesting against pay-per-use AI services"
+    ],
+    "evidenceExamples": [
+        "Rate limiting and cost-anomaly alerting configuration for pay-per-use AI/inference services",
+        "Model performance monitoring dashboards tracking accuracy/integrity drift over time",
+        "Business continuity/disaster recovery plans covering AI system unavailability scenarios",
+        "Incident response records for AI-targeted denial-of-service or integrity-erosion events"
+    ],
+    "commonGaps": [
+        "No cost-anomaly alerting exists for pay-per-use AI services, exposing the organization to cost harvesting attacks",
+        "Model integrity is only checked at deployment, with no ongoing monitoring for gradual erosion",
+        "Business continuity plans don't address what happens if an AI system becomes unavailable or untrustworthy"
+    ],
+    "interviewQuestions": [
+        "If an attacker drove up our AI service costs deliberately, would we catch it before the bill arrived?",
+        "How would we know if our model's accuracy was being eroded gradually rather than failing all at once?",
+        "Does our business continuity plan cover what happens if a critical AI system goes down or can't be trusted?",
+        "What's our exposure if someone found a way to make our AI service unusable through flooding or expensive queries?"
+    ],
+    "relatedControls": ["AML.TA0010", "AML.TA0007", "AML.TA0009"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0011/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

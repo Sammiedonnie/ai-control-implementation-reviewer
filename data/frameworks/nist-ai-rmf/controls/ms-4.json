@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MS-4",
+  "controlName": "Feedback About Efficacy of Measurement Is Gathered and Assessed",
+  "family": "MS",
+  "purpose": "Ensures the measurement approach itself is periodically evaluated for whether it's actually working, rather than assuming the original metrics remain sufficient indefinitely.",
+  "summary": "Feedback about the efficacy of measurement is gathered and assessed, including feedback from relevant AI actors on whether the measurement approach itself is capturing what matters, and using that feedback to improve measurement methods over time.",
+  "expectedStatementElements": [
+    "How feedback on the measurement approach itself (not just the system) is collected",
+    "Who provides this feedback — internal teams, independent assessors, external stakeholders",
+    "How gaps identified in the measurement approach lead to actual changes in methodology",
+    "How often the measurement approach is reassessed for continued adequacy"
+  ],
+  "evidenceExamples": [
+    "Feedback records specifically about the measurement/evaluation approach",
+    "Documentation of measurement methodology changes made in response to feedback",
+    "Review cadence for reassessing measurement adequacy",
+    "Evidence of independent or external input into the measurement approach"
+  ],
+  "commonGaps": [
+    "Feedback is collected about the AI system but never about whether the measurement approach itself is adequate",
+    "The measurement methodology has never changed since it was first established",
+    "Only internal teams evaluate whether the measurement approach is working",
+    "No process exists to reassess whether current metrics are still capturing what matters"
+  ],
+  "interviewQuestions": [
+    "Has anyone ever questioned whether your measurement approach itself is actually capturing the right things?",
+    "Has your measurement methodology changed at all since it was first set up, and why or why not?",
+    "Who outside the immediate team gets a say in whether your evaluation approach is adequate?",
+    "How often do you step back and ask whether you're measuring the right things?"
+  ],
+  "relatedControls": ["MS-1", "MS-3"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

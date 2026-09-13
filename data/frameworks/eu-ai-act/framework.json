@@ -1,0 +1,8 @@
+{
+    "id": "eu-ai-act",
+    "name": "EU AI Act",
+    "version": "Regulation (EU) 2024/1689",
+    "description": "The European Union's regulation establishing harmonized rules for AI systems, built here around the Chapter III, Section 2 mandatory requirements (Articles 9-15) that apply to high-risk AI systems.",
+    "sourceUrl": "https://artificialintelligenceact.eu/",
+    "contentStatusNotice": "Covers only the 7 Chapter III Section 2 high-risk system requirements (Articles 9-15), not the full Act. Note: under the Digital Omnibus (Regulation (EU) 2026/1744, in force since July 27, 2026), the compliance deadline for stand-alone high-risk AI systems under Annex III has been deferred from August 2, 2026 to December 2, 2027; high-risk AI embedded in regulated products under Annex I is deferred to August 2, 2028. The underlying obligations in Articles 9-15 are unchanged by this delay. Purpose, summary, and other narrative content are application-authored."
+}

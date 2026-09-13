@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0007",
+  "controlName": "Discovery",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect an adversary mapping out the internal environment after gaining access.",
+  "summary": "Discovery consists of techniques adversaries use to gain knowledge about the system and internal network, such as enumerating accounts, network shares, running processes, and system configuration to plan subsequent movement and objectives.",
+  "expectedStatementElements": [
+    "How the organization detects unusual enumeration activity (account, network share, process listing) on endpoints",
+    "What network monitoring identifies internal reconnaissance-style traffic (port scanning, share enumeration) distinct from normal use",
+    "How honeypots, decoy accounts, or canary tokens are used to catch discovery activity",
+    "How discovery-stage detections are correlated with earlier tactics to identify an attack in progress before lateral movement"
+  ],
+  "evidenceExamples": [
+    "EDR/SIEM detection rules for enumeration commands and discovery-related process activity",
+    "Internal network monitoring configuration flagging scanning or share enumeration behavior",
+    "Honeypot, decoy account, or canary token deployment documentation",
+    "Correlation rules linking discovery-stage alerts with earlier-stage indicators"
+  ],
+  "commonGaps": [
+    "Enumeration commands and discovery activity blend in with normal administrative behavior and go undetected",
+    "Internal network traffic isn't monitored closely enough to catch scanning or share enumeration",
+    "No honeypots, decoy accounts, or canary tokens exist to catch an adversary mapping the environment",
+    "Discovery-stage alerts aren't correlated with other tactics, so isolated signals don't trigger investigation"
+  ],
+  "interviewQuestions": [
+    "Would unusual account or network enumeration on an endpoint actually stand out from normal admin activity?",
+    "Is internal network traffic monitored closely enough to catch someone scanning or mapping shares?",
+    "Do you use any honeypots, decoy accounts, or canary tokens to catch this kind of activity?",
+    "If discovery activity were detected, would it get correlated with other signals, or treated as an isolated alert?"
+  ],
+  "relatedControls": ["TA0006", "TA0008"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0007/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

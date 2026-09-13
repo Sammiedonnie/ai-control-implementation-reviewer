@@ -1,0 +1,38 @@
+{
+  "frameworkId": "hipaa-security-rule",
+  "frameworkVersion": "45 CFR Part 164, Subpart C",
+  "controlId": "AS-9",
+  "controlName": "Business Associate Contracts (Administrative)",
+  "family": "AS",
+  "purpose": "Ensures third parties who create, receive, maintain, or transmit ePHI on behalf of the covered entity are contractually bound to protect it.",
+  "summary": "The covered entity may permit a business associate to create, receive, maintain, or transmit ePHI on its behalf only if the covered entity obtains satisfactory assurances, through a written contract or other arrangement, that the business associate will appropriately safeguard the information.",
+  "expectedStatementElements": [
+    "How business associates are identified before ePHI is shared",
+    "What safeguard obligations are included in business associate agreements (BAAs)",
+    "How BAAs are tracked and kept current",
+    "What happens if a business associate violates its BAA obligations",
+    "How subcontractors of business associates are addressed"
+  ],
+  "evidenceExamples": [
+    "Sample executed Business Associate Agreement",
+    "Inventory or register of active business associates and BAA status",
+    "Policy describing the BAA review and renewal process",
+    "Evidence of a BAA violation being addressed or terminated"
+  ],
+  "commonGaps": [
+    "No central inventory of who qualifies as a business associate",
+    "BAAs exist but are outdated or don't reflect current data flows",
+    "No process to confirm subcontractors of business associates also sign BAAs",
+    "No defined consequence or process when a business associate violates the agreement"
+  ],
+  "interviewQuestions": [
+    "How do you determine when a vendor needs a Business Associate Agreement?",
+    "Can you show me your current inventory of business associates and BAA status?",
+    "What happens if you find out a business associate isn't meeting its obligations?",
+    "How do you handle subcontractors that a business associate brings in?"
+  ],
+  "relatedControls": ["AS-1", "OR-1"],
+  "sourceUrl": "https://www.ecfr.gov/current/title-45/section-164.308",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

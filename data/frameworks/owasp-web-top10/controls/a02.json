@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-web-top10",
+  "frameworkVersion": "2025",
+  "controlId": "A02",
+  "controlName": "Security Misconfiguration",
+  "family": "WEB",
+  "purpose": "Prevents insecure default settings, incomplete hardening, or unnecessary exposed features across the application stack from giving attackers an easier path in.",
+  "summary": "Security Misconfiguration covers the broad set of issues that arise when security settings across the application, server, framework, and infrastructure are left at insecure defaults, inconsistently applied, or improperly hardened, including on the client side where third-party scripts and tags introduce their own configuration risk.",
+  "expectedStatementElements": [
+    "How a secure configuration baseline is defined and applied consistently across environments (application, server, framework, cloud infrastructure)",
+    "How configuration drift between development, staging, and production is detected and prevented",
+    "Whether unnecessary features, sample content, default accounts, and verbose error/debug output are disabled in production",
+    "How third-party scripts and tags loaded on the client side are governed and reviewed as part of the configuration surface"
+  ],
+  "evidenceExamples": [
+    "Security hardening checklist or configuration baseline applied to the stack",
+    "Infrastructure-as-code or configuration management showing consistent settings across environments",
+    "Evidence that debug mode, default accounts, and unnecessary features are disabled in production",
+    "Inventory and review process for third-party scripts/tags loaded on client-facing pages"
+  ],
+  "commonGaps": [
+    "Default accounts, sample applications, or unnecessary features remain enabled in production",
+    "Debug mode or verbose error messages are left enabled, leaking stack traces or internal details",
+    "No process catches configuration drift between documented baseline and actual deployment",
+    "Third-party scripts and tags are added to pages without any security review or ongoing governance"
+  ],
+  "interviewQuestions": [
+    "What's your baseline for secure configuration, and how do you confirm production actually matches it?",
+    "Are there any default accounts, sample content, or debug features still enabled anywhere in production?",
+    "How would you catch configuration drift between what's documented and what's deployed?",
+    "Who reviews and approves third-party scripts or tags before they're added to your pages?"
+  ],
+  "relatedControls": ["A01", "A03"],
+  "sourceUrl": "https://top10.owasp.org/2025/A02_2025-Security_Misconfiguration/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

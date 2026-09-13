@@ -1,0 +1,8 @@
+{
+  "id": "mitre-atlas",
+  "name": "MITRE ATLAS",
+  "version": "v5.x",
+  "description": "MITRE's knowledge base of adversary tactics and techniques specifically targeting AI and machine learning systems, used here at the tactic level to assess whether an organization's controls address each stage of an AI-focused attack lifecycle.",
+  "sourceUrl": "https://atlas.mitre.org/",
+  "contentStatusNotice": "Tactic identifiers and structure are drawn from the public MITRE ATLAS knowledge base. Purpose, summary, and review guidance are application-authored to support compliance review workflows and are not official MITRE guidance."
+}

@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM06",
+  "controlName": "Excessive Agency",
+  "family": "LLM",
+  "purpose": "Limits the functionality, permissions, and autonomy granted to an LLM-based system so that a manipulated or malfunctioning model can't take harmful actions.",
+  "summary": "Excessive Agency arises when an LLM agent is granted more tools, broader permissions, or more autonomy than its task requires, or is allowed to act without human approval, creating an exploitable attack surface if the model is manipulated or errs.",
+  "expectedStatementElements": [
+    "What tools, functions, or APIs the LLM agent has access to and why each is necessary",
+    "How permissions granted to the agent are scoped to the minimum needed for its task",
+    "What actions require human approval before execution versus fully autonomous actions",
+    "How the impact of a single erroneous or manipulated agent action is bounded",
+    "How agent actions are logged and auditable after the fact"
+  ],
+  "evidenceExamples": [
+    "Inventory of tools/functions available to the agent with justification for each",
+    "Permission scoping configuration (least-privilege access for the agent's credentials)",
+    "Human-in-the-loop approval workflow for high-impact actions",
+    "Audit log of agent actions taken"
+  ],
+  "commonGaps": [
+    "Agent is granted broad tool access beyond what its actual tasks require",
+    "No human approval step exists before high-impact or irreversible actions",
+    "Agent credentials have the same permissions as a human administrator",
+    "No logging exists to reconstruct what actions the agent took and why"
+  ],
+  "interviewQuestions": [
+    "What can this agent actually do, and why does it need each of those capabilities?",
+    "Which of the agent's actions happen automatically versus requiring human approval?",
+    "If the agent were manipulated into taking a harmful action, what's the worst it could do?",
+    "How would you reconstruct what actions the agent took last week and why?"
+  ],
+  "relatedControls": ["LLM01", "LLM05"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

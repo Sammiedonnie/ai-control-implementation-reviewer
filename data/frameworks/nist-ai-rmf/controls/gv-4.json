@@ -1,0 +1,37 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "GV-4",
+  "controlName": "Organizational Culture",
+  "family": "GV",
+  "purpose": "Fosters an organizational mindset that treats AI risk as something to be actively considered and communicated, not an afterthought discovered post-launch.",
+  "summary": "Organizational teams are committed to a culture that considers and communicates AI risk, including fostering a critical thinking and safety-first mindset, documenting and communicating risks and impacts, and enabling AI testing and incident information sharing.",
+  "expectedStatementElements": [
+    "How the organization fosters a critical thinking and safety-first mindset in AI design, development, deployment, and use",
+    "How risks and potential impacts of AI systems are documented and communicated, including to those outside the immediate development team",
+    "How the organization enables AI testing and identification of incidents",
+    "How information about AI incidents is shared, internally and where appropriate externally"
+  ],
+  "evidenceExamples": [
+    "Internal communications or training materials promoting safety-first AI development practices",
+    "Documentation showing AI risks were communicated beyond the immediate dev team",
+    "AI testing program documentation",
+    "Incident information-sharing policy or records of shared incident learnings"
+  ],
+  "commonGaps": [
+    "Safety-first mindset exists informally among some individuals but isn't organizationally reinforced",
+    "AI risk documentation stays within the dev team and never reaches leadership or other stakeholders",
+    "No structured AI testing program exists beyond ad hoc developer checks",
+    "Incidents aren't shared or discussed beyond the team that experienced them"
+  ],
+  "interviewQuestions": [
+    "How does your organization actively encourage a safety-first mindset around AI, beyond individual good intentions?",
+    "Who outside the development team sees documentation of an AI system's risks?",
+    "What does structured AI testing look like here, beyond what individual developers do on their own?",
+    "When an AI incident happens, who finds out about it and how?"
+  ],
+  "relatedControls": ["GV-2", "GV-5"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

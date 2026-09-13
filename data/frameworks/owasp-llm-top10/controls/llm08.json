@@ -1,0 +1,38 @@
+{
+  "frameworkId": "owasp-llm-top10",
+  "frameworkVersion": "2025",
+  "controlId": "LLM08",
+  "controlName": "Vector and Embedding Weaknesses",
+  "family": "LLM",
+  "purpose": "Secures how vectors and embeddings are generated, stored, and retrieved in retrieval-augmented generation (RAG) systems to prevent injection or data leakage.",
+  "summary": "RAG systems pull context from vector databases before generating responses. Weaknesses in how vectors and embeddings are generated, stored, or retrieved can enable injection of malicious content into retrieved context or leakage of data across users or tenants.",
+  "expectedStatementElements": [
+    "How access to the vector store is scoped, especially in multi-tenant environments",
+    "What controls prevent malicious or untrusted content from being embedded and later retrieved as trusted context",
+    "How retrieved content is treated when passed to the model (trusted vs. requiring the same scrutiny as user input)",
+    "How embedding data is protected from unauthorized access or modification",
+    "Whether cross-tenant or cross-user data isolation in the vector store has been tested"
+  ],
+  "evidenceExamples": [
+    "Vector database access control configuration, especially for multi-tenant isolation",
+    "Documentation of how ingested content is vetted before being embedded and indexed",
+    "Test results verifying no cross-tenant data leakage via retrieval",
+    "Architecture diagram showing the RAG pipeline from ingestion to retrieval to model input"
+  ],
+  "commonGaps": [
+    "Vector store isn't properly isolated between tenants or users, risking cross-contamination of retrieved results",
+    "Content is embedded and indexed with no vetting, allowing poisoned documents to later be retrieved as trusted context",
+    "Retrieved content is treated as fully trusted rather than subject to the same scrutiny as other untrusted input",
+    "No testing has verified that one tenant's data can't surface in another tenant's retrieval results"
+  ],
+  "interviewQuestions": [
+    "How is data isolated between tenants or users in the vector store?",
+    "What happens if someone gets malicious content embedded and indexed — could it later be retrieved and treated as trusted?",
+    "Is retrieved context treated any differently from user input when it reaches the model?",
+    "Has cross-tenant data isolation in the vector store actually been tested?"
+  ],
+  "relatedControls": ["LLM02", "LLM03"],
+  "sourceUrl": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

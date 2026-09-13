@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0012",
+    "controlName": "Privilege Escalation",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can prevent or detect an adversary gaining higher-level permissions on systems or networks that host or interact with AI resources.",
+    "summary": "Privilege Escalation consists of techniques adversaries use to gain higher-level permissions on a system or network, often after entering with unprivileged access. Common approaches take advantage of system weaknesses, misconfigurations, and vulnerabilities. Examples of elevated access include SYSTEM/root level, local administrator, or accounts with admin-like access to AI-specific systems or functions.",
+    "expectedStatementElements": [
+        "How least-privilege access is enforced for accounts and service principals interacting with AI systems and infrastructure",
+        "What controls prevent misuse of valid credentials to escalate privileges within AI pipelines (training, deployment, inference)",
+        "How the organization detects unusual privilege escalation attempts on systems hosting AI artifacts",
+        "Whether privilege boundaries between development, staging, and production AI environments are enforced"
+    ],
+    "evidenceExamples": [
+        "Least-privilege access control policy and role definitions for AI infrastructure and pipelines",
+        "Privileged access monitoring/alerting for AI training, deployment, and inference systems",
+        "Environment segregation documentation between dev/staging/production AI systems",
+        "Periodic access review records for elevated-privilege AI system accounts"
+    ],
+    "commonGaps": [
+        "Service accounts used in AI pipelines run with far broader permissions than the pipeline actually requires",
+        "No monitoring exists for privilege escalation attempts specific to AI infrastructure",
+        "Development and production AI environments share credentials or lack clear privilege boundaries"
+    ],
+    "interviewQuestions": [
+        "Do our AI pipeline service accounts run with only the permissions they actually need, or broader?",
+        "Would we notice if someone tried to escalate privileges on a system hosting our AI models?",
+        "Are our development and production AI environments truly separated in terms of access?",
+        "When was the last time we reviewed who has elevated access to our AI infrastructure?"
+    ],
+    "relatedControls": ["AML.TA0006", "AML.TA0013", "AML.TA0004"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0012/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API9",
+  "controlName": "Improper Inventory Management",
+  "family": "API",
+  "purpose": "Prevents attackers from exploiting forgotten, undocumented, or non-production API versions and hosts that lack the same security scrutiny as the current production API.",
+  "summary": "Improper Inventory Management occurs when an organization doesn't maintain an accurate, up-to-date inventory of all API hosts, versions, and environments, leaving old or deprecated versions, staging/test deployments, or undocumented endpoints exposed with weaker security than the current production API.",
+  "expectedStatementElements": [
+    "How the organization maintains an inventory of all API hosts, versions, and environments (production, staging, deprecated)",
+    "How deprecated or old API versions are retired, and whether they remain reachable after retirement",
+    "Whether non-production hosts (staging, dev, test) are exposed to the internet with the same or weaker security than production",
+    "How third-party or integrated systems that expose parts of the API are tracked and included in the inventory"
+  ],
+  "evidenceExamples": [
+    "Current API inventory documenting all hosts, versions, and environments",
+    "Deprecation policy and evidence that retired API versions are actually decommissioned",
+    "Network scan or asset discovery results confirming no unknown/undocumented API hosts are exposed",
+    "Documentation of third-party integrations that expose or consume parts of the API"
+  ],
+  "commonGaps": [
+    "No single, current inventory exists of all API versions and hosts across environments",
+    "Deprecated API versions remain live and reachable after being 'replaced,' with weaker security controls",
+    "Staging or test environments are internet-accessible with the same data access as production but lighter security",
+    "Third-party integrations expose API functionality that isn't tracked in the organization's own inventory"
+  ],
+  "interviewQuestions": [
+    "Is there one current inventory of every API version and host, or does that knowledge live in people's heads?",
+    "When an API version is deprecated, is it actually taken offline, or does it just stop being promoted?",
+    "Are any staging or test environments reachable from the internet, and if so, are they held to the same security standard?",
+    "How would you find out if a forgotten or undocumented API endpoint was still exposed somewhere?"
+  ],
+  "relatedControls": ["API8", "API10"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

@@ -1,0 +1,36 @@
+{
+    "frameworkId": "iso-42001",
+    "frameworkVersion": "2023",
+    "controlId": "A.2",
+    "controlName": "Policies related to AI",
+    "family": "ANNEX_A",
+    "purpose": "Assesses whether the organization has established, documented, and maintained an AI policy that is aligned with its other management system policies and reviewed on a defined cadence.",
+    "summary": "This objective requires the organization to define an AI policy that reflects its objectives and commitments regarding the responsible development, provision, or use of AI systems, ensure that policy is consistent with related organizational policies (e.g., information security, data protection, quality), and review it at planned intervals or when significant changes occur.",
+    "expectedStatementElements": [
+        "Whether a documented AI policy exists, is approved by top management, and is communicated across the organization",
+        "How the AI policy is kept consistent with other organizational policies (security, privacy, quality, ethics)",
+        "What review cadence exists for the AI policy and what triggers an out-of-cycle review",
+        "How policy commitments translate into measurable AI objectives"
+    ],
+    "evidenceExamples": [
+        "Approved AI policy document with version history and approval signatures",
+        "Cross-reference mapping showing alignment between the AI policy and other management system policies",
+        "Policy review schedule and records of the most recent review",
+        "AI objectives documentation tracing back to policy commitments"
+    ],
+    "commonGaps": [
+        "No formal AI policy exists, or one exists but was never approved by top management",
+        "The AI policy conflicts with or duplicates existing security/privacy policies without reconciliation",
+        "The policy hasn't been reviewed since it was first written, regardless of how long ago that was"
+    ],
+    "interviewQuestions": [
+        "Do we have a written AI policy that leadership has actually approved and communicated?",
+        "Does our AI policy contradict or overlap awkwardly with our security or privacy policies?",
+        "When was the AI policy last reviewed, and what would trigger us to review it sooner?",
+        "Can you trace our AI objectives back to specific commitments in the policy?"
+    ],
+    "relatedControls": ["A.3", "A.9"],
+    "sourceUrl": "https://www.iso.org/standard/81230.html",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

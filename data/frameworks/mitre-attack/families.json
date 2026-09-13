@@ -1,0 +1,3 @@
+[
+  { "id": "TACTIC", "name": "Tactics", "description": "The 15 adversary tactics in the MITRE ATT&CK Enterprise Matrix (v19), representing the stages of the attack lifecycle from reconnaissance through impact." }
+]

@@ -1,0 +1,38 @@
+{
+  "frameworkId": "nist-ai-rmf",
+  "frameworkVersion": "1.0",
+  "controlId": "MS-2",
+  "controlName": "AI Systems Are Evaluated for Trustworthy Characteristics",
+  "family": "MS",
+  "purpose": "Ensures the AI system is tested for the full range of trustworthy AI characteristics — validity, safety, security, fairness, privacy — not just accuracy on a benchmark dataset.",
+  "summary": "AI systems are evaluated for trustworthy characteristics, including validity and reliability, safety, security and resilience, and other dimensions such as privacy and fairness, using documented test methodologies and evaluations conducted under real deployment conditions with ongoing production monitoring.",
+  "expectedStatementElements": [
+    "What test, evaluation, verification, and validation (TEVV) methodologies and tools are used and documented",
+    "How the system is evaluated for safety, including failure modes and misuse scenarios",
+    "How the system is evaluated for security and resilience, including adversarial testing",
+    "How performance is evaluated under actual deployment conditions rather than only synthetic testing",
+    "What ongoing production monitoring exists after deployment"
+  ],
+  "evidenceExamples": [
+    "TEVV methodology and tooling documentation",
+    "Safety evaluation results identifying failure modes and misuse scenarios",
+    "Security/resilience testing results (adversarial testing, red-teaming)",
+    "Production monitoring dashboard or reports showing ongoing performance tracking"
+  ],
+  "commonGaps": [
+    "Testing only occurred once before launch, with no evaluation under real deployment conditions",
+    "No adversarial or security testing has been performed",
+    "Safety evaluation didn't consider realistic misuse scenarios",
+    "No production monitoring exists to catch degradation after deployment"
+  ],
+  "interviewQuestions": [
+    "What testing methodology was used to evaluate this system, and is it documented?",
+    "Has this system been evaluated under real deployment conditions, not just in a test environment?",
+    "Has any adversarial or security testing been performed against this system?",
+    "What monitoring is in place to catch problems after the system is already live?"
+  ],
+  "relatedControls": ["MS-1", "MS-3"],
+  "sourceUrl": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

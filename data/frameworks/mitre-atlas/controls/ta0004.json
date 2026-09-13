@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0004",
+    "controlName": "Initial Access",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization can prevent or detect an adversary's attempts to gain an initial foothold into a system that uses AI, whether local, edge, or cloud-enabled.",
+    "summary": "Initial Access consists of techniques that use various entry vectors to gain an initial foothold within a system that hosts or interacts with AI capabilities. Common vectors include AI supply chain compromise, exploiting public-facing applications, phishing, and abuse of valid accounts.",
+    "expectedStatementElements": [
+        "How the organization vets the AI software/hardware/data supply chain before deployment",
+        "How public-facing applications that expose or interact with AI models are hardened and monitored",
+        "What controls prevent phishing-based initial access to systems with AI privileges",
+        "How valid account abuse is prevented, including protections against credential reuse and default credentials"
+    ],
+    "evidenceExamples": [
+        "AI supply chain vetting records (software, model, dataset, and hardware provenance checks)",
+        "Vulnerability scanning and patch management records for public-facing AI-enabled applications",
+        "Phishing simulation results and security awareness training records",
+        "MFA enforcement and conditional access policy configuration for accounts with AI system access"
+    ],
+    "commonGaps": [
+        "AI supply chain components (models, datasets, packages) are integrated without provenance verification",
+        "Public-facing applications exposing AI functionality aren't regularly scanned or patched",
+        "MFA isn't enforced consistently across accounts with access to AI systems, especially service accounts"
+    ],
+    "interviewQuestions": [
+        "How do we verify a third-party model or dataset isn't compromised before we use it?",
+        "How current is patching on public-facing applications that expose our AI functionality?",
+        "Is MFA enforced on every account type with access to our AI systems, including service accounts?",
+        "What happens when an employee clicks a phishing link targeting AI system credentials?"
+    ],
+    "relatedControls": ["AML.TA0003", "AML.TA0000", "AML.TA0005"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0004/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}

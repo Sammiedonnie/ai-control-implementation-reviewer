@@ -1,0 +1,37 @@
+{
+  "frameworkId": "owasp-api-top10",
+  "frameworkVersion": "2023",
+  "controlId": "API4",
+  "controlName": "Unrestricted Resource Consumption",
+  "family": "API",
+  "purpose": "Prevents excessive consumption of computational, memory, storage, or third-party service resources that could degrade availability or drive up operating costs.",
+  "summary": "Unrestricted Resource Consumption occurs when an API doesn't properly limit the size or number of requests, response payloads, or resource-intensive operations a client can trigger, making the API vulnerable to denial of service or excessive operational cost.",
+  "expectedStatementElements": [
+    "What rate limiting is applied per client, user, or API key",
+    "What limits exist on request payload size, response size, pagination, and array lengths",
+    "What limits or timeouts exist on resource-intensive operations (e.g., long-running queries, file uploads, third-party API calls)",
+    "How the API monitors and alerts on abnormal resource consumption patterns"
+  ],
+  "evidenceExamples": [
+    "Rate limiting configuration per client/user/API key",
+    "Request/response size and pagination limit configuration",
+    "Timeout and resource-limit configuration for expensive operations",
+    "Monitoring or alerting configuration for abnormal consumption spikes"
+  ],
+  "commonGaps": [
+    "No rate limiting exists, allowing unlimited requests from a single client",
+    "No limit on response payload size or pagination, letting a single request return unbounded data",
+    "Expensive operations (large file uploads, complex queries) have no size or time limits",
+    "No monitoring would catch an unusual spike in resource consumption before it causes an outage or cost spike"
+  ],
+  "interviewQuestions": [
+    "What stops a single client from sending an unlimited number of requests to this API?",
+    "Are there limits on how much data a single request or response can contain?",
+    "What happens if someone triggers an expensive operation repeatedly — is there a limit or timeout?",
+    "How would you find out about an unusual spike in API resource usage before it causes a problem?"
+  ],
+  "relatedControls": ["API6", "API2"],
+  "sourceUrl": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

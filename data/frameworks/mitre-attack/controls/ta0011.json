@@ -1,0 +1,37 @@
+{
+  "frameworkId": "mitre-attack",
+  "frameworkVersion": "v19",
+  "controlId": "TA0011",
+  "controlName": "Command and Control",
+  "family": "TACTIC",
+  "purpose": "Assesses whether the organization can detect or block communication channels an adversary establishes with compromised systems to send commands and receive data.",
+  "summary": "Command and Control consists of techniques adversaries use to communicate with systems under their control, such as using standard application layer protocols, encrypted channels, or legitimate web services to blend in with normal network traffic.",
+  "expectedStatementElements": [
+    "How outbound network traffic is monitored and filtered for connections to known-malicious or suspicious destinations",
+    "How the organization detects command-and-control traffic that mimics legitimate protocols or uses common web services as cover",
+    "What DNS monitoring exists to catch DNS-based C2 channels or domain generation algorithm (DGA) activity",
+    "How encrypted traffic is inspected or analyzed for anomalies without relying solely on payload visibility"
+  ],
+  "evidenceExamples": [
+    "Outbound traffic filtering and threat intelligence-based blocklist configuration",
+    "Network detection rules for C2 traffic patterns disguised as legitimate protocols or services",
+    "DNS monitoring/filtering configuration and DGA detection capability",
+    "TLS/encrypted traffic analysis configuration (JA3/JA4 fingerprinting, traffic analysis, etc.)"
+  ],
+  "commonGaps": [
+    "Outbound traffic isn't filtered against current threat intelligence, allowing connections to known-bad infrastructure",
+    "C2 traffic disguised as legitimate protocols or hidden within common web services would go unnoticed",
+    "No DNS monitoring exists to catch DNS tunneling or domain generation algorithm patterns",
+    "Encrypted traffic is a blind spot, with no analysis beyond basic firewall rules"
+  ],
+  "interviewQuestions": [
+    "Is outbound traffic filtered against current threat intelligence on known-malicious destinations?",
+    "Would C2 traffic disguised as normal web traffic or hidden in a legitimate service actually get caught?",
+    "Do you monitor DNS specifically for tunneling or algorithmically generated domains?",
+    "How much visibility do you actually have into encrypted outbound traffic?"
+  ],
+  "relatedControls": ["TA0009", "TA0010"],
+  "sourceUrl": "https://attack.mitre.org/tactics/TA0011/",
+  "provenance": "application-authored",
+  "lastReviewed": "2026-09-01"
+}

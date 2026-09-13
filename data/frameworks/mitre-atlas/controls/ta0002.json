@@ -1,0 +1,36 @@
+{
+    "frameworkId": "mitre-atlas",
+    "frameworkVersion": "v5.1.0",
+    "controlId": "AML.TA0002",
+    "controlName": "Reconnaissance",
+    "family": "TACTIC",
+    "purpose": "Assesses whether the organization limits or detects an adversary's ability to gather information about its AI systems that could be used to plan an attack.",
+    "summary": "Reconnaissance consists of techniques adversaries use to actively or passively gather information supporting future targeting, such as details of an organization's AI capabilities and research efforts. This information can be leveraged to obtain relevant AI artifacts, target specific capabilities, tailor attacks to the particular models in use, or drive further reconnaissance.",
+    "expectedStatementElements": [
+        "What information about internal AI systems, models, or architecture is exposed via public technical blogs, papers, job postings, or repos",
+        "Whether public-facing AI products/APIs are monitored for scanning or probing activity",
+        "How the organization limits AI-related detail in employee public communications (conference talks, blog posts, social media)",
+        "What controls exist around publishing model documentation, cards, or architecture details externally"
+    ],
+    "evidenceExamples": [
+        "Review process for external technical blog posts or conference presentations mentioning AI systems",
+        "Monitoring/alerting configuration for scanning or probing activity against public AI-facing endpoints",
+        "Employee guidelines on discussing internal AI research or infrastructure publicly",
+        "Inventory of externally published model cards, datasheets, or architecture documentation"
+    ],
+    "commonGaps": [
+        "Employees publish detailed technical blog posts or conference talks revealing model architecture without security review",
+        "No monitoring exists for active scanning or probing of public AI endpoints",
+        "Job postings and vendor RFPs disclose specific AI vendors, frameworks, or model families in use"
+    ],
+    "interviewQuestions": [
+        "If someone read every public blog post, paper, and job posting from this company, how much would they know about our AI systems?",
+        "Would we notice if someone was actively scanning our public AI endpoints for information?",
+        "Is there a review process before employees talk publicly about our AI research or infrastructure?",
+        "Do our job postings or vendor documents reveal more about our AI stack than they need to?"
+    ],
+    "relatedControls": ["AML.TA0001", "AML.TA0003", "AML.TA0004"],
+    "sourceUrl": "https://atlas.mitre.org/tactics/AML.TA0002/",
+    "provenance": "application-authored",
+    "lastReviewed": "2026-09-12"
+}
