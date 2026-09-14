@@ -10,6 +10,16 @@ expectations, or compliance conclusions.
 for exactly what's done and what's next** -- that file is the source of
 truth if a build session gets interrupted.
 
+## Screenshots
+
+**Dashboard**
+![Dashboard](docs/screenshots/dashboard.png)
+
+**New Review**
+![New Review](docs/screenshots/new-review.png)
+
+**Assessment Report**
+![Assessment Report](docs/screenshots/assessment-report.png)
 ## What it does
 
 1. Select a control from any of 11 supported frameworks (NIST SP 800-53, HIPAA Security Rule, OWASP LLM/API/Web Top 10, NIST AI RMF, MITRE ATT&CK, MITRE ATLAS, ISO/IEC 42001, EU AI Act).
