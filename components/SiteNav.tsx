@@ -49,7 +49,7 @@ export function SiteNav() {
           ))}
         </ul>
         <div className="hidden md:block px-5 py-4 mt-auto text-xs text-sidebar-ink-soft border-t border-sidebar-active-bg">
-          NIST SP 800-53 Rev. 5 · MCP-validated
+          11 Frameworks · MCP-validated
         </div>
     </nav>
   );
