@@ -33,7 +33,7 @@ export default function AboutPage() {
             call MCP tools to retrieve the actual NIST 800-53 control text,
             evidence requirements, and related controls before it can draw
             any conclusion. A server-side validation layer independently
-            re-checks the AI's proposed status against the same source
+            re-checks the AI&apos;s proposed status against the same source
             data, regardless of what the model claims to have done.
           </p>
         </Card>
@@ -45,7 +45,7 @@ export default function AboutPage() {
           <p className="text-sm text-ink-soft">
             All control content is sourced directly from NIST SP 800-53
             Revision 5. Nothing is generated or paraphrased from the
-            model's general knowledge — every control definition, gap, and
+            model&apos;s general knowledge — every control definition, gap, and
             evidence requirement traces back to the underlying dataset
             shipped with this application.
           </p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
             input, not as instructions to the model. A deterministic
             scoring engine — not the AI — calculates the final completeness
             score, so results stay consistent and explainable rather than
-            subject to model variance. The AI's role is limited to analysis
+            subject to model variance. The AI&apos;s role is limited to analysis
             and explanation, never final judgment.
           </p>
         </Card>
