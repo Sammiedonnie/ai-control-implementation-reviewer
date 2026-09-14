@@ -12,10 +12,10 @@ const FW = "nist-800-53-r5";
 
 describe("list_frameworks", () => {
   it("returns the NIST framework", () => {
-    const result = listFrameworksTool();
-    expect(result.frameworks).toHaveLength(1);
-    expect(result.frameworks[0].id).toBe(FW);
-  });
+  const result = listFrameworksTool();
+  expect(result.frameworks.length).toBeGreaterThan(1);
+  expect(result.frameworks.map((f) => f.id)).toContain(FW);
+});
 });
 
 describe("list_control_families", () => {

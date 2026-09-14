@@ -11,10 +11,10 @@ const FRAMEWORK_ID = "nist-800-53-r5";
 
 describe("frameworkLoader", () => {
   it("lists the NIST 800-53 framework", () => {
-    const frameworks = listFrameworks();
-    expect(frameworks).toHaveLength(1);
-    expect(frameworks[0].id).toBe(FRAMEWORK_ID);
-  });
+  const frameworks = listFrameworks();
+  expect(frameworks.length).toBeGreaterThan(1);
+  expect(frameworks.map((f) => f.id)).toContain(FRAMEWORK_ID);
+});
 
   it("loads 6 control families", () => {
     const families = loadFamilies(FRAMEWORK_ID);
