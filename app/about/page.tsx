@@ -14,12 +14,7 @@ export default function AboutPage() {
             The Problem
           </h2>
           <p className="text-sm text-ink-soft">
-            GRC analysts and ISSOs spend hours manually checking control
-            implementation statements against frameworks like NIST SP
-            800-53. This tool speeds up that first pass — flagging gaps,
-            missing evidence, and vague language — while keeping a human
-            firmly in the loop for the final call.
-          </p>
+            GRC analysts and ISSOs spend hours manually checking control implementation statements against frameworks like NIST SP 800-53, HIPAA, and the OWASP Top 10. This tool speeds up that first pass across 11 major security, privacy, and AI governance frameworks — flagging gaps, missing evidence, and vague language — while keeping a human firmly in the loop for the final call.</p>
         </Card>
 
         <Card>
@@ -43,11 +38,7 @@ export default function AboutPage() {
             Data Provenance
           </h2>
           <p className="text-sm text-ink-soft">
-            All control content is sourced directly from NIST SP 800-53
-            Revision 5. Nothing is generated or paraphrased from the
-            model&apos;s general knowledge — every control definition, gap, and
-            evidence requirement traces back to the underlying dataset
-            shipped with this application.
+            All control content is sourced directly from the authoritative texts of all 11 supported frameworks, including NIST SP 800-53 Revision 5, HIPAA, NIST AI RMF, and the OWASP and MITRE frameworks. Nothing is generated or paraphrased from the model&apos;s general knowledge — every control definition, gap, and evidence requirement traces back to the underlying dataset shipped with this application.
           </p>
         </Card>
 
